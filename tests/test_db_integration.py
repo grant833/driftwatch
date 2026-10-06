@@ -15,7 +15,7 @@ def conn(monkeypatch):
     monkeypatch.setenv("DRIFTWATCH_HOME", os.path.dirname(os.path.dirname(__file__)))
     with psycopg.connect(URL, autocommit=True) as c:
         c.execute("DROP TABLE IF EXISTS ledger, news_items, filings, gdelt_tone, insider_trades, "
-                  "triage, panel_assessments, predictions, llm_calls CASCADE")
+                  "triage, panel_assessments, predictions, llm_calls, fund_tickers CASCADE")
         db.apply_schema(c)
         yield c
 
@@ -44,16 +44,20 @@ class FakeLLM:
     def __init__(self):
         self.calls = []
 
-    def call_tool(self, model, system, user, tool, max_tokens=1024):
+    def call_json(self, model, system, user, schema, max_tokens=1024):
         import json
 
         from driftwatch.llm import ToolResult
-        self.calls.append(tool["name"])
-        if tool["name"] == "record_triage":
-            ids = [json.loads(line)["id"] for line in user.splitlines()[1:]]
-            return ToolResult({"items": [{"id": i, "material": True, "category": "earnings",
-                                          "market_sentiment": 0.2} for i in ids]}, 100, 50)
-        return ToolResult({"p_up": 0.6, "magnitude": "medium", "novelty": 0.7,
+        kind = "triage" if "items" in schema["properties"] else "panel"
+        self.calls.append(kind)
+        if kind == "triage":
+            items = [json.loads(line) for line in user.splitlines()[1:]]
+            return ToolResult({"items": [
+                {"id": it["id"], "material": True, "category": "earnings",
+                 # pretend the article is only "about" its first symbol
+                 "relevant_tickers": it["symbols"][:1], "market_sentiment": 0.2}
+                for it in items]}, 100, 50)
+        return ToolResult({"p_up": 0.6, "magnitude": "Medium", "novelty": 0.7,
                            "confidence": 0.6, "rationale": "Beat and raise."}, 200, 60)
 
 
@@ -63,7 +67,7 @@ def test_analyst_pipeline_end_to_end(conn):
     from driftwatch import analyst
 
     now = datetime.now(UTC).isoformat()
-    for i, syms in enumerate([["EXMP"], ["VOO"], list("ABCDEFG")], start=1):
+    for i, syms in enumerate([["EXMP", "BYST"], ["VOO"], list("ABCDEFG"), ["ICLN"]], start=1):
         db.insert_news(conn, {"source": "t", "external_id": str(i), "headline": f"h{i}",
                               "summary": "s", "content": "<p>c</p>", "symbols": syms,
                               "url": None, "author": None, "published_at": now,
@@ -72,12 +76,16 @@ def test_analyst_pipeline_end_to_end(conn):
            "triage_batch_size": 20, "max_tickers_per_item": 2, "skip_if_more_symbols_than": 4,
            "personas": ["fundamental", "skeptic", "flow"]}
     llm = FakeLLM()
-    assert analyst.run_triage(conn, llm, cfg) == 3
-    assert analyst.run_panel(conn, llm, cfg, frozenset({"VOO"})) == 1  # only EXMP qualifies
-    assert analyst.run_panel(conn, llm, cfg, frozenset({"VOO"})) == 0  # nothing reprocessed
+    assert analyst.run_triage(conn, llm, cfg) == 4
+    funds = frozenset({"ICLN"})
+    # EXMP qualifies; bystander BYST, blocklisted VOO, roundup, and ETF ICLN do not.
+    made = sum(analyst.run_panel(conn, llm, cfg, frozenset({"VOO"}), funds) for _ in range(3))
+    assert made == 1
+    assert analyst.run_panel(conn, llm, cfg, frozenset({"VOO"}), funds) == 0  # no reprocessing
+    assert llm.calls.count("panel") == 3  # 3 personas for EXMP only, nothing wasted
 
-    p = conn.execute("SELECT ticker, p_up_mean, agree, ledger_seq FROM predictions").fetchall()
-    assert len(p) == 1 and p[0][0] == "EXMP" and p[0][2] is True
+    p = conn.execute("SELECT ticker, p_up_mean, agree, stance FROM predictions").fetchall()
+    assert len(p) == 1 and p[0][0] == "EXMP" and p[0][2] is True and p[0][3] == "agree"
     assert ledger.verify(conn)[0] is True
     assert analyst.calls_today(conn, "triage") == 1
     assert analyst.calls_today(conn, "panel") == 3

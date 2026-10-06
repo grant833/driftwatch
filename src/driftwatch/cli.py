@@ -54,14 +54,15 @@ def cmd_analyst(s, conn, args):
 def cmd_predictions(s, conn, args):
     rows = conn.execute(
         """
-        SELECT p.created_at, p.ticker, p.p_up_mean, p.p_up_std, p.agree, p.novelty_mean,
-               p.magnitude, n.headline
+        SELECT p.created_at, p.ticker, p.p_up_mean, p.p_up_std,
+               coalesce(p.stance, CASE WHEN p.agree THEN 'agree' ELSE 'split' END),
+               p.novelty_mean, p.magnitude, n.headline
         FROM predictions p JOIN news_items n ON n.id = p.news_id
         ORDER BY p.created_at DESC LIMIT %s
         """, (args.last,)).fetchall()
     for r in rows:
-        flag = "AGREE" if r[4] else "split"
-        print(f"{r[0]:%m-%d %H:%M}  {r[1]:6s} p_up={r[2]:.2f}±{r[3]:.2f} {flag:5s} "
+        flag = r[4].upper()
+        print(f"{r[0]:%m-%d %H:%M}  {r[1]:6s} p_up={r[2]:.2f}±{r[3]:.2f} {flag:7s} "
               f"nov={r[5]:.2f} {r[6]:6s} | {r[7][:70]}")
 
 
@@ -137,7 +138,8 @@ def cmd_health(s, conn, args):
 
 
 def cmd_check_ticker(s, conn, args):
-    ok, reason = can_trade(args.ticker, s.blocklist)
+    funds = frozenset(r[0] for r in conn.execute("SELECT ticker FROM fund_tickers"))
+    ok, reason = can_trade(args.ticker, s.blocklist, funds)
     print(f"{args.ticker.upper()}: {'TRADEABLE' if ok else 'BLOCKED'} ({reason})")
 
 

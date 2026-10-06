@@ -3,7 +3,7 @@ from datetime import UTC, datetime
 from driftwatch.config import parse_blocklist
 from driftwatch.guards import can_trade
 from driftwatch.ingest.alpaca_news import normalize
-from driftwatch.ingest.edgar import parse_feed, parse_ticker_map
+from driftwatch.ingest.edgar import parse_feed, parse_fund_tickers, parse_ticker_map
 from driftwatch.ingest.gdelt import parse_timeline
 
 # ruff: noqa: E501
@@ -70,3 +70,16 @@ def test_blocklist_and_guard():
     assert bl == frozenset({"VOO", "SPY"})
     assert can_trade("voo", bl)[0] is False
     assert can_trade("AAPL", bl)[0] is True
+
+
+def test_fund_tickers_both_layouts():
+    tabular = {"fields": ["cik", "seriesId", "classId", "symbol"],
+               "data": [[1, "S1", "C1", "icln"], [2, "S2", "C2", "BKCH"], [3, "S3", "C3", None]]}
+    assert parse_fund_tickers(tabular) == {"ICLN", "BKCH"}
+    nested = {"0": {"cik": 1, "symbol": "QQQ"}}
+    assert parse_fund_tickers(nested) == {"QQQ"}
+
+
+def test_guard_blocks_funds():
+    assert can_trade("icln", frozenset(), frozenset({"ICLN"})) == (
+        False, "fund/ETF (single stocks only)")

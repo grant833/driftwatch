@@ -176,3 +176,16 @@ CREATE TABLE IF NOT EXISTS llm_calls (
     created_at     TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 CREATE INDEX IF NOT EXISTS llm_calls_day_idx ON llm_calls (created_at);
+
+-- ===================== Phase 1.1 =====================
+
+-- Fund/ETF tickers from SEC's investment-company list; never traded.
+CREATE TABLE IF NOT EXISTS fund_tickers (
+    ticker       TEXT        PRIMARY KEY,
+    refreshed_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- Which symbols the article is actually about (vs. merely mentioned).
+ALTER TABLE triage      ADD COLUMN IF NOT EXISTS relevant_tickers TEXT[];
+-- agree | split | neutral
+ALTER TABLE predictions ADD COLUMN IF NOT EXISTS stance TEXT;

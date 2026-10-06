@@ -22,6 +22,7 @@ log = logging.getLogger(__name__)
 
 FEED_URL = "https://www.sec.gov/cgi-bin/browse-edgar"
 TICKERS_URL = "https://www.sec.gov/files/company_tickers.json"
+FUNDS_URL = "https://www.sec.gov/files/company_tickers_mf.json"
 
 TITLE_RE = re.compile(r"^(?P<form>.+?) - (?P<company>.+) \((?P<cik>\d{10})\) \((?P<role>[^)]+)\)$")
 ACCESSION_RE = re.compile(r"accession-number=(\d{10}-\d{2}-\d{6})")
@@ -63,6 +64,33 @@ def parse_ticker_map(data: dict) -> dict[str, str]:
     return {str(v["cik_str"]).zfill(10): v["ticker"].upper() for v in data.values()}
 
 
+def parse_fund_tickers(data) -> set[str]:
+    """SEC's fund list is {"fields": [...], "data": [[cik, series, class, symbol], ...]}.
+    Tolerates a dict-of-dicts layout too, in case the format changes."""
+    out = set()
+    if isinstance(data, dict) and "fields" in data and "data" in data:
+        idx = [f.lower() for f in data["fields"]].index("symbol")
+        rows = (r[idx] for r in data["data"])
+    elif isinstance(data, dict):
+        rows = (v.get("symbol") for v in data.values() if isinstance(v, dict))
+    else:
+        rows = ()
+    for sym in rows:
+        if sym and isinstance(sym, str):
+            out.add(sym.strip().upper())
+    return out
+
+
+def refresh_funds(client: httpx.Client, conn) -> int:
+    funds = parse_fund_tickers(client.get(FUNDS_URL).raise_for_status().json())
+    with conn.cursor() as cur:
+        cur.executemany(
+            "INSERT INTO fund_tickers (ticker) VALUES (%s) "
+            "ON CONFLICT (ticker) DO UPDATE SET refreshed_at = now()",
+            [(t,) for t in funds])
+    return len(funds)
+
+
 def poll(s: Settings, conn) -> None:
     cfg = s.edgar
     client = httpx.Client(headers={"User-Agent": s.sec_user_agent}, timeout=30)
@@ -75,6 +103,10 @@ def poll(s: Settings, conn) -> None:
                 ticker_map = parse_ticker_map(client.get(TICKERS_URL).raise_for_status().json())
                 map_loaded_at = time.time()
                 log.info("loaded %d CIK->ticker mappings", len(ticker_map))
+                try:
+                    log.info("refreshed %d fund/ETF tickers", refresh_funds(client, conn))
+                except (httpx.HTTPError, ValueError) as exc:
+                    log.warning("fund list refresh failed (will retry tomorrow): %s", exc)
             for form in cfg["forms"]:
                 resp = client.get(FEED_URL, params={
                     "action": "getcurrent", "type": form, "owner": "include",
