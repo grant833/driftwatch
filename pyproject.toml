@@ -1,0 +1,35 @@
+[project]
+name = "driftwatch"
+version = "0.1.0"
+description = "Slow, skeptical, provable news-driven trading research system"
+requires-python = ">=3.11"
+dependencies = [
+  "psycopg[binary]>=3.2",
+  "httpx>=0.27",
+  "websockets>=12",
+  "feedparser>=6.0",
+  "pyyaml>=6.0",
+  "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+driftwatch = "driftwatch.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

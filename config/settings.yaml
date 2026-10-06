@@ -1,0 +1,19 @@
+universe:
+  # Tickers the bot may never buy. Put every ETF from your UBS model here
+  # to avoid the taxable-to-IRA wash sale trap.
+  blocklist_file: config/blocklist.txt
+  min_price: 5.0
+
+edgar:
+  forms: ["8-K", "4"]
+  poll_seconds: 60
+  ticker_map_refresh_hours: 24
+
+gdelt:
+  # GDELT DOC API allows roughly one request per 5 seconds.
+  poll_seconds: 900
+  spacing_seconds: 15
+  timespan: 24h
+  queries:
+    global_risk: '(war OR sanctions OR recession OR tariffs OR "central bank" OR inflation) sourcelang:english'
+    us_markets: '("stock market" OR "Wall Street" OR "Federal Reserve" OR earnings) sourcelang:english'

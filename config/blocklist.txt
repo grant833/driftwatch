@@ -1,0 +1,8 @@
+# One ticker per line. Comments start with #.
+# TODO: replace with the exact holdings of the UBS "ETF Aggressive" model.
+# Example placeholders (remove or keep as appropriate):
+SPY
+VOO
+IVV
+QQQ
+VTI
