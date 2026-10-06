@@ -83,6 +83,6 @@ def poll(s: Settings, conn) -> None:
                     failures += 1
                     log.error("GDELT %s failed after retries: %s", name, exc)
                     if failures == 6:
-                        alert(s.slack_webhook, f"GDELT poller failing repeatedly: {exc}")
+                        alert(s.slack_webhook, f"GDELT poller failing repeatedly: {exc}", conn=conn)
                 time.sleep(cfg["spacing_seconds"])
             time.sleep(cfg["poll_seconds"])

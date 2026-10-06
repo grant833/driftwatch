@@ -104,6 +104,6 @@ async def stream(s: Settings, conn) -> None:
         except (OSError, websockets.WebSocketException, RuntimeError, httpx.HTTPError) as exc:
             log.error("news stream dropped: %s (retry in %ss)", exc, backoff)
             if backoff >= 32:
-                alert(s.slack_webhook, f"news stream unstable: {exc}")
+                alert(s.slack_webhook, f"news stream unstable: {exc}", conn=conn)
             await asyncio.sleep(backoff)
             backoff = min(backoff * 2, 60)

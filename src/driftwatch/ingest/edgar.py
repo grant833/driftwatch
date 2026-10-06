@@ -121,5 +121,5 @@ def poll(s: Settings, conn) -> None:
             failures += 1
             log.error("EDGAR poll failed: %s", exc)
             if failures == 5:
-                alert(s.slack_webhook, f"EDGAR poller failing repeatedly: {exc}")
+                alert(s.slack_webhook, f"EDGAR poller failing repeatedly: {exc}", conn=conn)
         time.sleep(cfg["poll_seconds"])

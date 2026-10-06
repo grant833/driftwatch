@@ -51,6 +51,14 @@ services:
     <<: *app
     command: ["analyst"]
 
+  scorer:
+    <<: *app
+    command: ["scorer"]
+
+  notifier:
+    <<: *app
+    command: ["notifier"]
+
   gdelt:
     <<: *app
     command: ["gdelt-poll"]

@@ -15,6 +15,9 @@ proven instead of claimed.
 | `edgar` service | Polls SEC EDGAR for new 8-K (material events) and Form 4 (insider trades) filings, maps CIK to ticker |
 | `insider` service | Parses every Form 4, flags discretionary open-market buys by officers/directors (code P, no 10b5-1 plan, ≥ $25k) |
 | `analyst` service | Stage 1: cheap model triages every headline in batches and scores market-wide mood. Stage 2: three analyst personas (fundamental, skeptic, flow) independently estimate P(stock beats SPY over 5 days); agreement becomes confidence; every verdict is written to the ledger |
+| `scorer` service | Pulls split/dividend-adjusted daily bars and grades every prediction at 1, 5 and 10 sessions as excess return vs SPY, using conservative point-in-time entry rules (premarket → that day's open, intraday → that day's close, after hours → next open) |
+| `notifier` service | Telegram bot: insider buys, strong AGREE calls, problems, and a weekday after-close summary; commands `/status /today /insiders /score /mood /costs /kill /resume`. Obeys only the owner's chat |
+| "Priced in?" check | At prediction time the panel sees how far the stock has already moved vs the prior close (IEX snapshot), and the move is stored with the prediction |
 | `gdelt` service | Optional, off by default (GDELT's free API returned empty data in Oct 2026); replaced by headline-based market mood |
 | Ledger | Hash-chained, append-only (enforced by Postgres triggers), daily anchors for public git timestamps |
 | Guards | Ticker blocklist so the bot never buys ETFs held in the UBS model (wash-sale protection) |
@@ -46,6 +49,8 @@ docker compose run --rm news predictions         # latest panel verdicts
 docker compose run --rm news insiders            # latest insider buy signals
 docker compose run --rm news mood                # hourly market mood from headlines
 docker compose run --rm news costs               # API calls and tokens per day
+docker compose run --rm news score               # scorecard: hit rate, edge, IC vs SPY
+docker compose run --rm news kill                # halt trading (same as /kill in Telegram)
 ```
 
 Runs on a Raspberry Pi 5 (arm64) or any small Linux VM.
@@ -61,8 +66,7 @@ Runs on a Raspberry Pi 5 (arm64) or any small Linux VM.
 ## Roadmap
 
 - **Phase 1 (done):** Form 4 parsing, LLM triage plus analyst panel, predictions in the ledger.
-- **Phase 1C:** "already priced in?" check against price moves, plus scorekeeping: each prediction's
-  actual 1/5/10-day excess return vs SPY, calibration and hit-rate reports.
+- **Phase 1C (done):** "already priced in?" check, scorekeeper, Telegram bot with kill switch.
 - **Phase 2:** Three-way paper tournament (news drift, news plus insider, SPY trend baseline).
 - **Phase 3:** Go/no-go gate on Deflated Sharpe vs SPY, then small live Roth IRA allocation.
 

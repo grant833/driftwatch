@@ -189,3 +189,54 @@ CREATE TABLE IF NOT EXISTS fund_tickers (
 ALTER TABLE triage      ADD COLUMN IF NOT EXISTS relevant_tickers TEXT[];
 -- agree | split | neutral
 ALTER TABLE predictions ADD COLUMN IF NOT EXISTS stance TEXT;
+
+-- ===================== Phase 1.2: notifier, scorekeeper =====================
+
+-- Outbox: any service can queue a message; the notifier delivers it.
+CREATE TABLE IF NOT EXISTS notifications (
+    id          BIGSERIAL   PRIMARY KEY,
+    kind        TEXT        NOT NULL,     -- alert | insider | signal | summary | trade
+    text        TEXT        NOT NULL,
+    created_at  TIMESTAMPTZ NOT NULL DEFAULT now(),
+    sent_at     TIMESTAMPTZ
+);
+CREATE INDEX IF NOT EXISTS notifications_unsent_idx ON notifications (id) WHERE sent_at IS NULL;
+
+-- Runtime switches (e.g. trading_halted) and small bits of service state.
+CREATE TABLE IF NOT EXISTS controls (
+    key         TEXT        PRIMARY KEY,
+    value       TEXT        NOT NULL,
+    updated_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- Split- and dividend-adjusted daily bars.
+CREATE TABLE IF NOT EXISTS prices_daily (
+    ticker  TEXT             NOT NULL,
+    day     DATE             NOT NULL,
+    open    DOUBLE PRECISION NOT NULL,
+    close   DOUBLE PRECISION NOT NULL,
+    volume  DOUBLE PRECISION,
+    PRIMARY KEY (ticker, day)
+);
+
+-- Price context captured at the moment of each prediction.
+ALTER TABLE predictions ADD COLUMN IF NOT EXISTS pre_move  DOUBLE PRECISION; -- vs prior close
+ALTER TABLE predictions ADD COLUMN IF NOT EXISTS ref_price DOUBLE PRECISION;
+
+-- Realized outcome of each prediction at each horizon.
+CREATE TABLE IF NOT EXISTS outcomes (
+    news_id     BIGINT           NOT NULL,
+    ticker      TEXT             NOT NULL,
+    horizon     INT              NOT NULL,          -- trading sessions
+    entry_day   DATE             NOT NULL,
+    entry_kind  TEXT             NOT NULL,          -- open | close
+    entry_px    DOUBLE PRECISION NOT NULL,
+    exit_day    DATE             NOT NULL,
+    exit_px     DOUBLE PRECISION NOT NULL,
+    ret         DOUBLE PRECISION NOT NULL,
+    spy_ret     DOUBLE PRECISION NOT NULL,
+    excess      DOUBLE PRECISION NOT NULL,
+    scored_at   TIMESTAMPTZ      NOT NULL DEFAULT now(),
+    PRIMARY KEY (news_id, ticker, horizon),
+    FOREIGN KEY (news_id, ticker) REFERENCES predictions (news_id, ticker)
+);

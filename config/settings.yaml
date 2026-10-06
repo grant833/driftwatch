@@ -35,3 +35,11 @@ analyst:
   daily_caps:                    # hard ceilings on API calls per UTC day
     triage_calls: 400
     panel_calls: 450
+
+notifier:
+  daily_summary_time: "16:45"     # US/Eastern, weekdays, after the close
+  strong_signal_edge: 0.05        # notify when an AGREE prediction is >= this far from 0.5
+
+scorer:
+  poll_minutes: 30
+  horizons: [1, 5, 10]            # trading sessions after entry

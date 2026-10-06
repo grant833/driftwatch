@@ -8,12 +8,13 @@ from __future__ import annotations
 import logging
 import time
 from datetime import date
+from html import escape
 
 import httpx
 from defusedxml import DefusedXmlException
 from defusedxml import ElementTree as ET
 
-from .alerts import alert
+from .alerts import alert, notify
 from .config import Settings
 
 log = logging.getLogger(__name__)
@@ -101,6 +102,16 @@ def is_signal(t: dict, min_value: float) -> bool:
     )
 
 
+def format_insider(t: dict) -> str:
+    role = t["officer_title"] or "Director"
+    pct = ""
+    if t.get("shares_after") and t.get("shares") and t["shares_after"] > t["shares"]:
+        pct = f" (+{t['shares'] / (t['shares_after'] - t['shares']):.0%} to their stake)"
+    return (f"🔍 <b>Insider buy: {escape(t['ticker'])}</b>\n"
+            f"{escape(t['insider_name'] or '?')} ({escape(role)}) bought "
+            f"${t['value_usd']:,.0f} at ${t['price']:.2f}{pct}")
+
+
 def find_xml_url(client: httpx.Client, index_url: str) -> str:
     base = index_url.rsplit("/", 1)[0]
     listing = client.get(f"{base}/index.json").raise_for_status().json()
@@ -147,6 +158,7 @@ def poll(s: Settings, conn) -> None:
                                  (accession,))
                 for t in trades:
                     if is_signal(t, cfg["min_signal_value_usd"]):
+                        notify(conn, "insider", format_insider(t))
                         log.info("INSIDER BUY %s: %s (%s) bought $%.0f",
                                  t["ticker"], t["insider_name"], t["officer_title"] or "director",
                                  t["value_usd"])
@@ -159,6 +171,6 @@ def poll(s: Settings, conn) -> None:
                     "UPDATE filings SET parsed_at = now(), parse_error = %s WHERE accession = %s",
                     (str(exc)[:500], accession))
                 if failures == 10:
-                    alert(s.slack_webhook, f"Form 4 parser failing repeatedly: {exc}")
+                    alert(s.slack_webhook, f"Form 4 parser failing repeatedly: {exc}", conn=conn)
             time.sleep(0.5)  # 2 filings/sec, well under SEC's limit (2 requests each)
         time.sleep(cfg["poll_seconds"] if not rows else 1)
