@@ -73,3 +73,106 @@ DROP TRIGGER IF EXISTS ledger_no_truncate ON ledger;
 CREATE TRIGGER ledger_no_truncate
     BEFORE TRUNCATE ON ledger
     FOR EACH STATEMENT EXECUTE FUNCTION ledger_append_only();
+
+-- ===================== Phase 1 =====================
+
+ALTER TABLE filings ADD COLUMN IF NOT EXISTS parsed_at TIMESTAMPTZ;
+ALTER TABLE filings ADD COLUMN IF NOT EXISTS parse_error TEXT;
+
+-- One row per non-derivative transaction line in a Form 4.
+CREATE TABLE IF NOT EXISTS insider_trades (
+    accession         TEXT        NOT NULL REFERENCES filings(accession),
+    line_no           INT         NOT NULL,
+    ticker            TEXT,
+    issuer_cik        TEXT,
+    insider_name      TEXT,
+    officer_title     TEXT,
+    is_director       BOOLEAN     NOT NULL DEFAULT false,
+    is_officer        BOOLEAN     NOT NULL DEFAULT false,
+    is_ten_pct_owner  BOOLEAN     NOT NULL DEFAULT false,
+    transaction_date  DATE,
+    code              TEXT,       -- P = open-market purchase, S = sale, A = award, ...
+    acquired_disposed TEXT,       -- A or D
+    shares            DOUBLE PRECISION,
+    price             DOUBLE PRECISION,
+    value_usd         DOUBLE PRECISION,
+    shares_after      DOUBLE PRECISION,
+    plan_10b5_1       BOOLEAN     NOT NULL DEFAULT false,
+    received_at       TIMESTAMPTZ NOT NULL DEFAULT now(),
+    PRIMARY KEY (accession, line_no)
+);
+CREATE INDEX IF NOT EXISTS insider_trades_ticker_idx ON insider_trades (ticker, transaction_date DESC);
+
+-- Discretionary open-market buys by officers/directors, not pre-planned, meaningful size.
+CREATE OR REPLACE VIEW insider_buy_signals AS
+SELECT t.ticker, t.insider_name, t.officer_title, t.is_director, t.is_officer,
+       t.transaction_date, t.shares, t.price, t.value_usd, t.shares_after,
+       f.filed_at, t.received_at, t.accession
+FROM insider_trades t
+JOIN filings f USING (accession)
+WHERE t.code = 'P'
+  AND t.acquired_disposed = 'A'
+  AND NOT t.plan_10b5_1
+  AND (t.is_officer OR t.is_director)
+  AND t.value_usd >= 25000
+  AND t.ticker IS NOT NULL;
+
+-- Stage 1: cheap triage of every headline.
+CREATE TABLE IF NOT EXISTS triage (
+    news_id          BIGINT      PRIMARY KEY REFERENCES news_items(id),
+    material         BOOLEAN     NOT NULL,
+    category         TEXT,
+    market_sentiment DOUBLE PRECISION,
+    model            TEXT        NOT NULL,
+    prompt_version   TEXT        NOT NULL,
+    created_at       TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- Stage 2: each analyst persona's independent view.
+CREATE TABLE IF NOT EXISTS panel_assessments (
+    id             BIGSERIAL   PRIMARY KEY,
+    news_id        BIGINT      NOT NULL REFERENCES news_items(id),
+    ticker         TEXT        NOT NULL,
+    persona        TEXT        NOT NULL,
+    model          TEXT        NOT NULL,
+    prompt_version TEXT        NOT NULL,
+    output         JSONB       NOT NULL,
+    input_tokens   INT,
+    output_tokens  INT,
+    created_at     TIMESTAMPTZ NOT NULL DEFAULT now(),
+    UNIQUE (news_id, ticker, persona)
+);
+
+-- Aggregated panel verdict, linked to its ledger entry.
+CREATE TABLE IF NOT EXISTS predictions (
+    news_id        BIGINT      NOT NULL REFERENCES news_items(id),
+    ticker         TEXT        NOT NULL,
+    ledger_seq     BIGINT      NOT NULL REFERENCES ledger(seq),
+    p_up_mean      DOUBLE PRECISION NOT NULL,
+    p_up_std       DOUBLE PRECISION NOT NULL,
+    novelty_mean   DOUBLE PRECISION NOT NULL,
+    agree          BOOLEAN     NOT NULL,
+    magnitude      TEXT        NOT NULL,
+    created_at     TIMESTAMPTZ NOT NULL DEFAULT now(),
+    PRIMARY KEY (news_id, ticker)
+);
+
+-- Replacement for GDELT: market mood from our own headlines.
+CREATE OR REPLACE VIEW market_mood_hourly AS
+SELECT date_trunc('hour', n.published_at) AS hour,
+       avg(t.market_sentiment)            AS mood,
+       count(*)                           AS headlines
+FROM triage t JOIN news_items n ON n.id = t.news_id
+WHERE t.market_sentiment IS NOT NULL
+GROUP BY 1;
+
+-- Every API call, for daily caps and cost tracking.
+CREATE TABLE IF NOT EXISTS llm_calls (
+    id             BIGSERIAL   PRIMARY KEY,
+    stage          TEXT        NOT NULL,   -- triage | panel
+    model          TEXT        NOT NULL,
+    input_tokens   INT         NOT NULL,
+    output_tokens  INT         NOT NULL,
+    created_at     TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS llm_calls_day_idx ON llm_calls (created_at);

@@ -7,17 +7,19 @@ instead looks for news the market hasn't fully absorbed, holds for days, and
 records every prediction in a tamper-evident ledger, so its track record can be
 proven instead of claimed.
 
-## Status: Phase 0 (data foundation)
+## Status: Phase 1 (reading and predicting, no trading)
 
 | Component | What it does |
 |---|---|
 | `news` service | Alpaca/Benzinga news over WebSocket, with automatic REST gap-fill on every reconnect |
 | `edgar` service | Polls SEC EDGAR for new 8-K (material events) and Form 4 (insider trades) filings, maps CIK to ticker |
-| `gdelt` service | Global news tone every 15 minutes, used later as a market-wide risk dial |
+| `insider` service | Parses every Form 4, flags discretionary open-market buys by officers/directors (code P, no 10b5-1 plan, ≥ $25k) |
+| `analyst` service | Stage 1: cheap model triages every headline in batches and scores market-wide mood. Stage 2: three analyst personas (fundamental, skeptic, flow) independently estimate P(stock beats SPY over 5 days); agreement becomes confidence; every verdict is written to the ledger |
+| `gdelt` service | Optional, off by default (GDELT's free API returned empty data in Oct 2026); replaced by headline-based market mood |
 | Ledger | Hash-chained, append-only (enforced by Postgres triggers), daily anchors for public git timestamps |
 | Guards | Ticker blocklist so the bot never buys ETFs held in the UBS model (wash-sale protection) |
 
-No trading happens in Phase 0.
+No trading happens yet. Hard daily caps on API calls are enforced in code, and every call is logged for cost tracking.
 
 ## Design principles
 
@@ -40,6 +42,10 @@ docker compose run --rm news ledger-note "hello" # append a ledger entry
 docker compose run --rm news ledger-verify       # check the hash chain
 docker compose run --rm news ledger-anchor       # write anchors/YYYY-MM-DD.txt, then git commit + push
 docker compose run --rm news check-ticker VOO    # test the blocklist
+docker compose run --rm news predictions         # latest panel verdicts
+docker compose run --rm news insiders            # latest insider buy signals
+docker compose run --rm news mood                # hourly market mood from headlines
+docker compose run --rm news costs               # API calls and tokens per day
 ```
 
 Runs on a Raspberry Pi 5 (arm64) or any small Linux VM.
@@ -54,8 +60,9 @@ Runs on a Raspberry Pi 5 (arm64) or any small Linux VM.
 
 ## Roadmap
 
-- **Phase 1:** Form 4 XML parsing (open-market purchases, code P), LLM triage plus analyst panel,
-  "already priced in?" check, predictions written to the ledger. No trading.
+- **Phase 1 (done):** Form 4 parsing, LLM triage plus analyst panel, predictions in the ledger.
+- **Phase 1C:** "already priced in?" check against price moves, plus scorekeeping: each prediction's
+  actual 1/5/10-day excess return vs SPY, calibration and hit-rate reports.
 - **Phase 2:** Three-way paper tournament (news drift, news plus insider, SPY trend baseline).
 - **Phase 3:** Go/no-go gate on Deflated Sharpe vs SPY, then small live Roth IRA allocation.
 

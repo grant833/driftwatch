@@ -17,3 +17,21 @@ gdelt:
   queries:
     global_risk: '(war OR sanctions OR recession OR tariffs OR "central bank" OR inflation) sourcelang:english'
     us_markets: '("stock market" OR "Wall Street" OR "Federal Reserve" OR earnings) sourcelang:english'
+
+insider:
+  poll_seconds: 30
+  batch_size: 25
+  min_signal_value_usd: 25000
+
+analyst:
+  poll_seconds: 20
+  max_news_age_hours: 6          # only judge fresh news (forward-looking only)
+  triage_model: claude-haiku-4-5-20251001
+  panel_model: claude-sonnet-5-5
+  triage_batch_size: 20
+  max_tickers_per_item: 2
+  skip_if_more_symbols_than: 4   # roundup articles mention many tickers
+  personas: [fundamental, skeptic, flow]
+  daily_caps:                    # hard ceilings on API calls per UTC day
+    triage_calls: 400
+    panel_calls: 450
