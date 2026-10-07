@@ -30,6 +30,7 @@ analyst:
   triage_model: claude-haiku-4-5-20251001
   panel_model: claude-sonnet-5-5
   triage_batch_size: 20
+  triage_max_wait_minutes: 5     # otherwise wait for a full batch (cheaper)
   max_tickers_per_item: 2
   skip_if_more_symbols_than: 4   # roundup articles mention many tickers
   personas: [fundamental, skeptic, flow]

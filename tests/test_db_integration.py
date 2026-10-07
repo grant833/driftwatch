@@ -337,3 +337,17 @@ def test_strongest_report_ranks_by_conviction(conn):
                      "(%s,%s,%s,%s,0,0.5,true,'small',%s)", (nid, sym, entry.seq, p, stance))
     text = reports.predictions(conn, last=5, today_only=True, compact=True, strongest=True)
     assert text.splitlines()[0].startswith("BBB") and "CCC" not in text
+
+
+def test_triage_waits_for_a_full_batch(conn):
+    from driftwatch import analyst
+    for i in range(3):
+        _news(conn, f"w{i}", ["EXMP"])
+    cfg = {**CFG, "triage_max_wait_minutes": 5}
+    llm = FakeLLM()
+    assert analyst.run_triage(conn, llm, cfg) == 0 and llm.calls == []   # too few, too fresh
+    conn.execute("UPDATE news_items SET received_at = now() - interval '6 minutes'")
+    assert analyst.run_triage(conn, llm, cfg) == 3 and llm.calls == ["triage"]
+    for i in range(20):
+        _news(conn, f"f{i}", ["EXMP"])
+    assert analyst.run_triage(conn, llm, cfg) == 20                       # full batch: go now

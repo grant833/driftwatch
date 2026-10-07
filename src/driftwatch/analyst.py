@@ -15,7 +15,7 @@ import re
 import statistics
 import time
 from collections import Counter
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from html import escape
 
 from . import ledger
@@ -247,12 +247,17 @@ def record_call(conn, stage: str, model: str, res) -> None:
 def run_triage(conn, llm: LLM, cfg: dict) -> int:
     rows = conn.execute(
         """
-        SELECT n.id, n.symbols, n.headline, n.summary FROM news_items n
+        SELECT n.id, n.symbols, n.headline, n.summary, n.received_at FROM news_items n
         LEFT JOIN triage t ON t.news_id = n.id
         WHERE t.news_id IS NULL AND n.published_at > now() - make_interval(hours => %s)
         ORDER BY n.published_at LIMIT %s
         """, (cfg["max_news_age_hours"], cfg["triage_batch_size"])).fetchall()
     if not rows:
+        return 0
+    # Each call carries a fixed overhead (instructions + schema), so wait for a full batch
+    # unless the oldest headline has already waited long enough.
+    wait = timedelta(minutes=cfg.get("triage_max_wait_minutes", 0))
+    if len(rows) < cfg["triage_batch_size"] and datetime.now(UTC) - min(r[4] for r in rows) < wait:
         return 0
     items = [{"id": r[0], "symbols": r[1], "headline": r[2], "summary": r[3]} for r in rows]
     res = llm.call_json(cfg["triage_model"], TRIAGE_SYSTEM, triage_prompt(items), TRIAGE_SCHEMA,
