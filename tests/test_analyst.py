@@ -15,6 +15,22 @@ def test_clean_text_strips_html():
     assert clean_text(None) == ""
 
 
+def test_tickers_for_tradable_universe_and_junk_symbols():
+    item = {"symbols": ["AAPL", "CURLF", "TSX:GDL"], "relevant": ["AAPL", "CURLF", "TSX:GDL"]}
+    assert tickers_for(item, frozenset(), 3, 4, tradable=frozenset({"AAPL"})) == ["AAPL"]
+    # tradable list not loaded yet: still drop invalid symbols
+    assert tickers_for(item, frozenset(), 3, 4) == ["AAPL", "CURLF"]
+
+
+def test_paced_allowance():
+    from datetime import UTC, datetime
+
+    from driftwatch.analyst import paced_allowance
+    assert paced_allowance(480, datetime(2026, 10, 7, 4, 0, tzinfo=UTC), 2) == 40   # 0:00 ET
+    assert paced_allowance(480, datetime(2026, 10, 7, 16, 0, tzinfo=UTC), 2) == 280  # noon ET
+    assert paced_allowance(480, datetime(2026, 10, 8, 3, 0, tzinfo=UTC), 2) == 480   # 11pm ET
+
+
 def test_tickers_for_uses_relevance_and_excludes_funds():
     item = {"symbols": ["FLDAI", "INTC", "META", "ICLN"], "relevant": ["FLDAI", "ICLN"]}
     assert tickers_for(item, frozenset(), 2, 4, funds=frozenset({"ICLN"})) == ["FLDAI"]
@@ -27,6 +43,8 @@ def test_validate_triage_item_keeps_only_listed_symbols():
                                 "market_sentiment": 3}, ["EXMP", "OTHR"])
     assert out["relevant_tickers"] == ["EXMP"]          # hallucinated ZZZZ dropped, deduped
     assert out["market_sentiment"] == 1.0 and out["category"] == "m_and_a"
+    assert out["importance"] == 3                                  # missing -> middle
+    assert validate_triage_item({"importance": 9}, [])["importance"] == 5
 
 
 def test_tickers_for_filters():

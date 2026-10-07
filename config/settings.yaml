@@ -2,7 +2,8 @@ universe:
   # Tickers the bot may never buy. Put every ETF from your UBS model here
   # to avoid the taxable-to-IRA wash sale trap.
   blocklist_file: config/blocklist.txt
-  min_price: 5.0
+  min_price: 5.0                # skip stocks trading under this (penny stocks)
+  exclude_otc: true
 
 edgar:
   forms: ["8-K", "4"]
@@ -32,7 +33,8 @@ analyst:
   max_tickers_per_item: 2
   skip_if_more_symbols_than: 4   # roundup articles mention many tickers
   personas: [fundamental, skeptic, flow]
-  daily_caps:                    # hard ceilings on API calls per UTC day
+  pacing_burst_hours: 2          # panel budget is released evenly through the day
+  daily_caps:                    # hard ceilings on API calls per US/Eastern day
     triage_calls: 400
     panel_calls: 450
 

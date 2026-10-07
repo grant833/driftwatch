@@ -16,7 +16,7 @@ def conn(monkeypatch):
     with psycopg.connect(URL, autocommit=True) as c:
         c.execute("DROP TABLE IF EXISTS ledger, news_items, filings, gdelt_tone, insider_trades, "
                   "triage, panel_assessments, predictions, llm_calls, fund_tickers, notifications, "
-                  "controls, prices_daily, outcomes CASCADE")
+                  "controls, prices_daily, outcomes, tradable_assets CASCADE")
         db.apply_schema(c)
         yield c
 
@@ -230,3 +230,110 @@ def test_outbox_delivery_rules(conn):
     notifier.flush_outbox(conn, FakeTG(fail_status=400), 42)
     assert conn.execute("SELECT count(*) FROM notifications WHERE sent_at IS NULL"
                         ).fetchone()[0] == 0
+
+
+# ---------------- Phase 1.3: universe, priority, pacing, incremental scorer ----------------
+
+def _news(conn, ext, symbols, headline="h"):
+    from datetime import UTC, datetime
+    db.insert_news(conn, {"source": "t", "external_id": ext, "headline": headline, "summary": "s",
+                          "content": "c", "symbols": symbols, "url": None, "author": None,
+                          "published_at": datetime.now(UTC).isoformat(), "updated_at": None,
+                          "raw": {}})
+    return conn.execute("SELECT id FROM news_items WHERE external_id = %s", (ext,)).fetchone()[0]
+
+
+def _triage(conn, news_id, tickers, importance):
+    conn.execute("INSERT INTO triage (news_id, material, category, relevant_tickers, importance, "
+                 "model, prompt_version) VALUES (%s, true, 'other', %s, %s, 'm', 'v')",
+                 (news_id, tickers, importance))
+
+
+CFG = {"max_news_age_hours": 6, "triage_model": "t", "panel_model": "p", "triage_batch_size": 20,
+       "max_tickers_per_item": 2, "skip_if_more_symbols_than": 4,
+       "personas": ["fundamental", "skeptic", "flow"]}
+
+
+def test_panel_priority_price_floor_universe_and_budget(conn):
+    from driftwatch import analyst
+    minor = _news(conn, "a", ["MINR"], "minor news")
+    major = _news(conn, "b", ["MAJR"], "major news")
+    penny = _news(conn, "c", ["PNNY"], "penny news")
+    otc = _news(conn, "d", ["CURLF"], "otc news")
+    _triage(conn, minor, ["MINR"], 2)
+    _triage(conn, major, ["MAJR"], 5)
+    _triage(conn, penny, ["PNNY"], 4)
+    _triage(conn, otc, ["CURLF"], 5)
+
+    class Px(FakePrices):
+        def snapshots(self, tickers):
+            p = {"MINR": 40.0, "MAJR": 80.0, "PNNY": 1.2}
+            return {t: {"price": p[t], "prev_close": p[t], "trade_time": None}
+                    for t in tickers if t in p}
+
+    llm = FakeLLM()
+    tradable = frozenset({"MINR", "MAJR", "PNNY"})
+    # Budget for only one prediction (3 calls): the most important eligible item wins.
+    left = {"n": 3}
+    budget = lambda: left["n"] - llm.calls.count("panel")  # noqa: E731
+    made = analyst.run_panel(conn, llm, CFG, frozenset(), frozenset(), Px(), None, tradable,
+                             5.0, budget)
+    assert made == 1
+    assert [r[0] for r in conn.execute("SELECT ticker FROM predictions")] == ["MAJR"]
+    skipped = {r[0] for r in conn.execute(
+        "SELECT news_id FROM panel_assessments WHERE persona = '_skipped'")}
+    assert skipped == {otc, penny}            # OTC not tradable; penny under $5
+    # More budget: the minor item is scored next; nothing is scored twice.
+    left["n"] = 99
+    assert analyst.run_panel(conn, llm, CFG, frozenset(), frozenset(), Px(), None, tradable,
+                             5.0, budget) == 1
+    assert analyst.run_panel(conn, llm, CFG, frozenset(), frozenset(), Px(), None, tradable,
+                             5.0, budget) == 0
+    assert llm.calls.count("panel") == 6
+
+
+def test_refresh_tradable_guards_against_bad_answers(conn):
+    from driftwatch import analyst
+
+    class Px:
+        def __init__(self, n):
+            self.n = n
+
+        def tradable_assets(self, exclude_otc=True):
+            return {f"T{i:04d}"[:5]: ("NYSE", "x") for i in range(self.n)}
+
+    assert analyst.refresh_tradable(conn, Px(1500)) > 1000
+    assert analyst.refresh_tradable(conn, Px(10)) == 0          # suspicious: ignored
+    assert conn.execute("SELECT count(*) FROM tradable_assets").fetchone()[0] > 1000
+
+
+def test_scorer_fetches_incrementally(conn):
+    from datetime import datetime, time, timedelta
+
+    from driftwatch import scorer
+    from driftwatch.prices import ET
+    prices = FakePrices()
+    calls = []
+    real = prices.daily_bars
+    prices.daily_bars = lambda t, a, b: (calls.append(sorted(t)), real(t, a, b))[1]
+    _make_prediction(conn, prices)
+    made = datetime.combine(prices.days[3], time(11, 0), tzinfo=ET)
+    conn.execute("UPDATE predictions SET created_at = %s", (made,))
+    now = datetime.combine(prices.days[-1] + timedelta(days=1), time(9, 0), tzinfo=ET)
+    tried = set()
+    assert scorer.refresh_prices(conn, prices, [1, 5, 10], now=now, tried=tried) > 0
+    assert scorer.refresh_prices(conn, prices, [1, 5, 10], now=now, tried=tried) == 0
+    assert len(calls) == 1                                      # same day: no re-download
+
+
+def test_strongest_report_ranks_by_conviction(conn):
+    from driftwatch import reports
+    for ext, sym, p, stance in (("s1", "AAA", 0.53, "agree"), ("s2", "BBB", 0.40, "agree"),
+                                ("s3", "CCC", 0.50, "neutral")):
+        nid = _news(conn, ext, [sym])
+        entry = ledger.append(conn, "prediction", {"t": sym})
+        conn.execute("INSERT INTO predictions (news_id, ticker, ledger_seq, p_up_mean, p_up_std, "
+                     "novelty_mean, agree, magnitude, stance) VALUES "
+                     "(%s,%s,%s,%s,0,0.5,true,'small',%s)", (nid, sym, entry.seq, p, stance))
+    text = reports.predictions(conn, last=5, today_only=True, compact=True, strongest=True)
+    assert text.splitlines()[0].startswith("BBB") and "CCC" not in text

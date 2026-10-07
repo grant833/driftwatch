@@ -19,6 +19,7 @@ import httpx
 
 from . import reports
 from .config import Settings
+from .db import get_control, set_control  # noqa: F401 (re-exported)
 from .prices import ET
 
 log = logging.getLogger(__name__)
@@ -39,17 +40,6 @@ HELP = """<b>driftwatch</b>
 
 
 # ---------------- state helpers ----------------
-
-def get_control(conn, key: str) -> str | None:
-    row = conn.execute("SELECT value FROM controls WHERE key = %s", (key,)).fetchone()
-    return row[0] if row else None
-
-
-def set_control(conn, key: str, value: str) -> None:
-    conn.execute(
-        "INSERT INTO controls (key, value) VALUES (%s, %s) ON CONFLICT (key) "
-        "DO UPDATE SET value = EXCLUDED.value, updated_at = now()", (key, value))
-
 
 def set_halt(conn, halted: bool) -> None:
     set_control(conn, "trading_halted", "true" if halted else "false")
@@ -128,7 +118,8 @@ def daily_summary(conn, horizons: list[int]) -> str:
         lines.append(f"⚠ No data in: {', '.join(stale)}")
     if total:
         lines.append("\n<b>Strongest calls today</b>")
-        lines.append(pre(reports.predictions(conn, last=5, today_only=True, compact=True)))
+        lines.append(pre(reports.predictions(conn, last=5, today_only=True, compact=True,
+                                             strongest=True)))
     lines.append("\n<b>Scorecard</b>")
     lines.append(pre(reports.score(conn, horizons)))
     return "\n".join(lines)

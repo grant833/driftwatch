@@ -67,3 +67,14 @@ def insert_tone(conn: psycopg.Connection, query_name: str, points) -> int:
         ).fetchone()
         n += row is not None
     return n
+
+
+def get_control(conn, key: str) -> str | None:
+    row = conn.execute("SELECT value FROM controls WHERE key = %s", (key,)).fetchone()
+    return row[0] if row else None
+
+
+def set_control(conn, key: str, value: str) -> None:
+    conn.execute(
+        "INSERT INTO controls (key, value) VALUES (%s, %s) ON CONFLICT (key) "
+        "DO UPDATE SET value = EXCLUDED.value, updated_at = now()", (key, value))

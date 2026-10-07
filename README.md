@@ -17,6 +17,7 @@ proven instead of claimed.
 | `analyst` service | Stage 1: cheap model triages every headline in batches and scores market-wide mood. Stage 2: three analyst personas (fundamental, skeptic, flow) independently estimate P(stock beats SPY over 5 days); agreement becomes confidence; every verdict is written to the ledger |
 | `scorer` service | Pulls split/dividend-adjusted daily bars and grades every prediction at 1, 5 and 10 sessions as excess return vs SPY, using conservative point-in-time entry rules (premarket → that day's open, intraday → that day's close, after hours → next open) |
 | `notifier` service | Telegram bot: insider buys, strong AGREE calls, problems, and a weekday after-close summary; commands `/status /today /insiders /score /mood /costs /kill /resume`. Obeys only the owner's chat |
+| Universe & budget | Only US exchange-listed stocks Alpaca can trade, priced at $5+, ETFs excluded. Triage rates importance 1–5; the panel scores the most important news first, and its daily call budget is released evenly through the US/Eastern day so a busy morning can't starve after-close earnings |
 | "Priced in?" check | At prediction time the panel sees how far the stock has already moved vs the prior close (IEX snapshot), and the move is stored with the prediction |
 | `gdelt` service | Optional, off by default (GDELT's free API returned empty data in Oct 2026); replaced by headline-based market mood |
 | Ledger | Hash-chained, append-only (enforced by Postgres triggers), daily anchors for public git timestamps |

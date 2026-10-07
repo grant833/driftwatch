@@ -22,6 +22,7 @@ from datetime import date, datetime, timedelta
 
 from .alerts import alert
 from .config import Settings
+from .db import get_control, set_control
 from .prices import ET, MARKET_CLOSE, MARKET_OPEN, PriceSource, completed_cutoff
 
 log = logging.getLogger(__name__)
@@ -102,7 +103,10 @@ def summarize(rows: list[tuple[float, float, str]]) -> dict:
 # ---------------- database work ----------------
 
 def refresh_prices(conn, src: PriceSource, horizons: list[int],
-                   now: datetime | None = None) -> int:
+                   now: datetime | None = None, tried: set[str] | None = None) -> int:
+    """Download only what is new. Once per completed trading day, refresh every pending
+    ticker; in between, fetch just tickers that have no bars yet (each tried once per day,
+    so symbols with no data, such as OTC names, are not re-requested every cycle)."""
     pending = conn.execute(
         "SELECT p.ticker, min(p.created_at) FROM predictions p "
         "WHERE (SELECT count(*) FROM outcomes o WHERE o.news_id = p.news_id "
@@ -111,18 +115,29 @@ def refresh_prices(conn, src: PriceSource, horizons: list[int],
         "GROUP BY p.ticker", (len(horizons),)).fetchall()
     if not pending:
         return 0
+    tried = tried if tried is not None else set()
     cutoff = completed_cutoff(now)
-    start = min(r[1] for r in pending).astimezone(ET).date() - timedelta(days=5)
+    first = {t: c.astimezone(ET).date() - timedelta(days=5) for t, c in pending}
+    if get_control(conn, "scorer_cutoff") != cutoff.isoformat():
+        tickers = set(first) | {BENCHMARK}
+        tried.clear()
+    else:
+        have = {r[0] for r in conn.execute(
+            "SELECT DISTINCT ticker FROM prices_daily WHERE ticker = ANY(%s)", (list(first),))}
+        tickers = set(first) - have - tried
+    if not tickers:
+        return 0
+    start = min(first[t] for t in tickers if t in first) if set(first) & tickers else cutoff
     if start > cutoff:
         return 0
-    tickers = sorted({r[0] for r in pending} | {BENCHMARK})
-    rows = src.daily_bars(tickers, start, cutoff)
-    rows = [r for r in rows if r[1] <= cutoff]
+    rows = [r for r in src.daily_bars(sorted(tickers), start, cutoff) if r[1] <= cutoff]
     with conn.cursor() as cur:
         cur.executemany(
             "INSERT INTO prices_daily (ticker, day, open, close, volume) "
             "VALUES (%s, %s, %s, %s, %s) ON CONFLICT (ticker, day) DO UPDATE SET "
             "open = EXCLUDED.open, close = EXCLUDED.close, volume = EXCLUDED.volume", rows)
+    tried |= tickers
+    set_control(conn, "scorer_cutoff", cutoff.isoformat())
     return len(rows)
 
 
@@ -175,9 +190,10 @@ def run(s: Settings, conn, src: PriceSource | None = None) -> None:
         from .prices import AlpacaPrices
         src = AlpacaPrices(s.alpaca_key, s.alpaca_secret)
     failures = 0
+    tried: set[str] = set()
     while True:
         try:
-            fetched = refresh_prices(conn, src, cfg["horizons"])
+            fetched = refresh_prices(conn, src, cfg["horizons"], tried=tried)
             scored = score_pending(conn, cfg["horizons"])
             log.info("scorer: %d bars refreshed, %d outcomes scored", fetched, scored)
             failures = 0

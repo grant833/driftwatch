@@ -32,9 +32,18 @@ def health(conn) -> tuple[str, list[str]]:
     return "\n".join(lines), stale
 
 
-def predictions(conn, last: int = 20, today_only: bool = False, compact: bool = False) -> str:
-    where = ("WHERE p.created_at >= date_trunc('day', now() AT TIME ZONE 'America/New_York') "
-             "AT TIME ZONE 'America/New_York'") if today_only else ""
+def predictions(conn, last: int = 20, today_only: bool = False, compact: bool = False,
+                strongest: bool = False) -> str:
+    """Recent predictions. strongest=True ranks by conviction (distance from 0.5) and
+    leaves out neutral calls."""
+    conds = []
+    if today_only:
+        conds.append("p.created_at >= date_trunc('day', now() AT TIME ZONE 'America/New_York') "
+                     "AT TIME ZONE 'America/New_York'")
+    if strongest:
+        conds.append("coalesce(p.stance, 'split') <> 'neutral'")
+    where = ("WHERE " + " AND ".join(conds)) if conds else ""
+    order = "abs(p.p_up_mean - 0.5) DESC, p.created_at DESC" if strongest else "p.created_at DESC"
     rows = conn.execute(
         f"""
         SELECT p.created_at, p.ticker, p.p_up_mean, p.p_up_std,
@@ -42,7 +51,7 @@ def predictions(conn, last: int = 20, today_only: bool = False, compact: bool = 
                p.novelty_mean, p.magnitude, n.headline, p.pre_move
         FROM predictions p JOIN news_items n ON n.id = p.news_id
         {where}
-        ORDER BY p.created_at DESC LIMIT %s
+        ORDER BY {order} LIMIT %s
         """, (last,)).fetchall()
     if not rows:
         return "No predictions yet."

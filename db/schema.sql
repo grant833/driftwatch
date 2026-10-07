@@ -240,3 +240,16 @@ CREATE TABLE IF NOT EXISTS outcomes (
     PRIMARY KEY (news_id, ticker, horizon),
     FOREIGN KEY (news_id, ticker) REFERENCES predictions (news_id, ticker)
 );
+
+-- ===================== Phase 1.3: universe, triage priority =====================
+
+-- US exchange-listed stocks Alpaca can trade (refreshed daily; OTC excluded).
+CREATE TABLE IF NOT EXISTS tradable_assets (
+    ticker       TEXT        PRIMARY KEY,
+    exchange     TEXT,
+    name         TEXT,
+    refreshed_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- 1 (trivial) .. 5 (major, likely to move the stock for days)
+ALTER TABLE triage ADD COLUMN IF NOT EXISTS importance INT;
