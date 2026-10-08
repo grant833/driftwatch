@@ -1,9 +1,9 @@
 {
  "costs": {
-  "avg_daily_usd": 1.79,
+  "avg_daily_usd": 1.89,
   "calls_30d": {
-   "panel": 1284,
-   "triage": 474
+   "panel": 1350,
+   "triage": 505
   },
   "daily_usd": [
    {
@@ -16,30 +16,31 @@
    },
    {
     "day": "2026-10-08",
-    "usd": 1.29
+    "usd": 1.6
    }
   ],
-  "total_30d_usd": 5.36
+  "total_30d_usd": 5.68
  },
  "first_prediction_at": "2026-10-06T20:08:45.296053+00:00",
- "generated_at": "2026-10-08T17:54:57.991589+00:00",
- "generated_et": "2026-10-08 13:54 ET",
- "insider_buys_total": 30,
+ "generated_at": "2026-10-08T21:30:07.680705+00:00",
+ "generated_et": "2026-10-08 17:30 ET",
+ "insider_buys_total": 32,
  "ledger": {
   "by_kind": {
+   "note": 1,
    "order": 17,
-   "prediction": 428
+   "prediction": 450
   },
-  "entries": 445,
+  "entries": 468,
   "first_bad_seq": null,
-  "head_hash": "d853daee4c628f4bc2afce86722fc4f2aeb614acc5e183637c380cb91f318c3a",
-  "head_recorded_at": "2026-10-08T17:51:19.393679+00:00",
-  "head_seq": 445,
+  "head_hash": "e8990340f2d78f45718ac5f5829dd18ed8ca761308d899c15037165b7fcf0801",
+  "head_recorded_at": "2026-10-08T21:22:08.423285+00:00",
+  "head_seq": 468,
   "verified": true,
-  "verified_at": "2026-10-08T17:54:57.991589+00:00"
+  "verified_at": "2026-10-08T21:30:07.680705+00:00"
  },
- "news_total": 2873,
- "predictions_total": 428,
+ "news_total": 3064,
+ "predictions_total": 450,
  "scorecard": {
   "1": {
    "agree": {
@@ -76,7 +77,41 @@
   }
  },
  "tournament": {
-  "accounts": {},
+  "accounts": {
+   "baseline": {
+    "days": 2,
+    "dsr": null,
+    "excess": 0.002062980005661297,
+    "max_dd": -0.0016939999999999733,
+    "psr": null,
+    "ret": -0.0016939999999999733,
+    "sharpe_ann": null,
+    "spy_ret": -0.00375698000566127,
+    "spy_sharpe_ann": null
+   },
+   "insider": {
+    "days": 2,
+    "dsr": null,
+    "excess": 0.0057288800056612965,
+    "max_dd": 0.0,
+    "psr": null,
+    "ret": 0.0019719000000000264,
+    "sharpe_ann": null,
+    "spy_ret": -0.00375698000566127,
+    "spy_sharpe_ann": null
+   },
+   "news": {
+    "days": 2,
+    "dsr": null,
+    "excess": 0.0034810800056612745,
+    "max_dd": -0.0002758999999999956,
+    "psr": null,
+    "ret": -0.0002758999999999956,
+    "sharpe_ann": null,
+    "spy_ret": -0.00375698000566127,
+    "spy_sharpe_ann": null
+   }
+  },
   "luck_bar_daily_sharpe": 0.0,
   "trials": 3,
   "waiting": []
