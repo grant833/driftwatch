@@ -1,0 +1,119 @@
+[
+ {
+  "account": "baseline",
+  "as_of": "2026-10-08T14:17:14.755237+00:00",
+  "entry": 775.33,
+  "pl_pct": 0.00072,
+  "price": 775.89,
+  "qty": 121.0,
+  "ticker": "SPY"
+ },
+ {
+  "account": "insider",
+  "as_of": "2026-10-08T14:17:14.665198+00:00",
+  "entry": 19.53,
+  "pl_pct": -0.00102,
+  "price": 19.51,
+  "qty": 424.0,
+  "ticker": "HRL"
+ },
+ {
+  "account": "insider",
+  "as_of": "2026-10-08T14:17:14.665198+00:00",
+  "entry": 37.5,
+  "pl_pct": -0.00587,
+  "price": 37.28,
+  "qty": 221.0,
+  "ticker": "PSUS"
+ },
+ {
+  "account": "insider",
+  "as_of": "2026-10-08T14:17:14.665198+00:00",
+  "entry": 15.84,
+  "pl_pct": 0.01073,
+  "price": 16.01,
+  "qty": 382.0,
+  "ticker": "DYN"
+ },
+ {
+  "account": "insider",
+  "as_of": "2026-10-08T14:17:14.665198+00:00",
+  "entry": 5.24,
+  "pl_pct": 0.0,
+  "price": 5.24,
+  "qty": 384.0,
+  "ticker": "VRA"
+ },
+ {
+  "account": "news",
+  "as_of": "2026-10-08T14:17:14.489396+00:00",
+  "entry": 18.69,
+  "pl_pct": 0.00401,
+  "price": 18.765,
+  "qty": 443.0,
+  "ticker": "LEVI"
+ },
+ {
+  "account": "news",
+  "as_of": "2026-10-08T14:17:14.489396+00:00",
+  "entry": 59.3,
+  "pl_pct": -0.00599,
+  "price": 58.945,
+  "qty": 139.0,
+  "ticker": "BMY"
+ },
+ {
+  "account": "news",
+  "as_of": "2026-10-08T14:17:14.489396+00:00",
+  "entry": 942.57,
+  "pl_pct": -0.0019,
+  "price": 940.78,
+  "qty": 8.0,
+  "ticker": "COST"
+ },
+ {
+  "account": "news",
+  "as_of": "2026-10-08T14:17:14.489396+00:00",
+  "entry": 20.51,
+  "pl_pct": -0.02034,
+  "price": 20.0928,
+  "qty": 281.0,
+  "ticker": "RELL"
+ },
+ {
+  "account": "news",
+  "as_of": "2026-10-08T14:17:14.489396+00:00",
+  "entry": 49.852019,
+  "pl_pct": 0.02283,
+  "price": 50.99,
+  "qty": 104.0,
+  "ticker": "GFS"
+ },
+ {
+  "account": "news",
+  "as_of": "2026-10-08T14:17:14.489396+00:00",
+  "entry": 40.48,
+  "pl_pct": 0.0047,
+  "price": 40.6701,
+  "qty": 125.0,
+  "ticker": "IONQ"
+ },
+ {
+  "account": "news",
+  "as_of": "2026-10-08T14:17:14.489396+00:00",
+  "entry": 23.44,
+  "pl_pct": 0.00277,
+  "price": 23.505,
+  "qty": 157.0,
+  "ticker": "APLD"
+ },
+ {
+  "account": "news",
+  "as_of": "2026-10-08T14:17:14.489396+00:00",
+  "entry": 11.7,
+  "pl_pct": -0.00855,
+  "price": 11.6,
+  "qty": 295.0,
+  "ticker": "BHVN"
+ }
+]

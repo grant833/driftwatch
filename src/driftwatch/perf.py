@@ -80,10 +80,9 @@ def account_stats(eq: list[float], spy: list[float]) -> dict:
     return out
 
 
-def report(conn, trials: int) -> str:
+def tournament(conn, trials: int) -> tuple[dict, list[str], float]:
+    """Per-account stats (with 'dsr' added), accounts still waiting, and the luck bar."""
     accts = [r[0] for r in conn.execute("SELECT DISTINCT account FROM equity_daily ORDER BY 1")]
-    if not accts:
-        return "No end-of-day equity recorded yet (first snapshot after 4:10pm ET)."
     stats, waiting = {}, []
     for a in accts:
         rows = conn.execute("SELECT equity, spy_close FROM equity_daily WHERE account = %s "
@@ -92,10 +91,19 @@ def report(conn, trials: int) -> str:
             waiting.append(a)
             continue
         stats[a] = account_stats([r[0] for r in rows], [r[1] for r in rows])
-    if not stats:
-        return "Need at least two end-of-day snapshots before showing results."
     srs = [sharpe(s["r"]) for s in stats.values() if sharpe(s["r"]) is not None]
     sr0 = expected_max_sharpe(statistics.pvariance(srs) if len(srs) > 1 else 0.0, trials)
+    for s in stats.values():
+        s["dsr"] = psr(s["r"], sr0) if sr0 > 0 else None
+    return stats, waiting, sr0
+
+
+def report(conn, trials: int) -> str:
+    stats, waiting, sr0 = tournament(conn, trials)
+    if not stats and not waiting:
+        return "No end-of-day equity recorded yet (first snapshot after 4:10pm ET)."
+    if not stats:
+        return "Need at least two end-of-day snapshots before showing results."
     lines = []
     for a, s in stats.items():
         lines.append(f"── {a} ({s['days']} days) ──")
@@ -107,9 +115,8 @@ def report(conn, trials: int) -> str:
             lines.append(f"  Sharpe {s['sharpe_ann']:.2f}  (SPY {sp})")
         if s["psr"] is not None:
             lines.append(f"  P(real Sharpe > 0)        {s['psr']:.0%}")
-            dsr = psr(s["r"], sr0)
-            if dsr is not None and sr0 > 0:
-                lines.append(f"  P(beats luck, {trials} trials)  {dsr:.0%}")
+            if s["dsr"] is not None:
+                lines.append(f"  P(beats luck, {trials} trials)  {s['dsr']:.0%}")
     for a in waiting:
         lines.append(f"── {a} ── first day recorded; results start after day 2")
     lines.append(f"\nGo/no-go needs ~60+ trading days. Strategies tried so far: {trials}.")

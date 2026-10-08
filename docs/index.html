@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>driftwatch</title>
+<meta name="description" content="An AI news-trading experiment that keeps its own receipts: every prediction hash-chained and anchored in git before the outcome is known.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --bg: #f7f7f5; --card: #ffffff; --ink: #1b1d21; --muted: #6b7079; --line: #e4e4e0;
+  --accent: #2f6fde; --good: #15803d; --bad: #c2410c; --warn-bg: #fff7e6; --warn-ink: #8a5a00;
+  --c-news: #2f6fde; --c-insider: #9333ea; --c-baseline: #0f9d8a; --c-spy: #9aa0a6;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111316; --card: #1a1d21; --ink: #e8e9eb; --muted: #9399a3; --line: #2a2e34;
+    --accent: #6ea0ff; --good: #4ade80; --bad: #fb923c; --warn-bg: #2b2414; --warn-ink: #f5c86b;
+    --c-news: #6ea0ff; --c-insider: #c084fc; --c-baseline: #2dd4bf; --c-spy: #6b7280;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111316; --card: #1a1d21; --ink: #e8e9eb; --muted: #9399a3; --line: #2a2e34;
+  --accent: #6ea0ff; --good: #4ade80; --bad: #fb923c; --warn-bg: #2b2414; --warn-ink: #f5c86b;
+  --c-news: #6ea0ff; --c-insider: #c084fc; --c-baseline: #2dd4bf; --c-spy: #6b7280;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font: 15px/1.55 Inter, system-ui, sans-serif; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 16px 64px; }
+header h1 { font-size: 30px; margin: 0; letter-spacing: -0.02em; }
+header p.tag { margin: 6px 0 14px; color: var(--muted); font-size: 16px; max-width: 680px; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill { font-size: 12.5px; padding: 3px 10px; border-radius: 99px; border: 1px solid var(--line);
+  background: var(--card); color: var(--muted); }
+.pill.ok { color: var(--good); border-color: currentColor; }
+.pill.bad { color: var(--bad); border-color: currentColor; }
+section { margin-top: 36px; }
+h2 { font-size: 19px; margin: 0 0 4px; letter-spacing: -0.01em; }
+.sub { color: var(--muted); margin: 0 0 14px; font-size: 14px; max-width: 760px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px;
+  margin-top: 24px; }
+.kpi .v { font-size: 26px; font-weight: 600; letter-spacing: -0.02em; }
+.kpi .l { color: var(--muted); font-size: 13px; }
+.chart-box { position: relative; height: 300px; }
+.scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+th { text-align: left; font-weight: 500; color: var(--muted); font-size: 12.5px;
+  border-bottom: 1px solid var(--line); padding: 7px 8px; white-space: nowrap; }
+td { border-bottom: 1px solid var(--line); padding: 7px 8px; white-space: nowrap; }
+tr:last-child td { border-bottom: none; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--mono); font-size: 12.5px; }
+.pos { color: var(--good); } .neg { color: var(--bad); } .dim { color: var(--muted); }
+.warn { background: var(--warn-bg); color: var(--warn-ink); border-radius: 10px;
+  padding: 10px 14px; font-size: 13.5px; margin-bottom: 14px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.grid2 > * { min-width: 0; }
+.card, section { min-width: 0; }
+@media (max-width: 760px) { .grid2 { grid-template-columns: 1fr; } }
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; }
+.tabs { display: flex; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; }
+.tabs button { font: inherit; font-size: 13px; padding: 4px 12px; border-radius: 99px;
+  border: 1px solid var(--line); background: var(--card); color: var(--muted); cursor: pointer; }
+.tabs button.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.hash { word-break: break-all; font-family: var(--mono); font-size: 12.5px; }
+ol.steps { margin: 8px 0 0; padding-left: 20px; } ol.steps li { margin: 6px 0; }
+a { color: var(--accent); }
+.more { margin-top: 10px; font: inherit; font-size: 13px; background: none; border: 0;
+  color: var(--accent); cursor: pointer; padding: 0; }
+footer { margin-top: 48px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line);
+  padding-top: 16px; }
+.empty { color: var(--muted); padding: 8px 0; }
+.theme-btn { float: right; font: inherit; font-size: 12.5px; background: var(--card);
+  border: 1px solid var(--line); color: var(--muted); border-radius: 99px; padding: 3px 10px;
+  cursor: pointer; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <button class="theme-btn" id="themeBtn" type="button">Theme</button>
+    <h1>driftwatch</h1>
+    <p class="tag">An AI news-trading experiment that keeps its own receipts. Every prediction is
+      written to a hash-chained ledger and anchored in git <em>before</em> the outcome is known,
+      then graded against simply buying the S&amp;P 500.</p>
+    <div class="pills" id="pills"><span class="pill">Loading…</span></div>
+  </header>
+
+  <div class="kpis" id="kpis"></div>
+
+  <section>
+    <h2>The tournament</h2>
+    <p class="sub">Three paper-money accounts with the same rules and risk limits, each started
+      at $100k, against buy-and-hold SPY. The baseline uses no AI at all: if the AI can't beat a
+      one-line rule, it doesn't deserve real money.</p>
+    <div class="card">
+      <div class="chart-box"><canvas id="eqChart"></canvas></div>
+      <div class="scroll" style="margin-top:14px"><table id="tourTable"></table></div>
+      <p class="sub" style="margin:10px 0 0">"P(beats luck)" is the Deflated Sharpe Ratio: the
+        chance the Sharpe ratio is real after accounting for <span id="trials">3</span>
+        strategies being tried at once. The bar for real money is high confidence after
+        roughly 60+ trading days.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Does the AI actually know anything?</h2>
+    <p class="sub">Every call the analyst panel makes is graded as the stock's return minus SPY's
+      over the same window, entering at the first price we could really have traded at. A "hit"
+      is a call that leaned the right way.</p>
+    <div id="scoreWarn"></div>
+    <div class="card scroll"><table id="scoreTable"></table></div>
+  </section>
+
+  <section>
+    <h2>Recent calls</h2>
+    <p class="sub">P(up) is the panel's probability the stock beats SPY over the next 5 trading
+      days. AGREE means all three analyst personas leaned the same way. "Moved" is how far the
+      stock had already moved when the call was made.</p>
+    <div class="tabs" id="predTabs"></div>
+    <div class="card scroll"><table id="predTable"></table>
+      <button class="more" id="predMore" type="button" hidden>Show more</button></div>
+  </section>
+
+  <section class="grid2">
+    <div>
+      <h2>Paper trades</h2>
+      <p class="sub">Every order is written to the ledger before it is sent.</p>
+      <div class="card scroll"><table id="tradeTable"></table></div>
+    </div>
+    <div>
+      <h2>Open positions</h2>
+      <p class="sub" id="posAsOf">&nbsp;</p>
+      <div class="card scroll"><table id="posTable"></table></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Proof, not claims</h2>
+    <p class="sub">Anyone can backfill a great track record. This one can't be edited after the fact.</p>
+    <div class="card" id="proof"></div>
+  </section>
+
+  <section>
+    <h2>What it costs to run</h2>
+    <p class="sub">Estimated AI API spend (list prices), last 30 days. Hosting is a home PC.</p>
+    <div class="card"><div class="chart-box" style="height:200px"><canvas id="costChart"></canvas></div>
+      <p class="sub" id="costNote" style="margin:10px 0 0"></p></div>
+  </section>
+
+  <footer>
+    Paper trading only. This is a research project, not investment advice, and past results
+    (paper or otherwise) say little about the future. News headlines are not republished here;
+    each call links to its source.
+    <a href="https://github.com/grant833/driftwatch">Source code</a> ·
+    <a href="https://github.com/grant833/driftwatch/commits/main/anchors">Anchor history</a>
+    <div id="updated" style="margin-top:6px"></div>
+  </footer>
+</div>
+
+<script>
+const ACCOUNTS = {
+  news: { label: "AI news panel", color: "--c-news", desc: "Buys when all 3 personas agree, 5-day holds" },
+  insider: { label: "Insider buys", color: "--c-insider", desc: "Follows officers/directors buying their own stock, 20-day holds" },
+  baseline: { label: "SPY trend (no AI)", color: "--c-baseline", desc: "SPY above its 200-day average, else cash" },
+};
+const REPO = "https://github.com/grant833/driftwatch";
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const pct = (x, d = 1) => x == null ? "–" : `${x >= 0 ? "+" : ""}${(x * 100).toFixed(d)}%`;
+const pctPlain = (x, d = 0) => x == null ? "–" : `${(x * 100).toFixed(d)}%`;
+const signCls = x => x == null ? "dim" : x > 0 ? "pos" : x < 0 ? "neg" : "";
+const num = (x, d = 2) => x == null ? "–" : x.toFixed(d);
+const money = x => x == null ? "–" : "$" + Math.round(x).toLocaleString("en-US");
+const et = iso => iso ? new Date(iso).toLocaleString("en-US", { timeZone: "America/New_York",
+  month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }) : "–";
+const charts = [];
+
+async function load(name) {
+  try { const r = await fetch(`data/${name}?v=${Date.now()}`); return r.ok ? await r.json() : null; }
+  catch { return null; }
+}
+
+function setTable(id, head, rows, emptyText) {
+  const t = document.getElementById(id);
+  if (!rows.length) { t.innerHTML = `<tr><td class="empty">${emptyText}</td></tr>`; return; }
+  t.innerHTML = `<thead><tr>${head.map(h => `<th class="${h[1] || ""}">${h[0]}</th>`).join("")}</tr></thead>`
+    + `<tbody>${rows.join("")}</tbody>`;
+}
+
+function renderHeader(s, preds) {
+  const L = s.ledger;
+  const first = s.first_prediction_at ? new Date(s.first_prediction_at) : null;
+  const days = first ? Math.max(1, Math.ceil((Date.now() - first) / 864e5)) : 0;
+  document.getElementById("pills").innerHTML = [
+    `<span class="pill">Paper money</span>`,
+    days ? `<span class="pill">Day ${days}</span>` : "",
+    L.verified ? `<span class="pill ok">✓ Ledger verified</span>`
+               : `<span class="pill bad">Ledger check failed</span>`,
+    s.trading_halted ? `<span class="pill bad">Trading halted</span>` : "",
+    `<span class="pill">Updated ${et(s.generated_at)} ET</span>`,
+  ].join("");
+  const five = (s.scorecard || {})["5"] || {};
+  const k = [
+    [s.predictions_total.toLocaleString(), "predictions logged"],
+    [five.hit_rate != null ? pctPlain(five.hit_rate) : "–", `5-day hit rate (${five.n_dir || 0} graded)`],
+    [L.entries.toLocaleString(), "ledger entries"],
+    [s.insider_buys_total.toLocaleString(), "insider buys detected"],
+    ["$" + (s.costs.avg_daily_usd ?? 0).toFixed(2), "AI cost per day"],
+  ];
+  document.getElementById("kpis").innerHTML = k.map(([v, l]) =>
+    `<div class="card kpi"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
+  document.getElementById("updated").textContent =
+    `Data generated ${s.generated_et}. Rebuilt nightly after the US close.`;
+}
+
+function renderTournament(s, eq) {
+  const ds = [];
+  const t = s.tournament;
+  let spyDone = false;
+  for (const [acct, rows] of Object.entries(eq || {})) {
+    if (rows.length < 1) continue;
+    const meta = ACCOUNTS[acct] || { label: acct, color: "--accent" };
+    ds.push({ label: meta.label, data: rows.map(r => ({ x: r.day, y: 100 * r.equity / rows[0].equity })),
+      borderColor: css(meta.color), backgroundColor: css(meta.color), tension: 0.2, pointRadius: rows.length < 30 ? 3 : 0 });
+    if (!spyDone && rows[0].spy) {
+      spyDone = true;
+      ds.push({ label: "SPY buy & hold", data: rows.map(r => ({ x: r.day, y: 100 * r.spy / rows[0].spy })),
+        borderColor: css("--c-spy"), backgroundColor: css("--c-spy"), borderDash: [5, 4], tension: 0.2, pointRadius: 0 });
+    }
+  }
+  const box = document.getElementById("eqChart");
+  if (!ds.length) {
+    box.parentElement.innerHTML = `<p class="empty">The first end-of-day snapshot is recorded after the close on the first trading day.</p>`;
+  } else {
+    const labels = [...new Set(ds.flatMap(d => d.data.map(p => p.x)))].sort();
+    charts.push(new Chart(box, { type: "line", data: { labels, datasets: ds },
+      options: { maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+        scales: { y: { title: { display: true, text: "Growth of 100", color: css("--muted") },
+                       ticks: { color: css("--muted") }, grid: { color: css("--line") } },
+                  x: { ticks: { color: css("--muted"), maxTicksLimit: 8 }, grid: { display: false } } },
+        plugins: { legend: { labels: { color: css("--ink"), boxWidth: 12 } },
+          tooltip: { callbacks: { label: c => `${c.dataset.label}: ${(c.parsed.y - 100).toFixed(2)}%` } } } } }));
+  }
+  const rows = Object.entries(ACCOUNTS).map(([acct, meta]) => {
+    const a = (t.accounts || {})[acct];
+    const dot = `<span class="dot" style="background:${css(meta.color)}"></span>`;
+    if (!a) {
+      const waiting = (t.waiting || []).includes(acct);
+      return `<tr><td>${dot}${meta.label}<div class="dim" style="font-size:12px">${meta.desc}</div></td>`
+        + `<td colspan="6" class="dim">${waiting ? "Results start after day 2" : "No data yet"}</td></tr>`;
+    }
+    return `<tr><td>${dot}${meta.label}<div class="dim" style="font-size:12px">${meta.desc}</div></td>`
+      + `<td class="num ${signCls(a.ret)}">${pct(a.ret, 2)}</td>`
+      + `<td class="num ${signCls(a.excess)}">${pct(a.excess, 2)}</td>`
+      + `<td class="num">${pct(a.max_dd, 1)}</td>`
+      + `<td class="num">${num(a.sharpe_ann)}</td>`
+      + `<td class="num">${pctPlain(a.psr)}</td>`
+      + `<td class="num">${pctPlain(a.dsr)}</td></tr>`;
+  });
+  setTable("tourTable", [["Account"], ["Return", "num"], ["vs SPY", "num"], ["Max drawdown", "num"],
+    ["Sharpe", "num"], ["P(Sharpe > 0)", "num"], [`P(beats luck)`, "num"]], rows, "");
+  document.getElementById("trials").textContent = t.trials;
+}
+
+function renderScore(s) {
+  const sc = s.scorecard || {};
+  const hs = Object.keys(sc).sort((a, b) => a - b);
+  const minDays = Math.min(...hs.map(h => sc[h].n_dir ? sc[h].n_days || 0 : Infinity));
+  if (!isFinite(minDays) || minDays < 20) {
+    document.getElementById("scoreWarn").innerHTML = `<div class="warn">Only
+      ${isFinite(minDays) ? minDays : 0} trading day(s) of graded results. Calls made on the same
+      day share the same market, so under ~20 days these numbers are mostly noise. Watch the
+      by-day t-stat: above about 2 starts to mean something.</div>`;
+  }
+  const rows = hs.map(h => {
+    const c = sc[h];
+    if (!c.n_dir) return `<tr><td>${h}-day</td><td colspan="6" class="dim">${c.n} graded, none directional yet</td></tr>`;
+    return `<tr><td>${h}-day</td><td class="num">${c.n_dir}</td><td class="num">${c.n_days ?? "–"}</td>`
+      + `<td class="num">${pctPlain(c.hit_rate)}</td>`
+      + `<td class="num ${signCls(c.median_signed)}">${pct(c.median_signed, 2)}</td>`
+      + `<td class="num ${signCls(c.clipped_mean)}">${pct(c.clipped_mean, 2)}</td>`
+      + `<td class="num">${num(c.t_days, 1)}</td><td class="num">${num(c.rank_ic, 2)}</td></tr>`;
+  });
+  setTable("scoreTable", [["Horizon"], ["Calls graded", "num"], ["Days", "num"], ["Hit rate", "num"],
+    ["Median edge", "num"], ["Capped avg edge", "num"], ["By-day t", "num"], ["Rank IC", "num"]],
+    rows, "No graded calls yet. The first 1-day grades arrive the trading day after the first call.");
+}
+
+let predFilter = "agree", predShown = 25;
+function renderPreds(preds) {
+  const tabs = [["agree", "All agree"], ["strong", "Strongest"], ["all", "Everything"]];
+  document.getElementById("predTabs").innerHTML = tabs.map(([k, l]) =>
+    `<button type="button" data-k="${k}" class="${k === predFilter ? "on" : ""}">${l}</button>`).join("");
+  document.querySelectorAll("#predTabs button").forEach(b => b.onclick = () => {
+    predFilter = b.dataset.k; predShown = 25; renderPreds(preds); });
+  let list = preds || [];
+  if (predFilter === "agree") list = list.filter(p => p.stance === "agree");
+  if (predFilter === "strong") list = list.filter(p => p.stance !== "neutral")
+    .slice().sort((a, b) => Math.abs(b.p_up - 0.5) - Math.abs(a.p_up - 0.5)).slice(0, 50);
+  const shown = list.slice(0, predShown);
+  const rows = shown.map(p => {
+    const lean = p.p_up > 0.5 ? "pos" : p.p_up < 0.5 ? "neg" : "dim";
+    const ex = h => { const v = p.excess[h]; if (v == null) return `<td class="num dim">…</td>`;
+      const right = (p.p_up - 0.5) * v > 0; return `<td class="num ${signCls(v)}" title="${right ? "leaned right" : "leaned wrong"}">${pct(v, 1)}</td>`; };
+    return `<tr><td class="dim">${et(p.made_at)}</td><td><b>${esc(p.ticker)}</b></td>`
+      + `<td class="num ${lean}">${p.p_up.toFixed(2)}</td><td>${esc(p.stance.toUpperCase())}</td>`
+      + `<td class="num">${pct(p.pre_move, 1)}</td>${ex("1")}${ex("5")}${ex("10")}`
+      + `<td class="mono dim">#${p.seq}</td>`
+      + `<td>${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener nofollow">source</a>` : ""}</td></tr>`;
+  });
+  setTable("predTable", [["Made (ET)"], ["Ticker"], ["P(up)", "num"], ["Stance"], ["Moved", "num"],
+    ["1-day vs SPY", "num"], ["5-day", "num"], ["10-day", "num"], ["Ledger"], [""]], rows, "No calls in this view yet.");
+  const more = document.getElementById("predMore");
+  more.hidden = list.length <= predShown;
+  more.onclick = () => { predShown += 50; renderPreds(preds); };
+}
+
+function renderTrades(trades, positions) {
+  const tr = (trades || []).slice(0, 40).map(t => {
+    const meta = ACCOUNTS[t.account] || { label: t.account, color: "--accent" };
+    const px = t.fill_price ?? t.limit;
+    return `<tr><td class="dim">${et(t.submitted_at)}</td>`
+      + `<td><span class="dot" style="background:${css(meta.color)}"></span>${esc(t.account)}</td>`
+      + `<td class="${t.side === "buy" ? "pos" : "neg"}">${esc(t.side)}</td><td><b>${esc(t.ticker)}</b></td>`
+      + `<td class="num">${t.qty}</td><td class="num">${px != null ? "$" + px.toFixed(2) : "–"}</td>`
+      + `<td class="dim">${esc(t.status)}</td></tr>`;
+  });
+  setTable("tradeTable", [["When (ET)"], ["Account"], ["Side"], ["Ticker"], ["Qty", "num"], ["Price", "num"], ["Status"]],
+    tr, "No trades yet.");
+  const pr = (positions || []).map(p => {
+    const meta = ACCOUNTS[p.account] || { label: p.account, color: "--accent" };
+    return `<tr><td><span class="dot" style="background:${css(meta.color)}"></span>${esc(p.account)}</td>`
+      + `<td><b>${esc(p.ticker)}</b></td><td class="num">${p.qty}</td>`
+      + `<td class="num">$${(p.entry ?? 0).toFixed(2)}</td><td class="num ${signCls(p.pl_pct)}">${pct(p.pl_pct, 1)}</td></tr>`;
+  });
+  setTable("posTable", [["Account"], ["Ticker"], ["Qty", "num"], ["Entry", "num"], ["P/L", "num"]], pr, "No open positions.");
+  const asOf = (positions || []).map(p => p.as_of).sort().pop();
+  if (asOf) document.getElementById("posAsOf").textContent = `As of ${et(asOf)} ET.`;
+}
+
+function renderProof(s) {
+  const L = s.ledger;
+  const kinds = Object.entries(L.by_kind || {}).map(([k, n]) => `${n.toLocaleString()} ${esc(k)}`).join(", ");
+  document.getElementById("proof").innerHTML = `
+    <p style="margin:0 0 10px">${L.verified
+      ? `<span class="pos">✓ All ${L.entries.toLocaleString()} ledger entries verified</span>`
+      : `<span class="neg">✗ Chain check failed at entry #${L.first_bad_seq}</span>`}
+      <span class="dim">(${kinds || "empty"}) · checked ${et(L.verified_at)} ET</span></p>
+    ${L.head_hash ? `<div class="dim" style="font-size:13px">Latest entry #${L.head_seq}, fingerprint:</div>
+      <div class="hash">${esc(L.head_hash)}</div>` : ""}
+    <ol class="steps">
+      <li>Each prediction and each order is saved as a ledger entry whose fingerprint (SHA-256)
+        covers its contents <em>and the previous entry's fingerprint</em>. Changing any old entry
+        changes every fingerprint after it. The database itself refuses edits and deletes.</li>
+      <li>Every evening the latest fingerprint is committed to this project's public GitHub repo.
+        GitHub's commit history is an outside timestamp nobody here can rewrite quietly.</li>
+      <li>So every call in the table above provably existed before its outcome was known. The
+        ledger # on each call is its position in the chain;
+        <a href="${REPO}/commits/main/anchors">see every daily anchor</a>.</li>
+    </ol>`;
+}
+
+function renderCosts(s) {
+  const c = s.costs || {};
+  const d = c.daily_usd || [];
+  const box = document.getElementById("costChart");
+  if (!d.length) { box.parentElement.innerHTML = `<p class="empty">No API usage recorded yet.</p>`; }
+  else charts.push(new Chart(box, { type: "bar",
+    data: { labels: d.map(x => x.day.slice(5)), datasets: [{ data: d.map(x => x.usd), backgroundColor: css("--accent") }] },
+    options: { maintainAspectRatio: false, plugins: { legend: { display: false },
+      tooltip: { callbacks: { label: x => "$" + x.parsed.y.toFixed(2) } } },
+      scales: { y: { ticks: { color: css("--muted"), callback: v => "$" + v }, grid: { color: css("--line") } },
+                x: { ticks: { color: css("--muted") }, grid: { display: false } } } } }));
+  const calls = c.calls_30d || {};
+  document.getElementById("costNote").textContent =
+    `$${(c.total_30d_usd ?? 0).toFixed(2)} over the last 30 days: ${(calls.triage || 0).toLocaleString()} triage calls `
+    + `(a fast model reads every headline) and ${(calls.panel || 0).toLocaleString()} panel calls (three analyst personas per important story).`;
+}
+
+async function main() {
+  const [s, preds, trades, positions, eq] = await Promise.all(
+    ["summary.json", "predictions.json", "trades.json", "positions.json", "equity.json"].map(load));
+  if (!s) {
+    document.getElementById("pills").innerHTML = `<span class="pill">No data published yet. The first nightly publish fills this page.</span>`;
+    return;
+  }
+  renderHeader(s, preds);
+  renderTournament(s, eq);
+  renderScore(s);
+  renderPreds(preds);
+  renderTrades(trades, positions);
+  renderProof(s);
+  renderCosts(s);
+}
+
+// Theme toggle (remembers the choice when the browser allows it).
+(function () {
+  const root = document.documentElement;
+  try { const t = localStorage.getItem("dw-theme"); if (t) root.dataset.theme = t; } catch {}
+  document.getElementById("themeBtn").onclick = () => {
+    const dark = root.dataset.theme ? root.dataset.theme === "dark"
+      : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = dark ? "light" : "dark";
+    try { localStorage.setItem("dw-theme", root.dataset.theme); } catch {}
+    charts.forEach(c => c.destroy()); charts.length = 0;
+    document.querySelectorAll(".chart-box").forEach(b => { if (!b.querySelector("canvas")) return;
+      const id = b.querySelector("canvas").id; b.innerHTML = `<canvas id="${id}"></canvas>`; });
+    main();
+  };
+})();
+main();
+</script>
+</body>
+</html>

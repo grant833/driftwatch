@@ -5,3 +5,7 @@ __pycache__/
 .ruff_cache/
 *.egg-info/
 pgdata/
+backups/*
+!backups/.gitkeep
+ops/nightly.log
+*.tmp

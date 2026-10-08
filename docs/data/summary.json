@@ -1,0 +1,85 @@
+{
+ "costs": {
+  "avg_daily_usd": 1.67,
+  "calls_30d": {
+   "panel": 1215,
+   "triage": 437
+  },
+  "daily_usd": [
+   {
+    "day": "2026-10-06",
+    "usd": 2.08
+   },
+   {
+    "day": "2026-10-07",
+    "usd": 1.99
+   },
+   {
+    "day": "2026-10-08",
+    "usd": 0.93
+   }
+  ],
+  "total_30d_usd": 5.0
+ },
+ "first_prediction_at": "2026-10-06T20:08:45.296053+00:00",
+ "generated_at": "2026-10-08T14:17:17.880985+00:00",
+ "generated_et": "2026-10-08 10:17 ET",
+ "insider_buys_total": 25,
+ "ledger": {
+  "by_kind": {
+   "order": 15,
+   "prediction": 405
+  },
+  "entries": 420,
+  "first_bad_seq": null,
+  "head_hash": "bb99a6e4db2b2a8fba65f9b073b9a93b1e0683250660bb7ad474b0a6b69ac2d1",
+  "head_recorded_at": "2026-10-08T14:10:20.236231+00:00",
+  "head_seq": 420,
+  "verified": true,
+  "verified_at": "2026-10-08T14:17:17.880985+00:00"
+ },
+ "news_total": 2616,
+ "predictions_total": 405,
+ "scorecard": {
+  "1": {
+   "agree": {
+    "hit_rate": 0.4845360824742268,
+    "mean_signed": 0.0014700494481295187,
+    "median_signed": -0.0016384305235850327,
+    "n": 97
+   },
+   "clipped_mean": -0.0011214953918408745,
+   "hit_rate": 0.4806201550387597,
+   "ic": 0.13377259495198263,
+   "mean_signed": 0.0023722238675567622,
+   "median_signed": -0.0016384305235850327,
+   "n": 191,
+   "n_days": 2,
+   "n_dir": 129,
+   "rank_ic": 0.02710110667234615,
+   "split": {
+    "hit_rate": 0.46875,
+    "mean_signed": 0.005106940076445594,
+    "median_signed": -0.0010287304179510404,
+    "n": 32
+   },
+   "t_days": null,
+   "t_stat": 0.44391862331348597
+  },
+  "10": {
+   "n": 0,
+   "n_dir": 0
+  },
+  "5": {
+   "n": 0,
+   "n_dir": 0
+  }
+ },
+ "tournament": {
+  "accounts": {},
+  "luck_bar_daily_sharpe": 0.0,
+  "trials": 3,
+  "waiting": []
+ },
+ "trading_halted": false
+}

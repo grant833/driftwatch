@@ -138,6 +138,11 @@ def daily_summary(conn, horizons: list[int]) -> str:
     _, stale = reports.health(conn)
     if stale:
         lines.append(f"⚠ No data in: {', '.join(stale)}")
+    from .publish import stale as publish_stale
+    last = get_control(conn, "last_publish")
+    if publish_stale(datetime.now(UTC), last):
+        lines.append(f"⚠ Nightly publish hasn't run since {last[:10]}: check the PC's "
+                     "scheduled task (ops/nightly.log)")
     if total:
         lines.append("\n<b>Strongest calls today</b>")
         lines.append(pre(reports.predictions(conn, last=5, today_only=True, compact=True,

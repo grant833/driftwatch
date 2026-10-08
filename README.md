@@ -23,10 +23,12 @@ proven instead of claimed.
 | Safety | Refuses any non-paper Alpaca URL unless `trading.allow_live: true`. Telegram `/kill` halts and cancels working orders; `/flatten confirm` sells everything and halts; `/resume confirm` restarts |
 | `/perf` | Each account vs buy-and-hold SPY: return, max drawdown, Sharpe, probabilistic Sharpe, and the Deflated Sharpe Ratio adjusted for the number of strategies tried |
 | `gdelt` service | Optional, off by default (GDELT's free API returned empty data in Oct 2026); replaced by headline-based market mood |
-| Ledger | Hash-chained, append-only (enforced by Postgres triggers), daily anchors for public git timestamps |
+| Ledger | Hash-chained, append-only (enforced by Postgres triggers). Nightly, the chain is verified and its head is committed to this repo (`anchors/`), an outside timestamp proving each prediction predates its outcome |
+| `backup` service | Nightly compressed `pg_dump` into `./backups`, integrity-checked, 14 days kept; Telegram alert on failure |
+| Public dashboard | `docs/` (GitHub Pages): tournament vs SPY, prediction scorecard, recent calls with ledger numbers, trades, ledger proof, running costs. Data rebuilt nightly by `publish`; headlines are linked, never republished |
 | Guards | Ticker blocklist so the bot never buys ETFs held in the UBS model (wash-sale protection) |
 
-No trading happens yet. Hard daily caps on API calls are enforced in code, and every call is logged for cost tracking.
+Paper money only. Hard daily caps on API calls are enforced in code, and every call is logged for cost tracking.
 
 ## Design principles
 
@@ -47,7 +49,7 @@ docker compose logs -f news   # watch headlines arrive
 docker compose run --rm news health              # row counts for the last 24h
 docker compose run --rm news ledger-note "hello" # append a ledger entry
 docker compose run --rm news ledger-verify       # check the hash chain
-docker compose run --rm news ledger-anchor       # write anchors/YYYY-MM-DD.txt, then git commit + push
+docker compose run --rm publisher               # verify ledger, write anchor + dashboard data
 docker compose run --rm news check-ticker VOO    # test the blocklist
 docker compose run --rm news predictions         # latest panel verdicts
 docker compose run --rm news insiders            # latest insider buy signals
@@ -59,7 +61,7 @@ docker compose run --rm news positions           # open paper positions
 docker compose run --rm news perf                # tournament results vs SPY
 ```
 
-Runs on a Raspberry Pi 5 (arm64) or any small Linux VM.
+Runs on any always-on machine with Docker and ~2 GB free RAM (Windows PC with Docker Desktop, a small Linux VM, or a Raspberry Pi 4/5 with 4 GB+).
 
 ## Setup checklist
 
@@ -67,7 +69,24 @@ Runs on a Raspberry Pi 5 (arm64) or any small Linux VM.
 2. Replace `config/blocklist.txt` with every ETF in the UBS model.
 3. Set `SEC_USER_AGENT` to your name and real email (SEC requirement).
 4. Optional: add a Slack incoming webhook for alerts.
-5. Schedule `ledger-anchor` daily (cron) and commit the anchor file to a public repo.
+5. Windows: `powershell -ExecutionPolicy Bypass -File ops\install-nightly.ps1` registers the nightly
+   publish (5:30 PM: verify, anchor, dashboard data, commit `anchors/` + `docs/`, push).
+   Linux: cron `ops/nightly.ps1`'s equivalent (`docker compose run --rm publisher && git add anchors docs && git commit && git push`).
+6. GitHub repo → Settings → Pages → Deploy from branch `main`, folder `/docs`.
+
+## Backups
+
+The `backup` service writes `backups/driftwatch-YYYY-MM-DD.dump` every night at 2:30 AM ET.
+Restore into a fresh database:
+
+```bash
+docker compose stop news edgar insider analyst scorer notifier trader
+docker compose exec -T db dropdb -U driftwatch driftwatch
+docker compose exec -T db createdb -U driftwatch driftwatch
+docker compose exec -T db pg_restore -U driftwatch -d driftwatch < backups/driftwatch-YYYY-MM-DD.dump
+docker compose up -d
+docker compose run --rm news ledger-verify
+```
 
 ## Roadmap
 

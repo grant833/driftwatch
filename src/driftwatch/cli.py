@@ -117,8 +117,27 @@ def cmd_ledger_verify(s, conn, args):
 
 
 def cmd_ledger_anchor(s, conn, args):
-    path = ledger.anchor(conn, home() / "anchors")
+    from .prices import ET
+    path = ledger.anchor(conn, home() / "anchors", today=datetime.now(ET).date())
     log.info("anchor written: %s (commit and push it)", path) if path else log.info("ledger empty")
+
+
+def cmd_publish(s, conn, args):
+    from . import publish
+    try:
+        paths = publish.run(conn, home(), s.raw["scorer"]["horizons"],
+                            s.raw.get("trading", {}).get("trials_count", 3))
+    except RuntimeError as exc:
+        log.error("publish refused: %s", exc)
+        raise SystemExit(1) from exc
+    for p in paths:
+        log.info("wrote %s", p.relative_to(home()))
+
+
+def cmd_notify(s, conn, args):
+    from .alerts import notify
+    notify(conn, "alert", f"🚨 {args.text}")
+    log.info("queued for Telegram")
 
 
 def cmd_ledger_note(s, conn, args):
@@ -169,6 +188,10 @@ def main() -> None:
     sub.add_parser("resume").set_defaults(fn=cmd_resume)
     sub.add_parser("ledger-verify").set_defaults(fn=cmd_ledger_verify)
     sub.add_parser("ledger-anchor").set_defaults(fn=cmd_ledger_anchor)
+    sub.add_parser("publish").set_defaults(fn=cmd_publish)
+    nt = sub.add_parser("notify")
+    nt.add_argument("text")
+    nt.set_defaults(fn=cmd_notify)
     n = sub.add_parser("ledger-note")
     n.add_argument("text")
     n.set_defaults(fn=cmd_ledger_note)

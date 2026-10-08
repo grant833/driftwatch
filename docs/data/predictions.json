@@ -1,0 +1,5649 @@
+[
+ {
+  "excess": {},
+  "made_at": "2026-10-08T14:10:20.233612+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": -0.0072,
+  "published_at": "2026-10-08T14:06:13.907000+00:00",
+  "seq": 420,
+  "stance": "neutral",
+  "ticker": "RY",
+  "url": "https://www.benzinga.com/news/26/10/62247521/rbc-seeks-block-h-r-s-breakup-and-sale-blackstone-others-bloomberg"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T14:00:22.938321+00:00",
+  "magnitude": "small",
+  "p_std": 0.021,
+  "p_up": 0.473,
+  "pre_move": 0.0486,
+  "published_at": "2026-10-08T13:56:09.411000+00:00",
+  "seq": 419,
+  "stance": "split",
+  "ticker": "ACN",
+  "url": "https://www.benzinga.com/wiim/26/10/62246850/accenture-shares-are-trading-higher-after-company-announced-expanded-collaboration-dell-technologies"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:51:09.646422+00:00",
+  "magnitude": "small",
+  "p_std": 0.021,
+  "p_up": 0.473,
+  "pre_move": 0.0645,
+  "published_at": "2026-10-08T13:46:36.721000+00:00",
+  "seq": 403,
+  "stance": "split",
+  "ticker": "WOLF",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62246356/whats-going-on-with-wolfspeed-stock-thursday-2"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:41:13.518292+00:00",
+  "magnitude": "small",
+  "p_std": 0.024,
+  "p_up": 0.467,
+  "pre_move": 0.4396,
+  "published_at": "2026-10-08T13:27:50.317000+00:00",
+  "seq": 402,
+  "stance": "split",
+  "ticker": "PCRX",
+  "url": "https://www.benzinga.com/wiim/26/10/62245591/pacira-biosciences-shares-are-trading-higher-after-company-announced-it-will-be-acquired-viatris"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:32:18.413985+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": 0.0003,
+  "published_at": "2026-10-08T13:03:53+00:00",
+  "seq": 401,
+  "stance": "agree",
+  "ticker": "FDS",
+  "url": "https://www.benzinga.com/news/26/10/62244893/factset-expands-collaboration-scotia-wealth-management-integrate-its-tools-scotia-wealth-management-"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:29:11.545508+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.517,
+  "pre_move": -0.001,
+  "published_at": "2026-10-08T13:04:28+00:00",
+  "seq": 400,
+  "stance": "neutral",
+  "ticker": "NCNO",
+  "url": "https://www.benzinga.com/quote/INBK"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:29:05.654557+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": 0.0141,
+  "published_at": "2026-10-08T13:04:33+00:00",
+  "seq": 399,
+  "stance": "neutral",
+  "ticker": "NTES",
+  "url": "https://www.benzinga.com/news/26/10/62244914/netease-cloud-music-collaborates-gamma-expand-opportunities-gamma"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:28:56.283561+00:00",
+  "magnitude": "small",
+  "p_std": 0.024,
+  "p_up": 0.483,
+  "pre_move": -0.1024,
+  "published_at": "2026-10-08T13:06:53+00:00",
+  "seq": 398,
+  "stance": "neutral",
+  "ticker": "SECZ",
+  "url": "https://www.benzinga.com/news/26/10/62244981/securitize-rolls-out-securitize-stocks"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:28:49.642008+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.53,
+  "pre_move": -0.001,
+  "published_at": "2026-10-08T10:07:40+00:00",
+  "seq": 397,
+  "stance": "agree",
+  "ticker": "IMOS",
+  "url": "https://www.benzinga.com/news/26/10/62239537/chipmos-technologies-reports-q3-sales-263-8m-36-7-yoy"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:28:43.197859+00:00",
+  "magnitude": "small",
+  "p_std": 0.025,
+  "p_up": 0.487,
+  "pre_move": -0.0761,
+  "published_at": "2026-10-08T10:13:22+00:00",
+  "seq": 396,
+  "stance": "neutral",
+  "ticker": "DNA",
+  "url": "https://www.benzinga.com/news/26/10/62239765/ginkgo-bioworks-integrate-araceli-biosciences-endeavor-high-content-imaging-instrument-nebula-compan"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:28:37.064794+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": -0.0187,
+  "published_at": "2026-10-08T10:14:24+00:00",
+  "seq": 395,
+  "stance": "neutral",
+  "ticker": "ANGO",
+  "url": "https://www.benzinga.com/news/26/10/62239779/angiodynamics-appoints-eric-honroth-president-and-ceo-effective-november-2"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:28:30.851578+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.42,
+  "pre_move": -0.0554,
+  "published_at": "2026-10-08T10:26:47+00:00",
+  "seq": 394,
+  "stance": "agree",
+  "ticker": "NUAI",
+  "url": "https://www.benzinga.com/news/26/10/62240043/new-era-energy-digital-units-tcdc-powerco-and-texas-critical-data-centers-enter-letter-credit-reimbu"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:28:23.195963+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": -0.0176,
+  "published_at": "2026-10-08T10:33:51+00:00",
+  "seq": 393,
+  "stance": "neutral",
+  "ticker": "RDY",
+  "url": "https://www.benzinga.com/news/26/10/62240196/dr-reddy-s-says-fda-completed-pre-approval-inspection-fto-11-manufacturing-facility-pydibhimavaram"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:28:16.726411+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.45,
+  "pre_move": -0.005,
+  "published_at": "2026-10-08T10:36:46+00:00",
+  "seq": 392,
+  "stance": "agree",
+  "ticker": "RNA",
+  "url": "https://www.benzinga.com/news/26/10/62240288/atrium-therapeutics-announces-50m-private-placement-5-170-384-shares-and-pre-funded-warrants-purchas"
+ },
+ {
+  "excess": {
+   "1": -0.0938
+  },
+  "made_at": "2026-10-08T13:28:06.615853+00:00",
+  "magnitude": "medium",
+  "p_std": 0.025,
+  "p_up": 0.55,
+  "pre_move": 0.012,
+  "published_at": "2026-10-08T10:45:47+00:00",
+  "seq": 391,
+  "stance": "agree",
+  "ticker": "HELE",
+  "url": "https://www.benzinga.com/news/earnings/26/10/62240504/helen-troy-q2-adj-eps-0-79-beats-0-50-estimate-sales-440-926m-miss-442-329m-estimate"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:27:59.750728+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.49,
+  "pre_move": -0.0179,
+  "published_at": "2026-10-08T10:46:48+00:00",
+  "seq": 390,
+  "stance": "neutral",
+  "ticker": "F",
+  "url": "https://www.benzinga.com/markets/tech/26/10/62240532/jim-farley-says-fords-next-gen-evs-will-check-themselves-for-assembly-defects-the-vehicle-diagnoses-itself"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:27:52.604381+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.54,
+  "pre_move": -0.011,
+  "published_at": "2026-10-08T10:48:52+00:00",
+  "seq": 389,
+  "stance": "agree",
+  "ticker": "MOV",
+  "url": "https://www.benzinga.com/news/26/10/62240575/movado-group-sell-its-95-stake-ebel-brand-66-5m-strategic-buyer-group-led-swiss-luxury-watch-manufac"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:27:45.367160+00:00",
+  "magnitude": "medium",
+  "p_std": 0.009,
+  "p_up": 0.413,
+  "pre_move": -0.0348,
+  "published_at": "2026-10-08T10:59:29+00:00",
+  "seq": 388,
+  "stance": "agree",
+  "ticker": "VG",
+  "url": "https://www.benzinga.com/news/26/10/62240799/venture-global-announces-international-chamber-commerce-partial-final-award-issued-arbitration-galp-"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:27:38.163042+00:00",
+  "magnitude": "small",
+  "p_std": 0.016,
+  "p_up": 0.5,
+  "pre_move": 0.0655,
+  "published_at": "2026-10-08T11:11:44+00:00",
+  "seq": 387,
+  "stance": "neutral",
+  "ticker": "GKOS",
+  "url": "https://www.benzinga.com/news/26/10/62241083/glaukos-enters-exclusive-license-agreement-revopsis-therapeutics-develop-and-commercialize-ro-104-no"
+ },
+ {
+  "excess": {
+   "1": -0.0376
+  },
+  "made_at": "2026-10-08T13:27:27.130571+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": -0.0412,
+  "published_at": "2026-10-08T11:12:11+00:00",
+  "seq": 386,
+  "stance": "neutral",
+  "ticker": "APLD",
+  "url": "https://www.benzinga.com/markets/earnings/26/10/62241095/apld-ceo-scarcity-value-ai-data-center-lease-rates-over-15"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:27:20.444545+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.533,
+  "pre_move": 0.0016,
+  "published_at": "2026-10-08T11:16:38+00:00",
+  "seq": 385,
+  "stance": "agree",
+  "ticker": "GILT",
+  "url": "https://www.benzinga.com/news/26/10/62241151/gilat-satellite-networks-datapath-receives-pentagon-orders-totaling-8m"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:27:13.858949+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.47,
+  "pre_move": -0.0397,
+  "published_at": "2026-10-08T11:23:07+00:00",
+  "seq": 384,
+  "stance": "agree",
+  "ticker": "CGEM",
+  "url": "https://www.benzinga.com/quote/CGEM"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:27:07.297710+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.413,
+  "pre_move": -0.0117,
+  "published_at": "2026-10-08T11:24:24+00:00",
+  "seq": 383,
+  "stance": "agree",
+  "ticker": "CRGY",
+  "url": "https://www.benzinga.com/news/26/10/62241475/crescent-energy-company-commences-1b-class-common-stock-offering"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:27:00.597378+00:00",
+  "magnitude": "small",
+  "p_std": 0.013,
+  "p_up": 0.503,
+  "pre_move": 0.0219,
+  "published_at": "2026-10-08T11:28:03+00:00",
+  "seq": 382,
+  "stance": "neutral",
+  "ticker": "STZ",
+  "url": "https://www.benzinga.com/analyst-stock-ratings/price-target/26/10/62241524/these-analysts-slash-their-forecasts-on-constellation-brands-following-q2-results"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:26:53.652219+00:00",
+  "magnitude": "small",
+  "p_std": 0.019,
+  "p_up": 0.493,
+  "pre_move": 0.0393,
+  "published_at": "2026-10-08T11:33:11+00:00",
+  "seq": 381,
+  "stance": "neutral",
+  "ticker": "CMND",
+  "url": "https://www.benzinga.com/news/26/10/62241682/clearmind-medicine-publishes-patient-application-japan-its-compositions-and-methods-treating-dyskine"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:26:46.944692+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": -0.0073,
+  "published_at": "2026-10-08T11:56:11+00:00",
+  "seq": 380,
+  "stance": "neutral",
+  "ticker": "NVDA",
+  "url": "https://www.benzinga.com/news/26/10/62242238/nvidia-s-big-bet-physical-ai-aims-safer-robotaxis-humanoid-robots-ars-technica"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:26:40.244224+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.457,
+  "pre_move": -0.0614,
+  "published_at": "2026-10-08T12:06:54+00:00",
+  "seq": 379,
+  "stance": "agree",
+  "ticker": "IMC",
+  "url": "https://www.benzinga.com/quote/IMC"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:26:33.496746+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.497,
+  "pre_move": -0.0129,
+  "published_at": "2026-10-08T12:07:14+00:00",
+  "seq": 378,
+  "stance": "neutral",
+  "ticker": "EWTX",
+  "url": "https://www.benzinga.com/general/biotech/26/10/62242893/edgewise-therapeutics-doses-first-participant-equinox-hfpef-study-edg-15400-treat-adults-symptomatic"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:26:27.598179+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": 0.0091,
+  "published_at": "2026-10-08T12:08:56+00:00",
+  "seq": 377,
+  "stance": "agree",
+  "ticker": "DELL",
+  "url": "https://www.benzinga.com/news/26/10/62242968/accenture-and-dell-expand-collaboration-form-accenture-dell-business-group-help-scale-ai-and-moderni"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:26:20.463103+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": 0.0166,
+  "published_at": "2026-10-08T12:08:56+00:00",
+  "seq": 376,
+  "stance": "agree",
+  "ticker": "ACN",
+  "url": "https://www.benzinga.com/news/26/10/62242968/accenture-and-dell-expand-collaboration-form-accenture-dell-business-group-help-scale-ai-and-moderni"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:26:14.269625+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": -0.0327,
+  "published_at": "2026-10-08T13:01:42+00:00",
+  "seq": 375,
+  "stance": "neutral",
+  "ticker": "AVAV",
+  "url": "https://www.benzinga.com/news/26/10/62244778/aerovironment-s-subsidiary-tapped-u-s-navy-prototype-other-transaction-agreement"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:26:07.617978+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.493,
+  "pre_move": -0.014,
+  "published_at": "2026-10-08T13:04:36+00:00",
+  "seq": 374,
+  "stance": "neutral",
+  "ticker": "BABA",
+  "url": "https://www.benzinga.com/markets/tech/26/10/62244918/alibaba-explores-spanish-expansion-amid-global-ai-push"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:26:00.979837+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": 0.0243,
+  "published_at": "2026-10-08T13:12:11+00:00",
+  "seq": 373,
+  "stance": "agree",
+  "ticker": "ZETA",
+  "url": "https://www.benzinga.com/news/26/10/62245097/zeta-global-partners-fireworks-develop-athena-inference-model-using-nvidia-nemotron-open-models"
+ },
+ {
+  "excess": {
+   "1": -0.0938
+  },
+  "made_at": "2026-10-08T13:25:33.947823+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": 0.012,
+  "published_at": "2026-10-08T13:21:42.134000+00:00",
+  "seq": 372,
+  "stance": "neutral",
+  "ticker": "HELE",
+  "url": "https://www.benzinga.com/markets/earnings/26/10/62245309/oxo-hydro-flask-parent-helen-of-troy-stock-hits-52-week-high-heres-why"
+ },
+ {
+  "excess": {
+   "1": -0.0175
+  },
+  "made_at": "2026-10-08T13:25:16.810689+00:00",
+  "magnitude": "small",
+  "p_std": 0.013,
+  "p_up": 0.467,
+  "pre_move": 0.0204,
+  "published_at": "2026-10-08T13:06:09+00:00",
+  "seq": 371,
+  "stance": "agree",
+  "ticker": "LEVI",
+  "url": "https://www.benzinga.com/analyst-stock-ratings/price-target/26/10/62244965/these-analysts-revise-their-forecasts-on-levi-strauss-after-q3-results"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:25:07.293951+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": -0.0665,
+  "published_at": "2026-10-08T13:03:11+00:00",
+  "seq": 370,
+  "stance": "neutral",
+  "ticker": "ELVR",
+  "url": "https://www.benzinga.com/quote/ELVR"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:24:53.015581+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": 0.0006,
+  "published_at": "2026-10-08T12:47:14+00:00",
+  "seq": 369,
+  "stance": "neutral",
+  "ticker": "MSFT",
+  "url": "https://www.benzinga.com/news/26/10/62244140/microsoft-creates-new-xbox-division-xp-appoints-kayleen-walters-president-xp"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:24:46.637343+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.457,
+  "pre_move": -0.0166,
+  "published_at": "2026-10-08T12:54:13+00:00",
+  "seq": 368,
+  "stance": "agree",
+  "ticker": "PEP",
+  "url": "https://www.benzinga.com/markets/earnings/26/10/62244383/pepsico-admits-its-soda-business-is-falling-behind-rivals"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:24:32.519577+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": -0.0315,
+  "published_at": "2026-10-08T12:33:53+00:00",
+  "seq": 367,
+  "stance": "neutral",
+  "ticker": "CRSP",
+  "url": "https://www.benzinga.com/quote/CRSP"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:24:25.249286+00:00",
+  "magnitude": "medium",
+  "p_std": 0.009,
+  "p_up": 0.413,
+  "pre_move": -0.0329,
+  "published_at": "2026-10-08T12:37:05+00:00",
+  "seq": 366,
+  "stance": "agree",
+  "ticker": "ARQQ",
+  "url": "https://www.benzinga.com/quote/ARQQ"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:24:18.449508+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": -0.0363,
+  "published_at": "2026-10-08T12:44:52+00:00",
+  "seq": 365,
+  "stance": "agree",
+  "ticker": "NESR",
+  "url": "https://www.benzinga.com/markets/mid-cap/26/10/62244062/nesr-to-deliver-saudi-arabias-first-direct-lithium-extraction-project"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:24:03.752350+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.53,
+  "pre_move": -0.0099,
+  "published_at": "2026-10-08T12:33:32+00:00",
+  "seq": 364,
+  "stance": "agree",
+  "ticker": "VIR",
+  "url": "https://www.benzinga.com/news/26/10/62243663/vir-biotechnology-receives-fda-fast-track-designation-vir-5500-treat-metastatic-castration-resistant"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:23:50.624395+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.507,
+  "pre_move": 0.0074,
+  "published_at": "2026-10-08T12:15:02+00:00",
+  "seq": 363,
+  "stance": "neutral",
+  "ticker": "GOOG",
+  "url": "https://www.benzinga.com/news/26/10/62243132/google-cloud-rolls-out-gemini-agent"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:23:44.759911+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.507,
+  "pre_move": 0.0063,
+  "published_at": "2026-10-08T12:15:02+00:00",
+  "seq": 362,
+  "stance": "neutral",
+  "ticker": "GOOGL",
+  "url": "https://www.benzinga.com/news/26/10/62243132/google-cloud-rolls-out-gemini-agent"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:23:37.269893+00:00",
+  "magnitude": "small",
+  "p_std": 0.026,
+  "p_up": 0.537,
+  "pre_move": 0.0225,
+  "published_at": "2026-10-08T12:21:11+00:00",
+  "seq": 361,
+  "stance": "split",
+  "ticker": "USO",
+  "url": "https://www.benzinga.com/news/26/10/62243242/houthi-military-warns-saudi-oil-workers-avoid-target-sites-country-repeats-warning-airlines-and-airp"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:23:30.841506+00:00",
+  "magnitude": "small",
+  "p_std": 0.016,
+  "p_up": 0.5,
+  "pre_move": -0.0204,
+  "published_at": "2026-10-08T12:28:39+00:00",
+  "seq": 360,
+  "stance": "neutral",
+  "ticker": "AVO",
+  "url": "https://www.benzinga.com/news/26/10/62243422/mission-produce-targets-mid-single-digit-organic-sales-growth-300-basis-points-margin-expansion-over"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:23:16.494574+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": 0.002,
+  "published_at": "2026-10-08T12:10:38+00:00",
+  "seq": 359,
+  "stance": "agree",
+  "ticker": "GFUZ",
+  "url": "https://www.benzinga.com/quote/GFUZ"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:23:06.988312+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": -0.032,
+  "published_at": "2026-10-08T12:14:07+00:00",
+  "seq": 358,
+  "stance": "neutral",
+  "ticker": "TSM",
+  "url": "https://www.benzinga.com/news/26/10/62243104/globalfoundries-reaches-deal-with-tsmc-to-create-u-s-based-supply-of-silicon-interposers-for-tsmcs-cowos-advanced-packaging-ecosystem"
+ },
+ {
+  "excess": {
+   "1": 0.009
+  },
+  "made_at": "2026-10-08T13:23:00.076123+00:00",
+  "magnitude": "small",
+  "p_std": 0.017,
+  "p_up": 0.557,
+  "pre_move": 0.0272,
+  "published_at": "2026-10-08T12:14:07+00:00",
+  "seq": 357,
+  "stance": "agree",
+  "ticker": "GFS",
+  "url": "https://www.benzinga.com/news/26/10/62243104/globalfoundries-reaches-deal-with-tsmc-to-create-u-s-based-supply-of-silicon-interposers-for-tsmcs-cowos-advanced-packaging-ecosystem"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:22:52.253584+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.47,
+  "pre_move": -0.002,
+  "published_at": "2026-10-08T12:13:44+00:00",
+  "seq": 356,
+  "stance": "agree",
+  "ticker": "ARGX",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62243091/argenx-halts-phase-3-study-in-rare-disease-following-futility-analysis"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:22:36.991097+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.43,
+  "pre_move": 0.1252,
+  "published_at": "2026-10-08T12:02:59+00:00",
+  "seq": 355,
+  "stance": "agree",
+  "ticker": "BIAF",
+  "url": "https://www.benzinga.com/quote/BIAF"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:22:27.421413+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": -0.0067,
+  "published_at": "2026-10-08T12:04:49+00:00",
+  "seq": 354,
+  "stance": "neutral",
+  "ticker": "SRRK",
+  "url": "https://www.benzinga.com/news/26/10/62242724/scholar-rock-refiles-marketing-authorisation-application-ema-apitegromab-treat-children-and-adults-s"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:22:21.783219+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": 0.0005,
+  "published_at": "2026-10-08T12:04:44+00:00",
+  "seq": 353,
+  "stance": "neutral",
+  "ticker": "ACVA",
+  "url": "https://www.benzinga.com/quote/ACVA"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:22:06.533558+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": -0.0466,
+  "published_at": "2026-10-08T12:02:20+00:00",
+  "seq": 352,
+  "stance": "neutral",
+  "ticker": "ERII",
+  "url": "https://www.benzinga.com/quote/ERII"
+ },
+ {
+  "excess": {
+   "1": -0.0175
+  },
+  "made_at": "2026-10-08T13:21:53.257967+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.493,
+  "pre_move": 0.0204,
+  "published_at": "2026-10-08T11:43:43+00:00",
+  "seq": 351,
+  "stance": "neutral",
+  "ticker": "LEVI",
+  "url": "https://www.benzinga.com/markets/earnings/26/10/62241926/levi-strauss-ceo-sounds-alarm-on-growing-competition-in-denim-market"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:21:45.833699+00:00",
+  "magnitude": "medium",
+  "p_std": 0.0,
+  "p_up": 0.42,
+  "pre_move": -0.0026,
+  "published_at": "2026-10-08T11:47:25+00:00",
+  "seq": 350,
+  "stance": "agree",
+  "ticker": "VTRS",
+  "url": "https://www.benzinga.com/quote/VTRS"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:21:37.988012+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": 0.4673,
+  "published_at": "2026-10-08T11:47:25+00:00",
+  "seq": 349,
+  "stance": "neutral",
+  "ticker": "PCRX",
+  "url": "https://www.benzinga.com/quote/VTRS"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:21:24.206937+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": 0.01,
+  "published_at": "2026-10-08T11:31:22+00:00",
+  "seq": 348,
+  "stance": "agree",
+  "ticker": "AGEN",
+  "url": "https://www.benzinga.com/news/26/10/62241611/agenus-receives-marketion-authorization-armenia-botvymo-treat-adult-patients-microsatellite-stable-m"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:21:16.618053+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.413,
+  "pre_move": 0.0171,
+  "published_at": "2026-10-08T11:23:44+00:00",
+  "seq": 347,
+  "stance": "agree",
+  "ticker": "VEEE",
+  "url": "https://www.benzinga.com/quote/VEEE"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:21:05.002396+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": -0.0029,
+  "published_at": "2026-10-08T11:13:28+00:00",
+  "seq": 346,
+  "stance": "neutral",
+  "ticker": "DVN",
+  "url": "https://www.benzinga.com/m/26/10/62241109/devon-energy-sell-its-eagle-ford-assets-crescent-energy-4-2b-cash"
+ },
+ {
+  "excess": {
+   "1": 0.0024
+  },
+  "made_at": "2026-10-08T13:20:57.702301+00:00",
+  "magnitude": "small",
+  "p_std": 0.013,
+  "p_up": 0.553,
+  "pre_move": 0.0018,
+  "published_at": "2026-10-08T11:21:36+00:00",
+  "seq": 345,
+  "stance": "agree",
+  "ticker": "BMY",
+  "url": "https://www.benzinga.com/quote/BMY"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:20:44.524230+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.527,
+  "pre_move": -0.0254,
+  "published_at": "2026-10-08T10:09:10+00:00",
+  "seq": 344,
+  "stance": "agree",
+  "ticker": "FTAI",
+  "url": "https://www.benzinga.com/news/26/10/62239569/ftai-aviation-announces-multi-year-maintenance-repair-and-exchange-agreement-united-airlines-terms-n"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:20:30.795014+00:00",
+  "magnitude": "medium",
+  "p_std": 0.024,
+  "p_up": 0.517,
+  "pre_move": -0.0793,
+  "published_at": "2026-10-08T10:42:46+00:00",
+  "seq": 343,
+  "stance": "neutral",
+  "ticker": "HNRG",
+  "url": "https://www.benzinga.com/news/26/10/62240410/hallador-energy-enters-six-year-700m-capacity-and-energy-agreements-miso-zone-6-utility-covering-del"
+ },
+ {
+  "excess": {
+   "1": -0.0938
+  },
+  "made_at": "2026-10-08T13:20:23.614834+00:00",
+  "magnitude": "medium",
+  "p_std": 0.017,
+  "p_up": 0.577,
+  "pre_move": 0.012,
+  "published_at": "2026-10-08T10:45:37+00:00",
+  "seq": 342,
+  "stance": "agree",
+  "ticker": "HELE",
+  "url": "https://www.benzinga.com/news/26/10/62240495/helen-troy-raises-fy2027-adj-eps-guidance-3-25-3-75-3-60-4-15-vs-3-55-est-narrows-fy2027-sales-guida"
+ },
+ {
+  "excess": {
+   "1": -0.0938
+  },
+  "made_at": "2026-10-08T13:20:16.290767+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.557,
+  "pre_move": 0.012,
+  "published_at": "2026-10-08T10:46:07+00:00",
+  "seq": 341,
+  "stance": "agree",
+  "ticker": "HELE",
+  "url": "https://www.benzinga.com/news/26/10/62240519/helen-troy-raises-fy2027-gaap-eps-guidance-3-57-4-18-3-63-4-26-vs-3-77-est"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:20:03.101565+00:00",
+  "magnitude": "small",
+  "p_std": 0.017,
+  "p_up": 0.543,
+  "pre_move": -0.0363,
+  "published_at": "2026-10-08T10:11:20+00:00",
+  "seq": 340,
+  "stance": "agree",
+  "ticker": "NESR",
+  "url": "https://www.benzinga.com/news/26/10/62239659/national-energy-services-reunited-unit-nesr-environmental-and-decarbonization-applications-partners-"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:19:56.511275+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": 0.0184,
+  "published_at": "2026-10-08T10:35:32+00:00",
+  "seq": 339,
+  "stance": "neutral",
+  "ticker": "PFE",
+  "url": "https://www.benzinga.com/news/politics/26/10/62240244/phrma-sues-trump-administration-medicare-drug-pricing"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:19:49.864500+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": 0.0268,
+  "published_at": "2026-10-08T10:35:32+00:00",
+  "seq": 338,
+  "stance": "neutral",
+  "ticker": "LLY",
+  "url": "https://www.benzinga.com/news/politics/26/10/62240244/phrma-sues-trump-administration-medicare-drug-pricing"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:19:36.567726+00:00",
+  "magnitude": "medium",
+  "p_std": 0.009,
+  "p_up": 0.413,
+  "pre_move": -0.0166,
+  "published_at": "2026-10-08T10:03:51+00:00",
+  "seq": 337,
+  "stance": "agree",
+  "ticker": "PEP",
+  "url": "https://www.benzinga.com/news/26/10/62239351/pepsico-lowers-fy2026-adj-eps-guidance-8-55-8-71-8-34-8-43-vs-8-55-est-narrows-fy2026-sales-guidance"
+ },
+ {
+  "excess": {
+   "1": -0.0376
+  },
+  "made_at": "2026-10-08T13:19:29.612267+00:00",
+  "magnitude": "small",
+  "p_std": 0.021,
+  "p_up": 0.497,
+  "pre_move": -0.0412,
+  "published_at": "2026-10-08T10:21:06+00:00",
+  "seq": 336,
+  "stance": "neutral",
+  "ticker": "APLD",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62239861/applied-digital-ceo-says-ai-demand-is-near-maximum"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:19:15.355945+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": -0.0147,
+  "published_at": "2026-10-08T09:14:19+00:00",
+  "seq": 335,
+  "stance": "agree",
+  "ticker": "BCO",
+  "url": "https://www.benzinga.com/news/26/10/62238575/brink-s-says-potential-notemachine-testlink-uk-sale-won-t-affect-expected-200m-annual-run-rate-syner"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:19:08.649512+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.53,
+  "pre_move": -0.0166,
+  "published_at": "2026-10-08T10:00:20+00:00",
+  "seq": 334,
+  "stance": "agree",
+  "ticker": "PEP",
+  "url": "https://www.benzinga.com/news/earnings/26/10/62239201/pepsico-q3-adj-eps-2-34-beats-2-29-estimate-sales-25-274b-beat-24-962b-estimate"
+ },
+ {
+  "excess": {
+   "1": -0.0141
+  },
+  "made_at": "2026-10-08T13:18:46.603787+00:00",
+  "magnitude": "small",
+  "p_std": 0.013,
+  "p_up": 0.567,
+  "pre_move": -0.0157,
+  "published_at": "2026-10-08T08:12:26+00:00",
+  "seq": 333,
+  "stance": "agree",
+  "ticker": "BHVN",
+  "url": "https://www.benzinga.com/news/26/10/62238028/biohaven-licenses-mode-igg-degraders-ono-japan-south-korea-taiwan-and-asean-100m-near-term-payments-"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:18:31.926427+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": 0.0004,
+  "published_at": "2026-10-08T07:24:53+00:00",
+  "seq": 332,
+  "stance": "agree",
+  "ticker": "CME",
+  "url": "https://www.benzinga.com/quote/CME"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:18:25.681447+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.487,
+  "pre_move": 0.0063,
+  "published_at": "2026-10-08T07:50:28+00:00",
+  "seq": 331,
+  "stance": "neutral",
+  "ticker": "GOOGL",
+  "url": "https://www.benzinga.com/markets/tech/26/10/62237813/googles-15-billion-finland-ai-push-hits-roadblock-as-regulators-order-halt-at-2-data-centers-pending-environmental-reviews"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T13:18:19.199582+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.49,
+  "pre_move": 0.0074,
+  "published_at": "2026-10-08T07:50:28+00:00",
+  "seq": 330,
+  "stance": "neutral",
+  "ticker": "GOOG",
+  "url": "https://www.benzinga.com/markets/tech/26/10/62237813/googles-15-billion-finland-ai-push-hits-roadblock-as-regulators-order-halt-at-2-data-centers-pending-environmental-reviews"
+ },
+ {
+  "excess": {
+   "1": -0.0175
+  },
+  "made_at": "2026-10-08T02:12:14.149772+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.45,
+  "pre_move": 0.0204,
+  "published_at": "2026-10-07T20:28:11.024000+00:00",
+  "seq": 329,
+  "stance": "agree",
+  "ticker": "LEVI",
+  "url": "https://www.benzinga.com/markets/earnings/26/10/62233480/levi-strauss-reports-mixed-q3-eps-beat-revenues-miss"
+ },
+ {
+  "excess": {
+   "1": -0.0235
+  },
+  "made_at": "2026-10-08T02:12:04.548620+00:00",
+  "magnitude": "small",
+  "p_std": 0.024,
+  "p_up": 0.483,
+  "pre_move": -0.0672,
+  "published_at": "2026-10-07T20:45:27.146000+00:00",
+  "seq": 328,
+  "stance": "neutral",
+  "ticker": "PROF",
+  "url": "https://www.benzinga.com/wiim/26/10/62233928/profound-medical-shares-are-trading-higher-after-company-reported-preliminary-q3-revenue-results"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T02:11:57.064162+00:00",
+  "magnitude": "small",
+  "p_std": 0.008,
+  "p_up": 0.51,
+  "pre_move": -0.0028,
+  "published_at": "2026-10-07T20:49:20.499000+00:00",
+  "seq": 327,
+  "stance": "neutral",
+  "ticker": "APO",
+  "url": "https://www.benzinga.com/markets/private-markets/26/10/62234094/a-third-of-apollos-35-billion-in-private-credit-trades-involved-other-firms-loans"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T02:11:50.423964+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": -0.0124,
+  "published_at": "2026-10-07T20:51:27.542000+00:00",
+  "seq": 326,
+  "stance": "neutral",
+  "ticker": "CWEN",
+  "url": "https://www.benzinga.com/news/26/10/62234209/clearway-energy-s-subsidiary-enters-membership-interest-purchase-agreement-purchaser-buy-interests-h"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T02:11:38.727874+00:00",
+  "magnitude": "small",
+  "p_std": 0.008,
+  "p_up": 0.51,
+  "pre_move": 0.014,
+  "published_at": "2026-10-07T21:13:04.139000+00:00",
+  "seq": 325,
+  "stance": "neutral",
+  "ticker": "AMZN",
+  "url": "https://www.benzinga.com/news/26/10/62234695/amazon-introduces-aws-physical-ai-toolchain"
+ },
+ {
+  "excess": {
+   "1": -0.0235
+  },
+  "made_at": "2026-10-08T02:11:32.722535+00:00",
+  "magnitude": "medium",
+  "p_std": 0.009,
+  "p_up": 0.607,
+  "pre_move": -0.0672,
+  "published_at": "2026-10-07T21:28:34.056000+00:00",
+  "seq": 324,
+  "stance": "agree",
+  "ticker": "PROF",
+  "url": "https://www.benzinga.com/news/26/10/62235012/profound-medical-sees-q3-sales-9-800m-10-000m-vs-6-934m-est"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T02:11:22.848337+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.487,
+  "pre_move": -0.0227,
+  "published_at": "2026-10-07T21:52:07.978000+00:00",
+  "seq": 323,
+  "stance": "neutral",
+  "ticker": "SKHY",
+  "url": "https://www.benzinga.com/news/26/10/62235318/sk-hynix-s-solidigm-said-pick-banks-us-ipo-next-year-bloomberg"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T00:53:19.442913+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": 0.0125,
+  "published_at": "2026-10-07T20:02:05.717000+00:00",
+  "seq": 322,
+  "stance": "neutral",
+  "ticker": "VTVT",
+  "url": "https://www.benzinga.com/news/26/10/62232657/vtv-therapeutics-receives-fda-s-orphan-drug-designation-hppd-treat-sickle-cell-disease"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-08T00:44:12.020191+00:00",
+  "magnitude": "medium",
+  "p_std": 0.009,
+  "p_up": 0.413,
+  "pre_move": 0.2567,
+  "published_at": "2026-10-07T20:07:31.328000+00:00",
+  "seq": 321,
+  "stance": "agree",
+  "ticker": "WOLF",
+  "url": "https://www.benzinga.com/news/26/10/62232914/wolfspeed-announces-conditional-commitment-1-5b-30-year-department-war-loan-would-issue-warrants-7-5"
+ },
+ {
+  "excess": {
+   "1": -0.0175
+  },
+  "made_at": "2026-10-08T00:34:24.828337+00:00",
+  "magnitude": "small",
+  "p_std": 0.016,
+  "p_up": 0.56,
+  "pre_move": 0.0204,
+  "published_at": "2026-10-07T20:10:59.909000+00:00",
+  "seq": 320,
+  "stance": "agree",
+  "ticker": "LEVI",
+  "url": "https://www.benzinga.com/news/earnings/26/10/62233027/levi-strauss-q3-adj-eps-0-48-beats-0-36-estimate-sales-1-610b-miss-1-615b-estimate"
+ },
+ {
+  "excess": {
+   "1": -0.0175
+  },
+  "made_at": "2026-10-08T00:25:16.404959+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.537,
+  "pre_move": 0.0204,
+  "published_at": "2026-10-07T20:12:54.759000+00:00",
+  "seq": 319,
+  "stance": "agree",
+  "ticker": "LEVI",
+  "url": "https://www.benzinga.com/news/26/10/62233066/levi-strauss-raises-fy2026-adj-eps-guidance-1-46-1-52-1-54-1-56-vs-1-54-est-narrows-fy2026-sales-gui"
+ },
+ {
+  "excess": {
+   "1": -0.0235
+  },
+  "made_at": "2026-10-08T00:15:09.463953+00:00",
+  "magnitude": "medium",
+  "p_std": 0.033,
+  "p_up": 0.457,
+  "pre_move": -0.0672,
+  "published_at": "2026-10-07T20:16:40.663000+00:00",
+  "seq": 318,
+  "stance": "split",
+  "ticker": "PROF",
+  "url": "https://www.benzinga.com/news/26/10/62233208/profound-medical-reports-q3-preliminary-revenue-range-9-8m-10m-85-89-yoy"
+ },
+ {
+  "excess": {
+   "1": -0.0116
+  },
+  "made_at": "2026-10-08T00:05:21.128992+00:00",
+  "magnitude": "small",
+  "p_std": 0.008,
+  "p_up": 0.55,
+  "pre_move": 0.0066,
+  "published_at": "2026-10-07T20:16:44.587000+00:00",
+  "seq": 317,
+  "stance": "agree",
+  "ticker": "COST",
+  "url": "https://www.benzinga.com/news/26/10/62233217/costco-reports-september-net-sales-30-02b-13-0-comparable-sales-11-4-7-6-excluding-gas-and-fx"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T23:56:12.975619+00:00",
+  "magnitude": "medium",
+  "p_std": 0.014,
+  "p_up": 0.43,
+  "pre_move": 0.2567,
+  "published_at": "2026-10-07T20:17:42.421000+00:00",
+  "seq": 316,
+  "stance": "agree",
+  "ticker": "WOLF",
+  "url": "https://www.benzinga.com/wiim/26/10/62233258/wolfspeed-shares-are-trading-higher-after-company-announced-it-has-received-conditional-loan-commitm"
+ },
+ {
+  "excess": {
+   "1": 0.0213
+  },
+  "made_at": "2026-10-07T23:47:00.318609+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.57,
+  "pre_move": 0.0499,
+  "published_at": "2026-10-07T20:24:31.370000+00:00",
+  "seq": 315,
+  "stance": "agree",
+  "ticker": "RELL",
+  "url": "https://www.benzinga.com/news/earnings/26/10/62233409/richardson-electronics-q1-eps-0-27-beats-0-09-estimate-sales-64-923m-beat-58-985m-estimate"
+ },
+ {
+  "excess": {
+   "1": -0.0376
+  },
+  "made_at": "2026-10-07T23:46:50.423251+00:00",
+  "magnitude": "medium",
+  "p_std": 0.026,
+  "p_up": 0.557,
+  "pre_move": -0.0341,
+  "published_at": "2026-10-07T20:34:37.363000+00:00",
+  "seq": 314,
+  "stance": "agree",
+  "ticker": "APLD",
+  "url": "https://www.benzinga.com/news/earnings/26/10/62233706/applied-digital-q1-adj-eps-0-01-beats-0-30-estimate-sales-300-393m-beat-132-163m-estimate"
+ },
+ {
+  "excess": {
+   "1": -0.0376
+  },
+  "made_at": "2026-10-07T23:29:53.411349+00:00",
+  "magnitude": "medium",
+  "p_std": 0.024,
+  "p_up": 0.553,
+  "pre_move": -0.0341,
+  "published_at": "2026-10-07T20:48:20.428000+00:00",
+  "seq": 313,
+  "stance": "agree",
+  "ticker": "APLD",
+  "url": "https://www.benzinga.com/markets/earnings/26/10/62234055/applied-digital-delivers-q1-double-beat-shares-rise"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T23:29:46.847533+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.45,
+  "pre_move": null,
+  "published_at": "2026-10-07T21:03:32.181000+00:00",
+  "seq": 312,
+  "stance": "agree",
+  "ticker": "ORCL",
+  "url": "https://www.benzinga.com/news/26/10/62234456/oracle-broadcom-and-spacex-seek-blockbuster-debt-deals-pay-ai-chips-wsj-exclusive"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T23:29:40.016420+00:00",
+  "magnitude": "small",
+  "p_std": 0.013,
+  "p_up": 0.483,
+  "pre_move": null,
+  "published_at": "2026-10-07T21:03:32.181000+00:00",
+  "seq": 311,
+  "stance": "neutral",
+  "ticker": "AVGO",
+  "url": "https://www.benzinga.com/news/26/10/62234456/oracle-broadcom-and-spacex-seek-blockbuster-debt-deals-pay-ai-chips-wsj-exclusive"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T22:58:12.066497+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.487,
+  "pre_move": -0.0147,
+  "published_at": "2026-10-07T21:04:56.077000+00:00",
+  "seq": 310,
+  "stance": "neutral",
+  "ticker": "GD",
+  "url": "https://www.benzinga.com/news/26/10/62234498/general-dynamics-elects-danny-deep-ceo-effective-january-1-2027-phebe-novakovic-transition-executive"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T22:48:23.202593+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.533,
+  "pre_move": -0.0035,
+  "published_at": "2026-10-07T21:33:23.078000+00:00",
+  "seq": 309,
+  "stance": "agree",
+  "ticker": "IBM",
+  "url": "https://www.benzinga.com/news/26/10/62235130/ibm-selected-stage-c-third-phase-quantum-benchmarking-initiative-led-darpa-united-states-defense-adv"
+ },
+ {
+  "excess": {
+   "1": -0.0325
+  },
+  "made_at": "2026-10-07T22:39:15.183916+00:00",
+  "magnitude": "medium",
+  "p_std": 0.021,
+  "p_up": 0.573,
+  "pre_move": -0.0455,
+  "published_at": "2026-10-07T21:48:22.604000+00:00",
+  "seq": 308,
+  "stance": "agree",
+  "ticker": "IONQ",
+  "url": "https://www.benzinga.com/news/26/10/62235229/ionq-advances-final-stage-darpa-s-quantum-benchmarking-initiative-ionq-and-darpa-have-signed-stage-c"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T22:29:25.759124+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": -0.008,
+  "published_at": "2026-10-07T21:50:19.798000+00:00",
+  "seq": 307,
+  "stance": "neutral",
+  "ticker": "ALK",
+  "url": "https://www.benzinga.com/news/26/10/62235260/alaska-airlines-triple-global-routes-help-jal-partnership-ceo-nikkei-asia"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T22:20:15.101747+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.493,
+  "pre_move": -0.0152,
+  "published_at": "2026-10-07T22:03:46.490000+00:00",
+  "seq": 306,
+  "stance": "neutral",
+  "ticker": "RIVN",
+  "url": "https://www.benzinga.com/news/26/10/62235398/rivian-automotive-earlier-announced-funding-1b-10-year-non-recourse-term-loan-volkswagen-group-6-03-"
+ },
+ {
+  "excess": {
+   "1": -0.0325
+  },
+  "made_at": "2026-10-07T22:10:07.916196+00:00",
+  "magnitude": "small",
+  "p_std": 0.024,
+  "p_up": 0.553,
+  "pre_move": -0.0455,
+  "published_at": "2026-10-07T22:07:40.413000+00:00",
+  "seq": 305,
+  "stance": "agree",
+  "ticker": "IONQ",
+  "url": "https://www.benzinga.com/content/62235418/ionq-advances-final-stage-c-darpa-s-quantum-benchmarking-initiative-under-agreement-worth-300m-will-"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T22:00:15.836666+00:00",
+  "magnitude": "medium",
+  "p_std": 0.0,
+  "p_up": 0.45,
+  "pre_move": 0.2567,
+  "published_at": "2026-10-07T20:08:01.672000+00:00",
+  "seq": 304,
+  "stance": "agree",
+  "ticker": "WOLF",
+  "url": "https://www.benzinga.com/news/26/10/62232932/wolfspeed-receives-15b-conditional-financing-u-s-department-war-its-domestic-development-production-"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T21:51:26.544263+00:00",
+  "magnitude": "medium",
+  "p_std": 0.0,
+  "p_up": 0.45,
+  "pre_move": 0.2567,
+  "published_at": "2026-10-07T20:52:19.415000+00:00",
+  "seq": 303,
+  "stance": "agree",
+  "ticker": "WOLF",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62234223/wolfspeed-stock-soars-on-massive-pentagon-loan-commitment"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:51:12.315002+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.457,
+  "pre_move": -0.0167,
+  "published_at": "2026-10-07T13:13:56+00:00",
+  "seq": 302,
+  "stance": "agree",
+  "ticker": "MU",
+  "url": "https://www.benzinga.com/news/26/10/62215976/reported-earlier-micron-tech-chipmaker-union-taiwan-gets-ok-strike-reuters"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:51:04.241467+00:00",
+  "magnitude": "small",
+  "p_std": 0.029,
+  "p_up": 0.53,
+  "pre_move": -0.015,
+  "published_at": "2026-10-07T13:06:33+00:00",
+  "seq": 301,
+  "stance": "split",
+  "ticker": "COCH",
+  "url": "https://www.benzinga.com/news/26/10/62215835/envoy-medical-announces-delaware-chancery-court-dismissal-prejudice-atlas-merchant-capital-spac-fund"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:50:55.958891+00:00",
+  "magnitude": "small",
+  "p_std": 0.019,
+  "p_up": 0.487,
+  "pre_move": -0.0654,
+  "published_at": "2026-10-07T13:05:38+00:00",
+  "seq": 300,
+  "stance": "neutral",
+  "ticker": "TXG",
+  "url": "https://www.benzinga.com/news/26/10/62215809/10x-genomics-partners-fred-hutchinson-cancer-center-over-use-single-cell-spatial-technologies-both-s"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:50:44.288627+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.54,
+  "pre_move": 0.0242,
+  "published_at": "2026-10-07T13:05:31+00:00",
+  "seq": 299,
+  "stance": "agree",
+  "ticker": "PRCT",
+  "url": "https://www.benzinga.com/news/26/10/62215800/barclays-initiates-coverage-procept-biorobotics-overweight-rating-announces-price-target-30"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:50:36.721753+00:00",
+  "magnitude": "medium",
+  "p_std": 0.024,
+  "p_up": 0.383,
+  "pre_move": 0.5043,
+  "published_at": "2026-10-07T13:04:35+00:00",
+  "seq": 298,
+  "stance": "agree",
+  "ticker": "LGCL",
+  "url": "https://www.benzinga.com/news/26/10/62215781/lucas-gc-limited-reports-h1-revenue-35-7m-down-36-6-yoy"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:50:25.661248+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": 0.0081,
+  "published_at": "2026-10-07T13:03:31+00:00",
+  "seq": 297,
+  "stance": "agree",
+  "ticker": "HCSG",
+  "url": "https://www.benzinga.com/quote/HCSG"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:50:15.740821+00:00",
+  "magnitude": "small",
+  "p_std": 0.022,
+  "p_up": 0.53,
+  "pre_move": 0.0074,
+  "published_at": "2026-10-07T12:58:49+00:00",
+  "seq": 296,
+  "stance": "split",
+  "ticker": "STZ",
+  "url": "https://www.benzinga.com/news/26/10/62215391/transcript-constellation-brands-q2-2027-earnings-conference-call"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:50:08.086842+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.493,
+  "pre_move": -0.0183,
+  "published_at": "2026-10-07T12:58:44+00:00",
+  "seq": 295,
+  "stance": "neutral",
+  "ticker": "BAM",
+  "url": "https://www.benzinga.com/m/26/10/62215369/brookfield-buy-esr-india-warehouse-parks-444-million-deal-bloomberg"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:49:54.441120+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.487,
+  "pre_move": 0.0332,
+  "published_at": "2026-10-07T12:55:00+00:00",
+  "seq": 294,
+  "stance": "neutral",
+  "ticker": "SUGP",
+  "url": "https://www.benzinga.com/quote/SUGP"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:49:43.797760+00:00",
+  "magnitude": "medium",
+  "p_std": 0.024,
+  "p_up": 0.483,
+  "pre_move": -0.2032,
+  "published_at": "2026-10-07T12:54:55+00:00",
+  "seq": 293,
+  "stance": "neutral",
+  "ticker": "BULL",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62215261/webull-stock-falls-after-house-panel-calls-its-china-ties-a-national-security-risk"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:49:31.828715+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": 0.0432,
+  "published_at": "2026-10-07T12:50:20+00:00",
+  "seq": 292,
+  "stance": "neutral",
+  "ticker": "AFRI",
+  "url": "https://www.benzinga.com/m/26/10/62215094/forafric-global-agrees-acquire-al-nasr-industries-systems-financial-terms-not-disclosed"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:49:23.178402+00:00",
+  "magnitude": "medium",
+  "p_std": 0.024,
+  "p_up": 0.433,
+  "pre_move": 0.6962,
+  "published_at": "2026-10-07T12:50:00+00:00",
+  "seq": 291,
+  "stance": "agree",
+  "ticker": "CHARR",
+  "url": "https://www.benzinga.com/quote/CHARR"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:49:16.481884+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": null,
+  "published_at": "2026-10-07T12:47:39+00:00",
+  "seq": 290,
+  "stance": "neutral",
+  "ticker": "AVAI",
+  "url": "https://www.benzinga.com/news/26/10/62215036/ava-bio-jv-partner-austrianova-announce-first-joint-steering-committee-meeting-partnership-ospedale-"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:49:08.886619+00:00",
+  "magnitude": "medium",
+  "p_std": 0.033,
+  "p_up": 0.473,
+  "pre_move": -0.1419,
+  "published_at": "2026-10-07T12:46:31+00:00",
+  "seq": 289,
+  "stance": "split",
+  "ticker": "HESM",
+  "url": "https://www.benzinga.com/markets/large-cap/26/10/62214999/chevron-swaps-hess-midstream-stake-for-50-lower-bakken-costs-and-a-200-million-payment"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:48:58.390894+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": -0.0013,
+  "published_at": "2026-10-07T12:46:31+00:00",
+  "seq": 288,
+  "stance": "neutral",
+  "ticker": "CVX",
+  "url": "https://www.benzinga.com/markets/large-cap/26/10/62214999/chevron-swaps-hess-midstream-stake-for-50-lower-bakken-costs-and-a-200-million-payment"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:48:50.558294+00:00",
+  "magnitude": "small",
+  "p_std": 0.033,
+  "p_up": 0.473,
+  "pre_move": -0.087,
+  "published_at": "2026-10-07T12:46:23+00:00",
+  "seq": 287,
+  "stance": "split",
+  "ticker": "CIRC",
+  "url": "https://www.benzinga.com/quote/CIRC"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:48:42.748679+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.493,
+  "pre_move": -0.0345,
+  "published_at": "2026-10-07T12:45:49+00:00",
+  "seq": 286,
+  "stance": "neutral",
+  "ticker": "OWLT",
+  "url": "https://www.benzinga.com/quote/OWLT"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:48:34.346268+00:00",
+  "magnitude": "small",
+  "p_std": 0.029,
+  "p_up": 0.49,
+  "pre_move": 0.0393,
+  "published_at": "2026-10-07T12:40:45+00:00",
+  "seq": 285,
+  "stance": "neutral",
+  "ticker": "CMND",
+  "url": "https://www.benzinga.com/quote/CMND"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:48:23.909904+00:00",
+  "magnitude": "small",
+  "p_std": 0.019,
+  "p_up": 0.527,
+  "pre_move": 0.0136,
+  "published_at": "2026-10-07T12:40:24+00:00",
+  "seq": 284,
+  "stance": "split",
+  "ticker": "OSTX",
+  "url": "https://www.benzinga.com/news/26/10/62214765/os-therapies-osah-subsidiary-receives-u-s-department-agriculture-guidance-commercial-deployment-path"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:48:13.267622+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.533,
+  "pre_move": 0.0182,
+  "published_at": "2026-10-07T12:38:58+00:00",
+  "seq": 283,
+  "stance": "agree",
+  "ticker": "ABBV",
+  "url": "https://www.benzinga.com/news/26/10/62214708/abbvie-receives-two-new-fda-s-breakthrough-therapy-designations-telisotuzumab-adizutecan-colorectal-"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:48:06.172838+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": -0.0201,
+  "published_at": "2026-10-07T12:38:45+00:00",
+  "seq": 282,
+  "stance": "neutral",
+  "ticker": "LTRN",
+  "url": "https://www.benzinga.com/quote/LTRN"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:47:52.483551+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.517,
+  "pre_move": -0.0088,
+  "published_at": "2026-10-07T12:38:18+00:00",
+  "seq": 281,
+  "stance": "neutral",
+  "ticker": "XRAY",
+  "url": "https://www.benzinga.com/news/26/10/62214683/dentsply-sirona-unit-wellspect-healthcare-announces-its-surity-urinary-management-portfolio-may-be-c"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:47:44.984435+00:00",
+  "magnitude": "medium",
+  "p_std": 0.021,
+  "p_up": 0.597,
+  "pre_move": 0.0209,
+  "published_at": "2026-10-07T12:38:12+00:00",
+  "seq": 280,
+  "stance": "agree",
+  "ticker": "HALO",
+  "url": "https://www.benzinga.com/quote/HALO"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:47:35.072744+00:00",
+  "magnitude": "small",
+  "p_std": 0.019,
+  "p_up": 0.533,
+  "pre_move": -0.0131,
+  "published_at": "2026-10-07T12:37:21+00:00",
+  "seq": 279,
+  "stance": "agree",
+  "ticker": "TRT",
+  "url": "https://www.benzinga.com/news/26/10/62214614/trio-tech-international-receives-new-three-year-4-45m-contract-offer-burn-testing-equipment-technica"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:47:26.486986+00:00",
+  "magnitude": "small",
+  "p_std": 0.024,
+  "p_up": 0.467,
+  "pre_move": 0.0018,
+  "published_at": "2026-10-07T12:37:10+00:00",
+  "seq": 278,
+  "stance": "split",
+  "ticker": "CHAR",
+  "url": "https://www.benzinga.com/quote/CHAR"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:47:18.517233+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": -0.0378,
+  "published_at": "2026-10-07T12:36:04+00:00",
+  "seq": 277,
+  "stance": "neutral",
+  "ticker": "TWAV",
+  "url": "https://www.benzinga.com/quote/TWAV"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:47:11.448146+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": 0.0042,
+  "published_at": "2026-10-07T12:35:57+00:00",
+  "seq": 276,
+  "stance": "neutral",
+  "ticker": "FBLG",
+  "url": "https://www.benzinga.com/news/26/10/62214571/fibrobiologics-files-u-s-patent-application-new-cell-based-technology-designed-continuously-produce-"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:47:02.852386+00:00",
+  "magnitude": "small",
+  "p_std": 0.025,
+  "p_up": 0.55,
+  "pre_move": -0.0114,
+  "published_at": "2026-10-07T12:35:45+00:00",
+  "seq": 275,
+  "stance": "agree",
+  "ticker": "QTI",
+  "url": "https://www.benzinga.com/quote/QTI"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:46:54.664053+00:00",
+  "magnitude": "small",
+  "p_std": 0.008,
+  "p_up": 0.46,
+  "pre_move": -0.0438,
+  "published_at": "2026-10-07T12:35:21+00:00",
+  "seq": 274,
+  "stance": "agree",
+  "ticker": "RNXT",
+  "url": "https://www.benzinga.com/news/26/10/62214534/renovorx-enrolls-first-participant-prism-tamp-pdac-regression-and-intraoperative-surgical-margin-neo"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:46:47.979147+00:00",
+  "magnitude": "small",
+  "p_std": 0.013,
+  "p_up": 0.537,
+  "pre_move": -0.0187,
+  "published_at": "2026-10-07T12:35:10+00:00",
+  "seq": 273,
+  "stance": "agree",
+  "ticker": "TEM",
+  "url": "https://www.benzinga.com/quote/MRK"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:46:39.370342+00:00",
+  "magnitude": "medium",
+  "p_std": 0.041,
+  "p_up": 0.567,
+  "pre_move": -0.0331,
+  "published_at": "2026-10-07T12:34:34+00:00",
+  "seq": 272,
+  "stance": "agree",
+  "ticker": "ONDS",
+  "url": "https://www.benzinga.com/news/26/10/62214509/ondas-receives-over-165m-orders-during-second-half-august-through-oct-1"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:46:31.519576+00:00",
+  "magnitude": "small",
+  "p_std": 0.033,
+  "p_up": 0.473,
+  "pre_move": 0.0123,
+  "published_at": "2026-10-07T12:34:32+00:00",
+  "seq": 271,
+  "stance": "split",
+  "ticker": "BGLC",
+  "url": "https://www.benzinga.com/quote/BGLC"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:46:23.839790+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.53,
+  "pre_move": 0.0206,
+  "published_at": "2026-10-07T12:33:48+00:00",
+  "seq": 270,
+  "stance": "agree",
+  "ticker": "MIMI",
+  "url": "https://www.benzinga.com/quote/MIMI"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:46:13.893297+00:00",
+  "magnitude": "small",
+  "p_std": 0.016,
+  "p_up": 0.5,
+  "pre_move": -0.0173,
+  "published_at": "2026-10-07T12:33:37+00:00",
+  "seq": 269,
+  "stance": "neutral",
+  "ticker": "FEAM",
+  "url": "https://www.benzinga.com/news/26/10/62214471/5e-advanced-materials-announces-searles-valley-minerals-assets-takeover-provides-257-workforce-three"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:46:06.720512+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.527,
+  "pre_move": 0.0321,
+  "published_at": "2026-10-07T12:33:05+00:00",
+  "seq": 268,
+  "stance": "agree",
+  "ticker": "AVX",
+  "url": "https://www.benzinga.com/quote/AVX"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:45:57.393784+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.457,
+  "pre_move": -0.0328,
+  "published_at": "2026-10-07T12:32:27+00:00",
+  "seq": 267,
+  "stance": "agree",
+  "ticker": "ONMD",
+  "url": "https://www.benzinga.com/quote/ONMD"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:45:50.340100+00:00",
+  "magnitude": "small",
+  "p_std": 0.013,
+  "p_up": 0.537,
+  "pre_move": 0.0256,
+  "published_at": "2026-10-07T12:31:59+00:00",
+  "seq": 266,
+  "stance": "agree",
+  "ticker": "RARE",
+  "url": "https://www.benzinga.com/m/26/10/62214430/ultragenyx-pharmaceutical-inks-210m-deal-sell-rare-pediatric-disease-priority-review-voucher"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:45:43.094905+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.44,
+  "pre_move": 0.0392,
+  "published_at": "2026-10-07T12:31:47+00:00",
+  "seq": 265,
+  "stance": "agree",
+  "ticker": "PPCB",
+  "url": "https://www.benzinga.com/quote/PPCB"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:45:36.384191+00:00",
+  "magnitude": "small",
+  "p_std": 0.021,
+  "p_up": 0.543,
+  "pre_move": 0.0112,
+  "published_at": "2026-10-07T12:31:16+00:00",
+  "seq": 264,
+  "stance": "agree",
+  "ticker": "PGNY",
+  "url": "https://www.benzinga.com/quote/PGNY"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:45:26.362379+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.527,
+  "pre_move": -0.0021,
+  "published_at": "2026-10-07T12:27:08+00:00",
+  "seq": 263,
+  "stance": "agree",
+  "ticker": "SHEL",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62214252/shell-points-to-42-barrel-refining-margin-hikes-gas-production-outlook-as-oil-spikes"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:45:19.010214+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.493,
+  "pre_move": -0.0113,
+  "published_at": "2026-10-07T12:25:15+00:00",
+  "seq": 262,
+  "stance": "neutral",
+  "ticker": "TDOC",
+  "url": "https://www.benzinga.com/news/health-care/26/10/62214223/teladoc-turns-smartphone-cameras-into-ai-powered-vital-sign-monitors"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:45:10.663273+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": 0.0018,
+  "published_at": "2026-10-07T12:25:00+00:00",
+  "seq": 261,
+  "stance": "neutral",
+  "ticker": "CHAR",
+  "url": "https://www.benzinga.com/quote/CHAR"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:45:03.938009+00:00",
+  "magnitude": "small",
+  "p_std": 0.008,
+  "p_up": 0.51,
+  "pre_move": 0.0037,
+  "published_at": "2026-10-07T12:21:01+00:00",
+  "seq": 260,
+  "stance": "neutral",
+  "ticker": "AAPL",
+  "url": "https://www.benzinga.com/news/26/10/62214090/reported-oct-6-apple-launch-doorbell-lock-thermostat-developed-lg-bloomberg"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:44:57.083482+00:00",
+  "magnitude": "small",
+  "p_std": 0.029,
+  "p_up": 0.53,
+  "pre_move": 0.022,
+  "published_at": "2026-10-07T12:17:32+00:00",
+  "seq": 259,
+  "stance": "split",
+  "ticker": "ICU",
+  "url": "https://www.benzinga.com/news/fda/26/10/62213907/seastar-medical-receives-fdas-medical-breakthrough-device-designation-for-its-selective-cytopheretic-device-therapy-to-treat-hyperinflammation"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:44:46.911932+00:00",
+  "magnitude": "small",
+  "p_std": 0.025,
+  "p_up": 0.487,
+  "pre_move": 0.0169,
+  "published_at": "2026-10-07T12:16:30+00:00",
+  "seq": 258,
+  "stance": "neutral",
+  "ticker": "MAIA",
+  "url": "https://www.benzinga.com/general/biotech/26/10/62213893/maia-biotechnology-completes-enrollment-patients-part-c-phase-2-study-ateganosine-sequenced-cpi-cemi"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:44:37.403255+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": 0.0042,
+  "published_at": "2026-10-07T12:15:06+00:00",
+  "seq": 257,
+  "stance": "neutral",
+  "ticker": "FBLG",
+  "url": "https://www.benzinga.com/news/health-care/26/10/62213829/exclusive-fibrobiologics-files-patent-application-for-cell-based-alternative-to-glp-1-injections"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:44:29.816368+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.45,
+  "pre_move": 0.064,
+  "published_at": "2026-10-07T12:11:48+00:00",
+  "seq": 256,
+  "stance": "agree",
+  "ticker": "SRXH",
+  "url": "https://www.benzinga.com/news/26/10/62213802/srx-global-inks-stock-purchase-agreement-cero-therapeutics-acquire-all-outstanding-stock-cero-therap"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:44:22.702436+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": -0.0409,
+  "published_at": "2026-10-07T12:09:05+00:00",
+  "seq": 255,
+  "stance": "neutral",
+  "ticker": "SPAI",
+  "url": "https://www.benzinga.com/news/26/10/62213759/safe-pro-group-reports-preliminary-q3-sales-2-5m-2-300-yoy-driven-multiple-u-s-government-subcontrac"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:44:12.891432+00:00",
+  "magnitude": "small",
+  "p_std": 0.029,
+  "p_up": 0.49,
+  "pre_move": 0.0579,
+  "published_at": "2026-10-07T12:07:47+00:00",
+  "seq": 254,
+  "stance": "neutral",
+  "ticker": "LABT",
+  "url": "https://www.benzinga.com/quote/LABT"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:44:05.501015+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": -0.0182,
+  "published_at": "2026-10-07T12:06:56+00:00",
+  "seq": 253,
+  "stance": "neutral",
+  "ticker": "VIVS",
+  "url": "https://www.benzinga.com/news/26/10/62213705/vivosim-labs-notes-fda-s-direct-final-rule-clarifying-non-animal-methods-can-be-used-where-appropria"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:43:58.275704+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.527,
+  "pre_move": 0.0005,
+  "published_at": "2026-10-07T12:06:43+00:00",
+  "seq": 252,
+  "stance": "agree",
+  "ticker": "YOU",
+  "url": "https://www.benzinga.com/quote/YOU"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:43:50.223167+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.497,
+  "pre_move": -0.0517,
+  "published_at": "2026-10-07T12:06:25+00:00",
+  "seq": 251,
+  "stance": "neutral",
+  "ticker": "CRCL",
+  "url": "https://www.benzinga.com/news/26/10/62213675/tereina-circle-internet-group-collaborate-integrate-usdc-eurc-tereina-s-payments-infrastructure"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:43:42.903147+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.503,
+  "pre_move": -0.0022,
+  "published_at": "2026-10-07T12:06:15+00:00",
+  "seq": 250,
+  "stance": "neutral",
+  "ticker": "OSPN",
+  "url": "https://www.benzinga.com/quote/OSPN"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:43:35.887525+00:00",
+  "magnitude": "small",
+  "p_std": 0.021,
+  "p_up": 0.497,
+  "pre_move": -0.0284,
+  "published_at": "2026-10-07T12:05:40+00:00",
+  "seq": 249,
+  "stance": "neutral",
+  "ticker": "CRWV",
+  "url": "https://www.benzinga.com/quote/CRWV"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:43:27.572448+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": -0.0134,
+  "published_at": "2026-10-07T12:05:39+00:00",
+  "seq": 248,
+  "stance": "neutral",
+  "ticker": "SHAK",
+  "url": "https://www.benzinga.com/news/26/10/62213583/shake-shack-intends-tap-brazil-market-through-new-licensing-deal-bold-hospitality"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:43:19.120328+00:00",
+  "magnitude": "small",
+  "p_std": 0.022,
+  "p_up": 0.57,
+  "pre_move": 0.0154,
+  "published_at": "2026-10-07T12:05:10+00:00",
+  "seq": 247,
+  "stance": "agree",
+  "ticker": "HP",
+  "url": "https://www.benzinga.com/quote/HP"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:43:10.878486+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": 0.0205,
+  "published_at": "2026-10-07T12:04:51+00:00",
+  "seq": 246,
+  "stance": "agree",
+  "ticker": "TOYO",
+  "url": "https://www.benzinga.com/news/26/10/62213554/toyo-completes-expansion-its-solar-module-production-site-texas-2-gigawatts"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:43:00.930474+00:00",
+  "magnitude": "none",
+  "p_std": 0.005,
+  "p_up": 0.507,
+  "pre_move": 0.0084,
+  "published_at": "2026-10-07T12:04:07+00:00",
+  "seq": 245,
+  "stance": "neutral",
+  "ticker": "XOM",
+  "url": "https://www.benzinga.com/news/26/10/62213543/helmerich-payne-expands-deployment-flexrobotics-technology-exxonmobil"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:42:54.387553+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.533,
+  "pre_move": 0.0154,
+  "published_at": "2026-10-07T12:04:07+00:00",
+  "seq": 244,
+  "stance": "agree",
+  "ticker": "HP",
+  "url": "https://www.benzinga.com/news/26/10/62213543/helmerich-payne-expands-deployment-flexrobotics-technology-exxonmobil"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:42:44.460532+00:00",
+  "magnitude": "small",
+  "p_std": 0.008,
+  "p_up": 0.54,
+  "pre_move": -0.0044,
+  "published_at": "2026-10-07T12:02:40+00:00",
+  "seq": 243,
+  "stance": "agree",
+  "ticker": "QTRX",
+  "url": "https://www.benzinga.com/news/26/10/62213493/quanterix-innovita-biological-technology-receives-regulatory-nods-china-quanterix-simoa-technology-n"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:42:37.384958+00:00",
+  "magnitude": "medium",
+  "p_std": 0.038,
+  "p_up": 0.447,
+  "pre_move": -0.1839,
+  "published_at": "2026-10-07T12:02:35+00:00",
+  "seq": 242,
+  "stance": "split",
+  "ticker": "BULL",
+  "url": "https://www.benzinga.com/news/26/10/62213482/trading-platform-webull-s-china-ties-create-national-security-risk-congressional-panel-finds"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:42:29.827904+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.503,
+  "pre_move": -0.0125,
+  "published_at": "2026-10-07T12:01:42+00:00",
+  "seq": 241,
+  "stance": "neutral",
+  "ticker": "GOOGL",
+  "url": "https://www.benzinga.com/news/26/10/62213466/google-unity-collaborate-new-integrated-gaming-platform-be-launched-later-2026"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:42:18.649955+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": -0.0115,
+  "published_at": "2026-10-07T12:01:42+00:00",
+  "seq": 240,
+  "stance": "neutral",
+  "ticker": "GOOG",
+  "url": "https://www.benzinga.com/news/26/10/62213466/google-unity-collaborate-new-integrated-gaming-platform-be-launched-later-2026"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:42:11.709282+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.457,
+  "pre_move": -0.0476,
+  "published_at": "2026-10-07T12:01:06+00:00",
+  "seq": 239,
+  "stance": "agree",
+  "ticker": "JSPR",
+  "url": "https://www.benzinga.com/quote/JSPR"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:42:04.190558+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.463,
+  "pre_move": -0.0323,
+  "published_at": "2026-10-07T11:58:06+00:00",
+  "seq": 238,
+  "stance": "agree",
+  "ticker": "KIDZ",
+  "url": "https://www.benzinga.com/news/26/10/62213228/kidz-ai-joins-industry-association-afcom-solution-provider-member-entry-builds-company-s-acceptance-"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:41:57.242322+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.477,
+  "pre_move": -0.0073,
+  "published_at": "2026-10-07T11:55:08+00:00",
+  "seq": 237,
+  "stance": "agree",
+  "ticker": "JBHT",
+  "url": "https://www.benzinga.com/analyst-stock-ratings/price-target/26/10/62213177/jb-hunt-likely-to-report-higher-q3-earnings-these-most-accurate-analysts-revise-forecasts-ahead-of-earnings-call"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:41:48.949639+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.45,
+  "pre_move": null,
+  "published_at": "2026-10-07T11:44:45+00:00",
+  "seq": 236,
+  "stance": "agree",
+  "ticker": "VWAGY",
+  "url": "https://www.benzinga.com/news/26/10/62212971/volkswagen-sets-aside-725mn-car-finance-mis-selling-scandal-figure-biggest-yet-car-manufacturer-and-"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:41:38.578789+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": -0.0311,
+  "published_at": "2026-10-07T11:40:24+00:00",
+  "seq": 235,
+  "stance": "neutral",
+  "ticker": "CRWV",
+  "url": "https://www.benzinga.com/news/26/10/62212911/coreweave-tees-first-india-data-centers-adaniconnex-deal-bloomberg"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:41:29.780219+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": 0.0016,
+  "published_at": "2026-10-07T11:37:56+00:00",
+  "seq": 234,
+  "stance": "neutral",
+  "ticker": "WBD",
+  "url": "https://www.benzinga.com/news/26/10/62212887/poland-vet-paramount-buy-local-warner-bros-discovery-unit-bloomberg"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:41:22.009790+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.43,
+  "pre_move": -0.2234,
+  "published_at": "2026-10-07T11:34:47+00:00",
+  "seq": 233,
+  "stance": "agree",
+  "ticker": "NXTS",
+  "url": "https://www.benzinga.com/news/26/10/62212839/nexentis-technologies-unit-mitocarex-bio-launches-its-computational-drug-discovery-infrastructure-go"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:41:14.282381+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": -0.0045,
+  "published_at": "2026-10-07T11:31:31+00:00",
+  "seq": 232,
+  "stance": "agree",
+  "ticker": "SRAD",
+  "url": "https://www.benzinga.com/quote/SRAD"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:41:04.453687+00:00",
+  "magnitude": "medium",
+  "p_std": 0.024,
+  "p_up": 0.467,
+  "pre_move": 0.009,
+  "published_at": "2026-10-07T11:30:58+00:00",
+  "seq": 231,
+  "stance": "split",
+  "ticker": "BEEM",
+  "url": "https://www.benzinga.com/m/26/10/62212756/beam-global-agrees-acquire-drone-tech-firm-scoutdi-24m"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:40:50.606719+00:00",
+  "magnitude": "small",
+  "p_std": 0.021,
+  "p_up": 0.547,
+  "pre_move": -0.0132,
+  "published_at": "2026-10-07T11:30:54+00:00",
+  "seq": 230,
+  "stance": "agree",
+  "ticker": "AEHR",
+  "url": "https://www.benzinga.com/quote/AEHR"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:40:42.832073+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.46,
+  "pre_move": -0.0081,
+  "published_at": "2026-10-07T11:29:00+00:00",
+  "seq": 229,
+  "stance": "agree",
+  "ticker": "EQNR",
+  "url": "https://www.benzinga.com/news/26/10/62212708/reported-earlier-equinor-hikes-norway-lng-plant-upgrade-cost-amid-project-hurdles-bloomberg"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:40:30.231324+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": 0.0082,
+  "published_at": "2026-10-07T11:16:43+00:00",
+  "seq": 228,
+  "stance": "agree",
+  "ticker": "ZETA",
+  "url": "https://www.benzinga.com/m-a/26/10/62212481/zeta-global-expands-ai-arsenal-with-digital-audience-buyout"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:40:23.107508+00:00",
+  "magnitude": "small",
+  "p_std": 0.008,
+  "p_up": 0.51,
+  "pre_move": -0.0031,
+  "published_at": "2026-10-07T11:12:05+00:00",
+  "seq": 227,
+  "stance": "neutral",
+  "ticker": "DHR",
+  "url": "https://www.benzinga.com/news/26/10/62212386/danaher-launch-its-first-ai-powered-autonomous-lab-help-researchers-develop-custom-antibodies-and-ot"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:40:07.895542+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": 0.0015,
+  "published_at": "2026-10-07T11:10:55+00:00",
+  "seq": 226,
+  "stance": "neutral",
+  "ticker": "REA",
+  "url": "https://www.benzinga.com/news/26/10/62212363/rare-earths-americas-begins-initial-assessment-its-constellation-rare-earths-project"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:40:00.203525+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": 0.0479,
+  "published_at": "2026-10-07T11:10:40+00:00",
+  "seq": 225,
+  "stance": "neutral",
+  "ticker": "ARMP",
+  "url": "https://www.benzinga.com/quote/ARMP"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:39:49.590816+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.54,
+  "pre_move": 0.0076,
+  "published_at": "2026-10-07T11:10:06+00:00",
+  "seq": 224,
+  "stance": "agree",
+  "ticker": "VAL",
+  "url": "https://www.benzinga.com/quote/VAL"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:39:36.588479+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": -0.019,
+  "published_at": "2026-10-07T11:09:38+00:00",
+  "seq": 223,
+  "stance": "neutral",
+  "ticker": "GILT",
+  "url": "https://www.benzinga.com/news/26/10/62212312/gilat-satellite-networks-receives-over-10m-orders-its-multi-orbit-skyedge-iv-platform-satellite-oper"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:39:26.796553+00:00",
+  "magnitude": "small",
+  "p_std": 0.013,
+  "p_up": 0.483,
+  "pre_move": -0.0092,
+  "published_at": "2026-10-07T11:08:23+00:00",
+  "seq": 222,
+  "stance": "neutral",
+  "ticker": "SPTX",
+  "url": "https://www.benzinga.com/quote/SPTX"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:39:18.748029+00:00",
+  "magnitude": "small",
+  "p_std": 0.017,
+  "p_up": 0.543,
+  "pre_move": -0.0139,
+  "published_at": "2026-10-07T11:07:55+00:00",
+  "seq": 221,
+  "stance": "agree",
+  "ticker": "PLSE",
+  "url": "https://www.benzinga.com/quote/PLSE"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:39:01.040587+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": -0.0088,
+  "published_at": "2026-10-07T11:07:55+00:00",
+  "seq": 220,
+  "stance": "neutral",
+  "ticker": "NMG",
+  "url": "https://www.benzinga.com/news/26/10/62212226/nouveau-monde-graphite-announces-new-green-chemistry-coating-process-anode-material-developed-mcgill"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:38:53.980494+00:00",
+  "magnitude": "small",
+  "p_std": 0.024,
+  "p_up": 0.517,
+  "pre_move": 0.0599,
+  "published_at": "2026-10-07T11:07:29+00:00",
+  "seq": 219,
+  "stance": "neutral",
+  "ticker": "BKV",
+  "url": "https://www.benzinga.com/quote/BKV"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:38:45.934214+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.44,
+  "pre_move": -0.0478,
+  "published_at": "2026-10-07T11:06:35+00:00",
+  "seq": 218,
+  "stance": "agree",
+  "ticker": "VRXA",
+  "url": "https://www.benzinga.com/quote/VRXA"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:38:32.918377+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": 0.0023,
+  "published_at": "2026-10-07T11:06:22+00:00",
+  "seq": 217,
+  "stance": "neutral",
+  "ticker": "LILAK",
+  "url": "https://www.benzinga.com/news/26/10/62212190/transcript-liberty-latin-america-q2-2026-earnings-conference-call"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:38:23.908005+00:00",
+  "magnitude": "small",
+  "p_std": 0.019,
+  "p_up": 0.487,
+  "pre_move": -0.0465,
+  "published_at": "2026-10-07T11:05:53+00:00",
+  "seq": 216,
+  "stance": "neutral",
+  "ticker": "BLLN",
+  "url": "https://www.benzinga.com/quote/BLLN"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:38:16.752050+00:00",
+  "magnitude": "small",
+  "p_std": 0.013,
+  "p_up": 0.537,
+  "pre_move": -0.0242,
+  "published_at": "2026-10-07T11:05:38+00:00",
+  "seq": 215,
+  "stance": "agree",
+  "ticker": "PDYN",
+  "url": "https://www.benzinga.com/quote/PDYN"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:38:02.269510+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.53,
+  "pre_move": -0.0014,
+  "published_at": "2026-10-07T11:05:09+00:00",
+  "seq": 214,
+  "stance": "agree",
+  "ticker": "ARVN",
+  "url": "https://www.benzinga.com/quote/ARVN"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:37:54.262328+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.473,
+  "pre_move": -0.0132,
+  "published_at": "2026-10-07T11:04:52+00:00",
+  "seq": 213,
+  "stance": "agree",
+  "ticker": "APO",
+  "url": "https://www.benzinga.com/quote/APO"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:37:47.545972+00:00",
+  "magnitude": "small",
+  "p_std": 0.021,
+  "p_up": 0.523,
+  "pre_move": -0.0303,
+  "published_at": "2026-10-07T11:04:12+00:00",
+  "seq": 212,
+  "stance": "split",
+  "ticker": "OR",
+  "url": "https://www.benzinga.com/quote/OR"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:37:33.338313+00:00",
+  "magnitude": "medium",
+  "p_std": 0.029,
+  "p_up": 0.49,
+  "pre_move": 0.0619,
+  "published_at": "2026-10-07T11:03:20+00:00",
+  "seq": 211,
+  "stance": "neutral",
+  "ticker": "CVKD",
+  "url": "https://www.benzinga.com/quote/CVKD"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:37:26.102282+00:00",
+  "magnitude": "small",
+  "p_std": 0.013,
+  "p_up": 0.537,
+  "pre_move": -0.031,
+  "published_at": "2026-10-07T11:03:12+00:00",
+  "seq": 210,
+  "stance": "agree",
+  "ticker": "SVIA",
+  "url": "https://www.benzinga.com/quote/SVIA"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:37:16.294577+00:00",
+  "magnitude": "small",
+  "p_std": 0.016,
+  "p_up": 0.56,
+  "pre_move": null,
+  "published_at": "2026-10-07T10:54:21+00:00",
+  "seq": 209,
+  "stance": "agree",
+  "ticker": "TSX:TFPM",
+  "url": "https://www.benzinga.com/news/26/10/62211913/triple-flag-precious-sees-q3-sales-106-700m-vs-100-610m-est"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:37:09.204391+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.57,
+  "pre_move": null,
+  "published_at": "2026-10-07T10:54:21+00:00",
+  "seq": 208,
+  "stance": "agree",
+  "ticker": "TFPM",
+  "url": "https://www.benzinga.com/news/26/10/62211913/triple-flag-precious-sees-q3-sales-106-700m-vs-100-610m-est"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:36:52.898081+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": -0.0311,
+  "published_at": "2026-10-07T10:52:46+00:00",
+  "seq": 207,
+  "stance": "neutral",
+  "ticker": "PRE",
+  "url": "https://www.benzinga.com/news/26/10/62211883/prenetics-ceo-danny-yeung-says-looking-potential-acquisitions-reach-new-customers-david-beckham-back"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:36:45.081192+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-07T10:50:59+00:00",
+  "seq": 206,
+  "stance": "neutral",
+  "ticker": "TSX:PRL",
+  "url": "https://www.benzinga.com/news/26/10/62211864/propel-holdings-q2-2026-earnings-call-complete-transcript"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:36:30.990641+00:00",
+  "magnitude": "medium",
+  "p_std": 0.029,
+  "p_up": 0.59,
+  "pre_move": null,
+  "published_at": "2026-10-07T10:40:31+00:00",
+  "seq": 205,
+  "stance": "agree",
+  "ticker": "JSDA",
+  "url": "https://www.benzinga.com/news/26/10/62211563/jones-soda-reports-preliminary-q3-sales-13-3m-196-yoy"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:36:20.162102+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.43,
+  "pre_move": -0.071,
+  "published_at": "2026-10-07T10:37:57+00:00",
+  "seq": 204,
+  "stance": "agree",
+  "ticker": "UUU",
+  "url": "https://www.benzinga.com/news/26/10/62211499/universal-safety-products-announces-name-change-defi-capital-markets-begin-trading-nyse-american-und"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:36:11.797242+00:00",
+  "magnitude": "small",
+  "p_std": 0.021,
+  "p_up": 0.473,
+  "pre_move": 0.0021,
+  "published_at": "2026-10-07T10:33:37+00:00",
+  "seq": 203,
+  "stance": "split",
+  "ticker": "TCBX",
+  "url": "https://www.benzinga.com/m/26/10/62211422/third-coast-bancshares-acquire-great-plains-bancshares-all-stock-transaction-valued-239-6m-tcbx-expe"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:35:57.184460+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.493,
+  "pre_move": 0.0385,
+  "published_at": "2026-10-07T10:29:49+00:00",
+  "seq": 202,
+  "stance": "neutral",
+  "ticker": "EVTL",
+  "url": "https://www.benzinga.com/news/26/10/62211359/vertical-aerospace-files-patent-infringement-counterclaim-against-archer-aviation-u-s-district-court"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:35:49.988086+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.46,
+  "pre_move": -0.0279,
+  "published_at": "2026-10-07T10:29:49+00:00",
+  "seq": 201,
+  "stance": "agree",
+  "ticker": "ACHR",
+  "url": "https://www.benzinga.com/news/26/10/62211359/vertical-aerospace-files-patent-infringement-counterclaim-against-archer-aviation-u-s-district-court"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:35:43.179508+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.43,
+  "pre_move": 0.3125,
+  "published_at": "2026-10-07T10:25:26+00:00",
+  "seq": 200,
+  "stance": "agree",
+  "ticker": "LPCN",
+  "url": "https://www.benzinga.com/news/26/10/62211320/lipocine-licensing-partner-verity-pharmaceuticals-receives-health-canada-approval-tlando-capsules-te"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:35:28.362988+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.49,
+  "pre_move": -0.0426,
+  "published_at": "2026-10-07T10:23:09+00:00",
+  "seq": 199,
+  "stance": "neutral",
+  "ticker": "HSBC",
+  "url": "https://www.benzinga.com/news/26/10/62211283/reported-earlier-hsbc-plans-sweeping-job-cuts-across-uk-wealth-business-ai-push-ft-exclusive"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:35:21.343294+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.493,
+  "pre_move": -0.0276,
+  "published_at": "2026-10-07T10:22:20+00:00",
+  "seq": 198,
+  "stance": "neutral",
+  "ticker": "ALP",
+  "url": "https://www.benzinga.com/news/26/10/62211271/alpha-compute-unit-gamee-reports-prelim-q3-sales-1-71m-94-yoy-daus-reach-270k-and-maus-reach-2-61m"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:35:14.126653+00:00",
+  "magnitude": "small",
+  "p_std": 0.022,
+  "p_up": 0.56,
+  "pre_move": 0.0,
+  "published_at": "2026-10-07T10:19:46+00:00",
+  "seq": 197,
+  "stance": "agree",
+  "ticker": "LZM",
+  "url": "https://www.benzinga.com/news/26/10/62211146/lifezone-metals-announces-8m-reduction-consideration-cap-payable-bhp-billiton-after-independent-expe"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:34:58.942945+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": -0.0035,
+  "published_at": "2026-10-07T10:17:43+00:00",
+  "seq": 196,
+  "stance": "neutral",
+  "ticker": "TDOC",
+  "url": "https://www.benzinga.com/news/26/10/62211086/teladoc-health-adds-two-new-ai-powered-capabilities-its-enterprise-smart-care-platform-solo"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:34:51.778986+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.44,
+  "pre_move": 0.008,
+  "published_at": "2026-10-07T10:15:55+00:00",
+  "seq": 195,
+  "stance": "agree",
+  "ticker": "GGR",
+  "url": "https://www.benzinga.com/news/26/10/62211061/gogoro-announces-61-8m-share-purchase-agreements-entities-controlled-company-director-mr-chung-yao-y"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:34:41.711562+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.457,
+  "pre_move": 0.0701,
+  "published_at": "2026-10-07T10:12:55+00:00",
+  "seq": 194,
+  "stance": "agree",
+  "ticker": "OPTT",
+  "url": "https://www.benzinga.com/news/26/10/62211006/ocean-power-technologies-appoints-victoria-hay-interim-cfo-replacing-robert-powers"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:34:27.675140+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": 0.0002,
+  "published_at": "2026-10-07T10:09:22+00:00",
+  "seq": 193,
+  "stance": "neutral",
+  "ticker": "UPS",
+  "url": "https://www.benzinga.com/news/26/10/62210865/ups-hire-100k-seasonal-employees-hundreds-locations-nationwide-expects-deliver-4b-rfid-enabled-packa"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:34:17.864050+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": 0.0011,
+  "published_at": "2026-10-07T10:05:26+00:00",
+  "seq": 192,
+  "stance": "neutral",
+  "ticker": "BSX",
+  "url": "https://www.benzinga.com/news/26/10/62210789/boston-scientific-appoints-joseph-m-fitzgerald-evp-and-coo-effective-january-1-2027"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:34:02.468164+00:00",
+  "magnitude": "none",
+  "p_std": 0.005,
+  "p_up": 0.503,
+  "pre_move": -0.0005,
+  "published_at": "2026-10-07T10:04:33+00:00",
+  "seq": 191,
+  "stance": "neutral",
+  "ticker": "SAP",
+  "url": "https://www.benzinga.com/news/26/10/62210769/ibm-ready-partners-sap-solutions-help-customers-accelerate-cloud-erp-modernization-unify-enterprise-"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:33:56.286325+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": 0.004,
+  "published_at": "2026-10-07T10:04:33+00:00",
+  "seq": 190,
+  "stance": "neutral",
+  "ticker": "IBM",
+  "url": "https://www.benzinga.com/news/26/10/62210769/ibm-ready-partners-sap-solutions-help-customers-accelerate-cloud-erp-modernization-unify-enterprise-"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:33:49.197369+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": -0.0308,
+  "published_at": "2026-10-07T09:50:07+00:00",
+  "seq": 189,
+  "stance": "neutral",
+  "ticker": "IBKR",
+  "url": "https://www.benzinga.com/analyst-stock-ratings/price-target/26/10/62210365/interactive-brokers-gears-up-for-q3-print-here-are-the-recent-forecast-changes-from-wall-streets-most-accurate-analysts"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:33:42.451938+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": 0.02,
+  "published_at": "2026-10-07T09:44:32+00:00",
+  "seq": 188,
+  "stance": "neutral",
+  "ticker": "ZIM",
+  "url": "https://www.benzinga.com/markets/guidance/26/10/62210331/zim-stock-nears-52-week-high-as-freight-boom-fuels-massive-profit-outlook-hike"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:33:27.682547+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": -0.0024,
+  "published_at": "2026-10-07T09:32:34+00:00",
+  "seq": 187,
+  "stance": "agree",
+  "ticker": "TSLA",
+  "url": "https://www.benzinga.com/markets/tech/26/10/62210266/tesla-fsd-gets-a-boost-in-europe-as-germany-pushes-for-faster-eu-approval-elon-musk-says-danke-schon"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:33:20.529712+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.533,
+  "pre_move": -0.012,
+  "published_at": "2026-10-07T09:25:27+00:00",
+  "seq": 186,
+  "stance": "agree",
+  "ticker": "CFG",
+  "url": "https://www.benzinga.com/news/26/10/62210237/raymond-james-reinstates-strong-buy-citizens-financial-group-announces-77-price-target"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:33:13.134308+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.533,
+  "pre_move": -0.0081,
+  "published_at": "2026-10-07T09:22:13+00:00",
+  "seq": 185,
+  "stance": "agree",
+  "ticker": "MTB",
+  "url": "https://www.benzinga.com/news/26/10/62210221/raymond-james-initiates-coverage-m-t-bank-outperform-rating-announces-price-target-250"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:32:59.583516+00:00",
+  "magnitude": "small",
+  "p_std": 0.008,
+  "p_up": 0.49,
+  "pre_move": -0.0143,
+  "published_at": "2026-10-07T09:11:47+00:00",
+  "seq": 184,
+  "stance": "neutral",
+  "ticker": "HONA",
+  "url": "https://www.benzinga.com/news/26/10/62210114/goldman-sachs-initiates-coverage-honeywell-aerospace-neutral-rating-announces-price-target-190"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:32:53.019396+00:00",
+  "magnitude": "small",
+  "p_std": 0.019,
+  "p_up": 0.507,
+  "pre_move": 0.0079,
+  "published_at": "2026-10-07T09:02:08+00:00",
+  "seq": 183,
+  "stance": "neutral",
+  "ticker": "INTC",
+  "url": "https://www.benzinga.com/markets/tech/26/10/62210012/intel-ceo-lip-bu-tan-says-company-will-keep-working-on-terafab-elon-musk-confirms-tsmc-may-only-sublease-part-of-the-fab-not-own-it"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:32:39.385032+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": -0.0125,
+  "published_at": "2026-10-07T08:51:48+00:00",
+  "seq": 182,
+  "stance": "neutral",
+  "ticker": "SNDK",
+  "url": "https://www.benzinga.com/markets/equities/26/10/62209966/mu-sndk-skhy-stocks-decline-on-toshiba-storage-fears-researcher-points-to-cantor-note-calling-the-pullback-a-buying-opportunity"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:32:32.086534+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": -0.0303,
+  "published_at": "2026-10-07T08:51:48+00:00",
+  "seq": 181,
+  "stance": "neutral",
+  "ticker": "MU",
+  "url": "https://www.benzinga.com/markets/equities/26/10/62209966/mu-sndk-skhy-stocks-decline-on-toshiba-storage-fears-researcher-points-to-cantor-note-calling-the-pullback-a-buying-opportunity"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T13:32:25.306344+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": 0.0125,
+  "published_at": "2026-10-07T08:06:11+00:00",
+  "seq": 180,
+  "stance": "agree",
+  "ticker": "TEAM",
+  "url": "https://www.benzinga.com/quote/TEAM"
+ },
+ {
+  "excess": {
+   "1": 0.0499
+  },
+  "made_at": "2026-10-07T00:04:08.818306+00:00",
+  "magnitude": "medium",
+  "p_std": 0.024,
+  "p_up": 0.467,
+  "pre_move": 0.0332,
+  "published_at": "2026-10-06T23:50:00.262000+00:00",
+  "seq": 179,
+  "stance": "split",
+  "ticker": "SUGP",
+  "url": "https://www.benzinga.com/content/62207749/trading-halt-halted-7-50-00-p-m-et-trading-halt-halt-news-pending"
+ },
+ {
+  "excess": {
+   "1": -0.4773
+  },
+  "made_at": "2026-10-07T00:04:01.389682+00:00",
+  "magnitude": "small",
+  "p_std": 0.024,
+  "p_up": 0.383,
+  "pre_move": 0.0703,
+  "published_at": "2026-10-06T21:32:00.272000+00:00",
+  "seq": 178,
+  "stance": "agree",
+  "ticker": "INV",
+  "url": "https://www.benzinga.com/news/26/10/62206996/innventure-enters-market-offering-agreement-lucid-capital-markets-may-offer-and-sell-common-stock-60"
+ },
+ {
+  "excess": {
+   "1": -0.0134
+  },
+  "made_at": "2026-10-07T00:03:50.794243+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.493,
+  "pre_move": 0.0557,
+  "published_at": "2026-10-06T21:30:41.777000+00:00",
+  "seq": 177,
+  "stance": "neutral",
+  "ticker": "AXIL",
+  "url": "https://www.benzinga.com/news/26/10/62206968/axil-brands-reports-q1-2027-results-full-earnings-call-transcript"
+ },
+ {
+  "excess": {
+   "1": -0.0856
+  },
+  "made_at": "2026-10-07T00:03:43.817426+00:00",
+  "magnitude": "small",
+  "p_std": 0.024,
+  "p_up": 0.483,
+  "pre_move": 0.007,
+  "published_at": "2026-10-06T21:27:11.518000+00:00",
+  "seq": 176,
+  "stance": "neutral",
+  "ticker": "HESM",
+  "url": "https://www.benzinga.com/news/26/10/62206908/hess-midstream-expects-2026-adj-ebitda-1-225b-1-25b-expects-2027-adj-ebitda-850m-950m-gross-adj-ebit"
+ },
+ {
+  "excess": {
+   "1": -0.0305
+  },
+  "made_at": "2026-10-07T00:03:36.450145+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.4,
+  "pre_move": 0.0985,
+  "published_at": "2026-10-06T21:22:56.512000+00:00",
+  "seq": 175,
+  "stance": "agree",
+  "ticker": "FUSE",
+  "url": "https://www.benzinga.com/news/26/10/62206833/fusemachines-files-prospectus-related-offer-and-resale-7-549-411-shares-common-stock"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T00:03:28.978041+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.413,
+  "pre_move": null,
+  "published_at": "2026-10-06T21:19:38.544000+00:00",
+  "seq": 174,
+  "stance": "agree",
+  "ticker": "TSX:GDL",
+  "url": "https://www.benzinga.com/news/earnings/26/10/62206779/goodfellow-q3-eps-0-27-down-0-44-yoy-sales-145-719m-141-910m-yoy"
+ },
+ {
+  "excess": {
+   "1": -0.0856
+  },
+  "made_at": "2026-10-07T00:03:20.266055+00:00",
+  "magnitude": "small",
+  "p_std": 0.029,
+  "p_up": 0.39,
+  "pre_move": 0.007,
+  "published_at": "2026-10-06T21:17:36.973000+00:00",
+  "seq": 173,
+  "stance": "agree",
+  "ticker": "HESM",
+  "url": "https://www.benzinga.com/news/26/10/62206672/chevron-divest-its-ownership-interests-hess-midstream-and-dj-basin-crude-midstream-assets-revised-ag"
+ },
+ {
+  "excess": {
+   "1": -0.0177
+  },
+  "made_at": "2026-10-07T00:03:11.900670+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.53,
+  "pre_move": 0.0056,
+  "published_at": "2026-10-06T21:17:36.973000+00:00",
+  "seq": 172,
+  "stance": "agree",
+  "ticker": "CVX",
+  "url": "https://www.benzinga.com/news/26/10/62206672/chevron-divest-its-ownership-interests-hess-midstream-and-dj-basin-crude-midstream-assets-revised-ag"
+ },
+ {
+  "excess": {
+   "1": 0.0032
+  },
+  "made_at": "2026-10-07T00:03:03.312255+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.557,
+  "pre_move": -0.0111,
+  "published_at": "2026-10-06T21:14:02.753000+00:00",
+  "seq": 171,
+  "stance": "agree",
+  "ticker": "JBLU",
+  "url": "https://www.benzinga.com/news/26/10/62206602/u-s-federal-aviation-administration-approves-transfer-22-slots-new-york-laguardia-defunct-spirit-air"
+ },
+ {
+  "excess": {
+   "1": -0.0027
+  },
+  "made_at": "2026-10-07T00:02:56.867172+00:00",
+  "magnitude": "small",
+  "p_std": 0.008,
+  "p_up": 0.51,
+  "pre_move": 0.0018,
+  "published_at": "2026-10-06T21:11:46.272000+00:00",
+  "seq": 170,
+  "stance": "neutral",
+  "ticker": "AAPL",
+  "url": "https://www.benzinga.com/news/26/10/62206566/apple-s-smart-home-push-includes-doorbell-lock-thermostat-codeveloped-lg-bloomberg"
+ },
+ {
+  "excess": {
+   "1": 0.0144
+  },
+  "made_at": "2026-10-07T00:02:50.275619+00:00",
+  "magnitude": "small",
+  "p_std": 0.008,
+  "p_up": 0.51,
+  "pre_move": 0.0022,
+  "published_at": "2026-10-06T21:10:34.813000+00:00",
+  "seq": 169,
+  "stance": "neutral",
+  "ticker": "RLGT",
+  "url": "https://www.benzinga.com/news/26/10/62206547/radiant-logistics-acquires-whitacre-logistics-dallas-operations-terms-not-disclosed"
+ },
+ {
+  "excess": {
+   "1": -0.0138
+  },
+  "made_at": "2026-10-07T00:02:42.871666+00:00",
+  "magnitude": "small",
+  "p_std": 0.008,
+  "p_up": 0.55,
+  "pre_move": 0.008,
+  "published_at": "2026-10-06T21:00:33.922000+00:00",
+  "seq": 168,
+  "stance": "agree",
+  "ticker": "FICO",
+  "url": "https://www.benzinga.com/news/26/10/62206314/fair-isaac-corp-commits-workforce-reduction-plan-october-1-2026-plan-involves-elimination-15-positio"
+ },
+ {
+  "excess": {
+   "1": 0.1242
+  },
+  "made_at": "2026-10-07T00:02:33.476332+00:00",
+  "magnitude": "medium",
+  "p_std": 0.0,
+  "p_up": 0.35,
+  "pre_move": 0.0793,
+  "published_at": "2026-10-06T20:58:49.713000+00:00",
+  "seq": 167,
+  "stance": "agree",
+  "ticker": "ACTU",
+  "url": "https://www.benzinga.com/news/26/10/62206276/actuate-therapeutics-sell-50-000-000-shares-assumed-price-0-819-share"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T00:02:25.769536+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.53,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:55:12.553000+00:00",
+  "seq": 166,
+  "stance": "agree",
+  "ticker": "GNRV",
+  "url": "https://www.benzinga.com/news/26/10/62206215/isabella-bank-and-grand-river-commerce-receive-regulatory-approvals-necessary-complete-their-previou"
+ },
+ {
+  "excess": {
+   "1": -0.0102
+  },
+  "made_at": "2026-10-07T00:02:18.675568+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": 0.0068,
+  "published_at": "2026-10-06T20:55:12.553000+00:00",
+  "seq": 165,
+  "stance": "neutral",
+  "ticker": "ISBA",
+  "url": "https://www.benzinga.com/news/26/10/62206215/isabella-bank-and-grand-river-commerce-receive-regulatory-approvals-necessary-complete-their-previou"
+ },
+ {
+  "excess": {
+   "1": -0.0108
+  },
+  "made_at": "2026-10-07T00:02:11.562716+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.45,
+  "pre_move": -0.0504,
+  "published_at": "2026-10-06T20:43:37.512000+00:00",
+  "seq": 164,
+  "stance": "agree",
+  "ticker": "MYPS",
+  "url": "https://www.benzinga.com/news/26/10/62205954/playstudios-cease-operation-tetris-block-party-sept-30-2026-recognize-non-cash-pre-tax-impairment-ch"
+ },
+ {
+  "excess": {
+   "1": 0.0766
+  },
+  "made_at": "2026-10-07T00:02:04.142150+00:00",
+  "magnitude": "medium",
+  "p_std": 0.052,
+  "p_up": 0.547,
+  "pre_move": 0.1238,
+  "published_at": "2026-10-06T20:39:53.886000+00:00",
+  "seq": 163,
+  "stance": "split",
+  "ticker": "PENG",
+  "url": "https://www.benzinga.com/markets/earnings/26/10/62205895/penguin-solutions-stock-pops-on-q4-earnings-beat-strong-guidance"
+ },
+ {
+  "excess": {
+   "1": -0.0429
+  },
+  "made_at": "2026-10-07T00:01:53.771997+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.533,
+  "pre_move": 0.0065,
+  "published_at": "2026-10-06T20:39:34.060000+00:00",
+  "seq": 162,
+  "stance": "agree",
+  "ticker": "ALVO",
+  "url": "https://www.benzinga.com/news/26/10/62205882/alvotech-and-lotte-biologics-announce-long-term-strategic-manufacturing-partnership-biosimilar-produ"
+ },
+ {
+  "excess": {
+   "1": -0.0134
+  },
+  "made_at": "2026-10-07T00:01:42.113727+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.44,
+  "pre_move": 0.0557,
+  "published_at": "2026-10-06T20:37:37.864000+00:00",
+  "seq": 161,
+  "stance": "agree",
+  "ticker": "AXIL",
+  "url": "https://www.benzinga.com/wiim/26/10/62205845/axil-brands-shares-are-trading-lower-after-company-reported-worse-expected-q1-financial-results"
+ },
+ {
+  "excess": {
+   "1": -0.0019
+  },
+  "made_at": "2026-10-07T00:01:35.556217+00:00",
+  "magnitude": "small",
+  "p_std": 0.024,
+  "p_up": 0.433,
+  "pre_move": 0.0013,
+  "published_at": "2026-10-06T20:37:15.674000+00:00",
+  "seq": 160,
+  "stance": "agree",
+  "ticker": "HMC",
+  "url": "https://www.benzinga.com/news/26/10/62205807/honda-delays-next-gen-cr-v-hybrid-production-several-months-us-canada-nikkei-asia"
+ },
+ {
+  "excess": {
+   "1": -0.0311
+  },
+  "made_at": "2026-10-07T00:01:28.178256+00:00",
+  "magnitude": "medium",
+  "p_std": 0.009,
+  "p_up": 0.413,
+  "pre_move": -0.0462,
+  "published_at": "2026-10-06T20:37:04.348000+00:00",
+  "seq": 159,
+  "stance": "agree",
+  "ticker": "CRBU",
+  "url": "https://www.benzinga.com/wiim/26/10/62205795/caribou-biosciences-shares-are-trading-lower-after-company-announced-it-exploring-strategic-alternat"
+ },
+ {
+  "excess": {
+   "1": -0.0226
+  },
+  "made_at": "2026-10-07T00:01:14.514921+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": 0.0292,
+  "published_at": "2026-10-06T20:35:27.111000+00:00",
+  "seq": 158,
+  "stance": "neutral",
+  "ticker": "TPC",
+  "url": "https://www.benzinga.com/news/26/10/62205745/tutor-perini-s-subsidiary-fisk-electric-awarded-24m-electrical-services-contract-confidential-data-c"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-07T00:01:05.087051+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.457,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:35:14.702000+00:00",
+  "seq": 157,
+  "stance": "agree",
+  "ticker": "CURLF",
+  "url": "https://www.benzinga.com/news/26/10/62205730/aurora-cannabis-shareholders-urged-no-action-against-curaleaf-s-hostile-acquisition-offer"
+ },
+ {
+  "excess": {
+   "1": -0.0302
+  },
+  "made_at": "2026-10-07T00:00:57.918538+00:00",
+  "magnitude": "medium",
+  "p_std": 0.024,
+  "p_up": 0.567,
+  "pre_move": 0.0303,
+  "published_at": "2026-10-06T20:35:14.702000+00:00",
+  "seq": 156,
+  "stance": "agree",
+  "ticker": "ACB",
+  "url": "https://www.benzinga.com/news/26/10/62205730/aurora-cannabis-shareholders-urged-no-action-against-curaleaf-s-hostile-acquisition-offer"
+ },
+ {
+  "excess": {
+   "1": 0.0336
+  },
+  "made_at": "2026-10-07T00:00:50.631605+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.457,
+  "pre_move": 0.0224,
+  "published_at": "2026-10-06T20:34:32.018000+00:00",
+  "seq": 155,
+  "stance": "agree",
+  "ticker": "STZ",
+  "url": "https://www.benzinga.com/wiim/26/10/62205697/constellation-brands-shares-are-trading-lower-after-company-reported-q2-financial-results-company-sa"
+ },
+ {
+  "excess": {
+   "1": 0.0095
+  },
+  "made_at": "2026-10-07T00:00:42.936998+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.413,
+  "pre_move": -0.0679,
+  "published_at": "2026-10-06T20:32:52.218000+00:00",
+  "seq": 154,
+  "stance": "agree",
+  "ticker": "AMTD",
+  "url": "https://www.benzinga.com/news/26/10/62205670/amtd-idea-group-announces-ads-ratio-change-one-ads-360-class-ordinary-shares-effective-october-19-eq"
+ },
+ {
+  "excess": {
+   "1": -0.017
+  },
+  "made_at": "2026-10-07T00:00:35.160044+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.46,
+  "pre_move": -0.0235,
+  "published_at": "2026-10-06T20:31:52.196000+00:00",
+  "seq": 153,
+  "stance": "agree",
+  "ticker": "BMRN",
+  "url": "https://www.benzinga.com/news/26/10/62205632/biomarin-pharmaceutical-expects-q3-pre-tax-charges-283m-bought-ipr-d-expense-expects-1-5-unfavorable"
+ },
+ {
+  "excess": {
+   "1": -0.007
+  },
+  "made_at": "2026-10-07T00:00:28.405332+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.517,
+  "pre_move": 0.0012,
+  "published_at": "2026-10-06T20:31:44.607000+00:00",
+  "seq": 152,
+  "stance": "neutral",
+  "ticker": "BLCO",
+  "url": "https://www.benzinga.com/news/26/10/62205621/bausch-lomb-says-fda-supportive-principle-initial-study-design-oral-dry-amd-drug-bl1243-expects-2027"
+ },
+ {
+  "excess": {
+   "1": 0.0766
+  },
+  "made_at": "2026-10-07T00:00:22.342865+00:00",
+  "magnitude": "small",
+  "p_std": 0.021,
+  "p_up": 0.523,
+  "pre_move": 0.1238,
+  "published_at": "2026-10-06T20:28:41.515000+00:00",
+  "seq": 151,
+  "stance": "split",
+  "ticker": "PENG",
+  "url": "https://www.benzinga.com/news/26/10/62205520/correction-penguin-solutions-sees-fy2027-adj-eps-3-75-5-15-vs-3-25-est-sees-sales-2-250b-2-596b-vs-2"
+ },
+ {
+  "excess": {
+   "1": -0.0277
+  },
+  "made_at": "2026-10-06T20:34:36.592127+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.53,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:25:01.438000+00:00",
+  "seq": 150,
+  "stance": "agree",
+  "ticker": "CAR",
+  "url": "https://www.benzinga.com/news/26/10/62205465/avis-budget-group-was-paid-650m-cash-settlement-october-5-2026-settlement-payment-approved-court-be-"
+ },
+ {
+  "excess": {
+   "1": 0.0156
+  },
+  "made_at": "2026-10-06T20:34:27.712500+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:20:06.464000+00:00",
+  "seq": 149,
+  "stance": "agree",
+  "ticker": "ZETA",
+  "url": "https://www.benzinga.com/m/26/10/62205363/zeta-global-agrees-acquire-digital-audience-financial-terms-not-disclosed"
+ },
+ {
+  "excess": {
+   "1": 0.0053
+  },
+  "made_at": "2026-10-06T20:34:19.512391+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:18:09.645000+00:00",
+  "seq": 148,
+  "stance": "neutral",
+  "ticker": "PBR",
+  "url": "https://www.benzinga.com/news/26/10/62205242/technipfmc-awarded-subsea-contract-petrobras-supply-flexible-pipe-systems-supporting-developments-of"
+ },
+ {
+  "excess": {
+   "1": -0.0221
+  },
+  "made_at": "2026-10-06T20:34:13.679120+00:00",
+  "magnitude": "small",
+  "p_std": 0.008,
+  "p_up": 0.53,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:18:09.645000+00:00",
+  "seq": 147,
+  "stance": "agree",
+  "ticker": "FTI",
+  "url": "https://www.benzinga.com/news/26/10/62205242/technipfmc-awarded-subsea-contract-petrobras-supply-flexible-pipe-systems-supporting-developments-of"
+ },
+ {
+  "excess": {
+   "1": 0.0766
+  },
+  "made_at": "2026-10-06T20:34:05.520284+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.563,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:17:47.373000+00:00",
+  "seq": 146,
+  "stance": "agree",
+  "ticker": "PENG",
+  "url": "https://www.benzinga.com/wiim/26/10/62205222/penguin-solutions-shares-are-trading-higher-after-company-reported-better-expected-q4-financial-resu"
+ },
+ {
+  "excess": {
+   "1": -0.0134
+  },
+  "made_at": "2026-10-06T20:33:55.205525+00:00",
+  "magnitude": "medium",
+  "p_std": 0.016,
+  "p_up": 0.4,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:17:40.743000+00:00",
+  "seq": 145,
+  "stance": "agree",
+  "ticker": "AXIL",
+  "url": "https://www.benzinga.com/news/earnings/26/10/62205202/axil-brands-q1-eps-0-05-misses-0-13-estimate-sales-6-090m-miss-8-118m-estimate"
+ },
+ {
+  "excess": {
+   "1": -0.0756
+  },
+  "made_at": "2026-10-06T20:33:47.033665+00:00",
+  "magnitude": "small",
+  "p_std": 0.013,
+  "p_up": 0.563,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:16:38.514000+00:00",
+  "seq": 144,
+  "stance": "agree",
+  "ticker": "NEOG",
+  "url": "https://www.benzinga.com/wiim/26/10/62205151/neogen-shares-are-trading-higher-after-company-reported-better-expected-q1-financial-results-and-rai"
+ },
+ {
+  "excess": {
+   "1": 0.0336
+  },
+  "made_at": "2026-10-06T20:33:32.309181+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:16:30.272000+00:00",
+  "seq": 143,
+  "stance": "neutral",
+  "ticker": "STZ",
+  "url": "https://www.benzinga.com/m/26/10/62205137/constellation-brands-acquires-spikedade-75m"
+ },
+ {
+  "excess": {
+   "1": -0.0006
+  },
+  "made_at": "2026-10-06T20:33:24.135353+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.517,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:16:02.114000+00:00",
+  "seq": 142,
+  "stance": "neutral",
+  "ticker": "NPB",
+  "url": "https://www.benzinga.com/trading-ideas/dividends/26/10/62205105/northpointe-bancshares-raises-quarterly-dividend-0-025-0-03-share"
+ },
+ {
+  "excess": {
+   "1": 0.0089
+  },
+  "made_at": "2026-10-06T20:33:15.962564+00:00",
+  "magnitude": "none",
+  "p_std": 0.005,
+  "p_up": 0.503,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:15:00.979000+00:00",
+  "seq": 141,
+  "stance": "neutral",
+  "ticker": "GOOG",
+  "url": "https://www.benzinga.com/news/26/10/62205028/black-hills-signs-definitive-agreements-effective-sept-30-2026-terms-through-2048-serve-planned-goog"
+ },
+ {
+  "excess": {
+   "1": 0.0122
+  },
+  "made_at": "2026-10-06T20:33:07.502162+00:00",
+  "magnitude": "medium",
+  "p_std": 0.034,
+  "p_up": 0.633,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:15:00.979000+00:00",
+  "seq": 140,
+  "stance": "agree",
+  "ticker": "BKH",
+  "url": "https://www.benzinga.com/news/26/10/62205028/black-hills-signs-definitive-agreements-effective-sept-30-2026-terms-through-2048-serve-planned-goog"
+ },
+ {
+  "excess": {
+   "1": 0.0328
+  },
+  "made_at": "2026-10-06T20:32:05.886062+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:13:19.395000+00:00",
+  "seq": 139,
+  "stance": "neutral",
+  "ticker": "RCKT",
+  "url": "https://www.benzinga.com/news/26/10/62204963/rocket-pharmaceuticals-announces-150m-credit-facility-hercules-capital-35m-received-closing-expects-"
+ },
+ {
+  "excess": {
+   "1": -0.0193
+  },
+  "made_at": "2026-10-06T20:31:59.358018+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.4,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:13:18.010000+00:00",
+  "seq": 138,
+  "stance": "agree",
+  "ticker": "WS",
+  "url": "https://www.benzinga.com/news/earnings/26/10/62204961/worthington-steel-q1-adj-eps-0-57-misses-0-68-estimate-sales-2-727b-beat-885-900m-estimate"
+ },
+ {
+  "excess": {
+   "1": -0.0127
+  },
+  "made_at": "2026-10-06T20:31:50.951549+00:00",
+  "magnitude": "small",
+  "p_std": 0.024,
+  "p_up": 0.467,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:11:53.153000+00:00",
+  "seq": 137,
+  "stance": "split",
+  "ticker": "BY",
+  "url": "https://www.benzinga.com/m/26/10/62204926/byline-bancorp-announces-87-9m-cash-and-stock-deal-acquire-illinois-state-bancorp-expects-close-q1-2"
+ },
+ {
+  "excess": {
+   "1": -0.0173
+  },
+  "made_at": "2026-10-06T20:31:43.164930+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:11:31.782000+00:00",
+  "seq": 136,
+  "stance": "agree",
+  "ticker": "BFLY",
+  "url": "https://www.benzinga.com/news/26/10/62204901/bridge-neurotech-butterfly-network-announce-research-development-agreement"
+ },
+ {
+  "excess": {
+   "1": 0.0766
+  },
+  "made_at": "2026-10-06T20:31:30.230523+00:00",
+  "magnitude": "medium",
+  "p_std": 0.038,
+  "p_up": 0.627,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:11:26.927000+00:00",
+  "seq": 135,
+  "stance": "agree",
+  "ticker": "PENG",
+  "url": "https://www.benzinga.com/news/26/10/62204890/penguin-solutions-sees-fy2027-gaap-eps-2-80-4-20-vs-2-13-est"
+ },
+ {
+  "excess": {
+   "1": -0.0212
+  },
+  "made_at": "2026-10-06T20:31:21.559888+00:00",
+  "magnitude": "small",
+  "p_std": 0.024,
+  "p_up": 0.533,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:11:10.908000+00:00",
+  "seq": 134,
+  "stance": "split",
+  "ticker": "NXH",
+  "url": "https://www.benzinga.com/news/26/10/62204875/neighborhood-intelligence-announces-reduction-offering-program-75m-200m"
+ },
+ {
+  "excess": {
+   "1": 0.0766
+  },
+  "made_at": "2026-10-06T20:31:13.927226+00:00",
+  "magnitude": "medium",
+  "p_std": 0.034,
+  "p_up": 0.633,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:10:26.022000+00:00",
+  "seq": 133,
+  "stance": "agree",
+  "ticker": "PENG",
+  "url": "https://www.benzinga.com/news/26/10/62204843/penguin-solutions-sees-fy2027-adj-eps-3-75-5-15-vs-3-25-est-sees-sales-2-182b-2-666b-vs-2-201b-est"
+ },
+ {
+  "excess": {
+   "1": -0.0081
+  },
+  "made_at": "2026-10-06T20:31:05.094957+00:00",
+  "magnitude": "small",
+  "p_std": 0.017,
+  "p_up": 0.543,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:09:52.708000+00:00",
+  "seq": 132,
+  "stance": "agree",
+  "ticker": "ELVN",
+  "url": "https://www.benzinga.com/news/26/10/62204810/enliven-therapeutics-announces-fda-alignment-phase-3-relcobatinib-chronic-myeloid-leukemia-trial-des"
+ },
+ {
+  "excess": {
+   "1": 0.0336
+  },
+  "made_at": "2026-10-06T20:30:55.813122+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.563,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:09:33.704000+00:00",
+  "seq": 131,
+  "stance": "agree",
+  "ticker": "STZ",
+  "url": "https://www.benzinga.com/news/26/10/62204785/constellation-brands-raises-fy2027-gaap-eps-guidance-11-50-12-20-11-85-12-55-vs-11-93-est"
+ },
+ {
+  "excess": {
+   "1": -0.0032
+  },
+  "made_at": "2026-10-06T20:30:47.832786+00:00",
+  "magnitude": "medium",
+  "p_std": 0.024,
+  "p_up": 0.587,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:09:03.010000+00:00",
+  "seq": 130,
+  "stance": "agree",
+  "ticker": "ZIM",
+  "url": "https://www.benzinga.com/news/26/10/62204770/zim-raises-fy2026-adjusted-ebitda-guidance-2-7b-3b-2b-2-4b-adjusted-ebit-1-4b-1-7b-700m-1-1b"
+ },
+ {
+  "excess": {
+   "1": 0.0336
+  },
+  "made_at": "2026-10-06T20:30:38.653299+00:00",
+  "magnitude": "small",
+  "p_std": 0.028,
+  "p_up": 0.58,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:08:32.911000+00:00",
+  "seq": 129,
+  "stance": "agree",
+  "ticker": "STZ",
+  "url": "https://www.benzinga.com/news/earnings/26/10/62204744/constellation-brands-q2-adj-eps-3-74-beats-3-56-estimate-sales-2-633b-beat-2-542b-estimate"
+ },
+ {
+  "excess": {
+   "1": -0.0311
+  },
+  "made_at": "2026-10-06T20:30:24.703123+00:00",
+  "magnitude": "medium",
+  "p_std": 0.0,
+  "p_up": 0.42,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:08:05.503000+00:00",
+  "seq": 128,
+  "stance": "agree",
+  "ticker": "CRBU",
+  "url": "https://www.benzinga.com/news/26/10/62204726/caribou-biosciences-announces-strategic-alternatives-review-discontinues-vispa-cel-and-cb-011-car-t-"
+ },
+ {
+  "excess": {
+   "1": -0.0311
+  },
+  "made_at": "2026-10-06T20:30:18.483221+00:00",
+  "magnitude": "medium",
+  "p_std": 0.009,
+  "p_up": 0.413,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:07:58.833000+00:00",
+  "seq": 127,
+  "stance": "agree",
+  "ticker": "CRBU",
+  "url": "https://www.benzinga.com/news/26/10/62204715/caribou-biosciences-mulls-strategic-options-maximize-shareholder-value-intends-discontinue-further-d"
+ },
+ {
+  "excess": {
+   "1": 0.0949
+  },
+  "made_at": "2026-10-06T20:30:04.383148+00:00",
+  "magnitude": "small",
+  "p_std": 0.021,
+  "p_up": 0.473,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:07:03.283000+00:00",
+  "seq": 126,
+  "stance": "split",
+  "ticker": "RMCF",
+  "url": "https://www.benzinga.com/news/26/10/62204669/rocky-mountain-chocolate-factory-announces-6-6m-sale-leaseback-durango-headquarters-interim-ceo-s-fa"
+ },
+ {
+  "excess": {
+   "1": 0.0766
+  },
+  "made_at": "2026-10-06T20:29:47.706906+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:06:49.070000+00:00",
+  "seq": 125,
+  "stance": "neutral",
+  "ticker": "PENG",
+  "url": "https://www.benzinga.com/news/26/10/62204650/penguin-solutions-appoints-stephen-cumming-cfo-effective-immediately"
+ },
+ {
+  "excess": {
+   "1": -0.0093
+  },
+  "made_at": "2026-10-06T20:29:32.630895+00:00",
+  "magnitude": "small",
+  "p_std": 0.017,
+  "p_up": 0.557,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:06:19.927000+00:00",
+  "seq": 124,
+  "stance": "agree",
+  "ticker": "HALO",
+  "url": "https://www.benzinga.com/news/26/10/62204613/halozyme-therapeutic-expands-collaboration-license-deal-argenx-over-development-commercialization-en"
+ },
+ {
+  "excess": {
+   "1": -0.0058
+  },
+  "made_at": "2026-10-06T20:29:17.752166+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:06:19.927000+00:00",
+  "seq": 123,
+  "stance": "agree",
+  "ticker": "ARGX",
+  "url": "https://www.benzinga.com/news/26/10/62204613/halozyme-therapeutic-expands-collaboration-license-deal-argenx-over-development-commercialization-en"
+ },
+ {
+  "excess": {
+   "1": -0.0206
+  },
+  "made_at": "2026-10-06T20:29:08.861757+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.42,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:06:19.044000+00:00",
+  "seq": 122,
+  "stance": "agree",
+  "ticker": "SAR",
+  "url": "https://www.benzinga.com/news/earnings/26/10/62204612/saratoga-investment-q2-adj-eps-0-45-misses-0-49-estimate-sales-31-169m-miss-31-700m-estimate"
+ },
+ {
+  "excess": {
+   "1": 0.0766
+  },
+  "made_at": "2026-10-06T20:29:00.333685+00:00",
+  "magnitude": "medium",
+  "p_std": 0.045,
+  "p_up": 0.597,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:06:05.059000+00:00",
+  "seq": 121,
+  "stance": "agree",
+  "ticker": "PENG",
+  "url": "https://www.benzinga.com/news/earnings/26/10/62204571/penguin-solutions-q4-adj-eps-1-00-beats-0-78-estimate-sales-566-685m-beat-516-115m-estimate"
+ },
+ {
+  "excess": {
+   "1": -0.0448
+  },
+  "made_at": "2026-10-06T20:28:51.638268+00:00",
+  "magnitude": "small",
+  "p_std": 0.024,
+  "p_up": 0.517,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:02:46.648000+00:00",
+  "seq": 120,
+  "stance": "neutral",
+  "ticker": "EVGN",
+  "url": "https://www.benzinga.com/news/26/10/62204401/evogene-reaches-agreement-pure-capital-group-resolve-differences"
+ },
+ {
+  "excess": {
+   "1": -0.0756
+  },
+  "made_at": "2026-10-06T20:28:40.096480+00:00",
+  "magnitude": "small",
+  "p_std": 0.008,
+  "p_up": 0.56,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:02:25.607000+00:00",
+  "seq": 119,
+  "stance": "agree",
+  "ticker": "NEOG",
+  "url": "https://www.benzinga.com/news/26/10/62204373/neogen-raises-fy2027-sales-guidance-880-000m-885-000m-885-000m-890-000m-vs-883-175m-est"
+ },
+ {
+  "excess": {
+   "1": -0.0756
+  },
+  "made_at": "2026-10-06T20:28:33.724833+00:00",
+  "magnitude": "medium",
+  "p_std": 0.034,
+  "p_up": 0.633,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:01:43.871000+00:00",
+  "seq": 118,
+  "stance": "agree",
+  "ticker": "NEOG",
+  "url": "https://www.benzinga.com/news/earnings/26/10/62204334/neogen-q1-adj-eps-0-08-beats-0-07-estimate-sales-222-800m-beat-208-175m-estimate"
+ },
+ {
+  "excess": {
+   "1": -0.0242
+  },
+  "made_at": "2026-10-06T20:28:20.251231+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:01:24.482000+00:00",
+  "seq": 117,
+  "stance": "neutral",
+  "ticker": "TNON",
+  "url": "https://www.benzinga.com/news/26/10/62204303/tenon-medical-announces-notice-allowance-u-s-patent-application-covering-sacroiliac-joint-stabilizat"
+ },
+ {
+  "excess": {
+   "1": -0.0485
+  },
+  "made_at": "2026-10-06T20:28:11.456304+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:01:23.132000+00:00",
+  "seq": 116,
+  "stance": "neutral",
+  "ticker": "CRUS",
+  "url": "https://www.benzinga.com/m/26/10/62204293/cirrus-logic-acquires-inventvm-financial-terms-not-disclosed"
+ },
+ {
+  "excess": {
+   "1": -0.0304
+  },
+  "made_at": "2026-10-06T20:28:02.784528+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.45,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:01:08.166000+00:00",
+  "seq": 115,
+  "stance": "agree",
+  "ticker": "TWG",
+  "url": "https://www.benzinga.com/news/26/10/62204274/top-wealth-group-receives-nasdaq-noncompliance-notice-gets-time-through-march-31-2027-regain-complia"
+ },
+ {
+  "excess": {
+   "1": -0.0311
+  },
+  "made_at": "2026-10-06T20:27:53.626089+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T20:01:00.374000+00:00",
+  "seq": 114,
+  "stance": "neutral",
+  "ticker": "CRBU",
+  "url": "https://www.benzinga.com/content/62204262/trading-halt-halted-4-01-00-p-m-et-trading-halt-halt-news-pending"
+ },
+ {
+  "excess": {
+   "1": -0.0117
+  },
+  "made_at": "2026-10-06T20:27:46.143922+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": null,
+  "published_at": "2026-10-06T19:33:37.430000+00:00",
+  "seq": 113,
+  "stance": "neutral",
+  "ticker": "COIN",
+  "url": "https://www.benzinga.com/crypto/cryptocurrency/26/10/62203454/cftc-approval-opens-many-doors-top-coinbase-exec-says"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-06T20:27:38.319923+00:00",
+  "magnitude": "small",
+  "p_std": 0.008,
+  "p_up": 0.51,
+  "pre_move": null,
+  "published_at": "2026-10-06T19:33:37.430000+00:00",
+  "seq": 112,
+  "stance": "neutral",
+  "ticker": "BTCUSD",
+  "url": "https://www.benzinga.com/crypto/cryptocurrency/26/10/62203454/cftc-approval-opens-many-doors-top-coinbase-exec-says"
+ },
+ {
+  "excess": {
+   "1": 0.0089
+  },
+  "made_at": "2026-10-06T20:27:24.018780+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T19:28:25.786000+00:00",
+  "seq": 111,
+  "stance": "neutral",
+  "ticker": "GOOG",
+  "url": "https://www.benzinga.com/news/26/10/62203335/waymo-boosts-private-debt-deal-5-billion-push-growth-bloomberg"
+ },
+ {
+  "excess": {
+   "1": 0.0036
+  },
+  "made_at": "2026-10-06T20:27:15.722233+00:00",
+  "magnitude": "none",
+  "p_std": 0.005,
+  "p_up": 0.507,
+  "pre_move": null,
+  "published_at": "2026-10-06T19:28:25.786000+00:00",
+  "seq": 110,
+  "stance": "neutral",
+  "ticker": "BX",
+  "url": "https://www.benzinga.com/news/26/10/62203335/waymo-boosts-private-debt-deal-5-billion-push-growth-bloomberg"
+ },
+ {
+  "excess": {
+   "1": 0.0148
+  },
+  "made_at": "2026-10-06T20:27:06.659341+00:00",
+  "magnitude": "small",
+  "p_std": 0.024,
+  "p_up": 0.417,
+  "pre_move": null,
+  "published_at": "2026-10-06T19:18:59.859000+00:00",
+  "seq": 109,
+  "stance": "agree",
+  "ticker": "PCVX",
+  "url": "https://www.benzinga.com/wiim/26/10/62203056/vaxcyte-shares-are-trading-lower-after-company-announced-500-million-equity-offering-and-500-million"
+ },
+ {
+  "excess": {
+   "1": 0.0172
+  },
+  "made_at": "2026-10-06T20:26:58.283151+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.44,
+  "pre_move": null,
+  "published_at": "2026-10-06T19:18:14.222000+00:00",
+  "seq": 108,
+  "stance": "agree",
+  "ticker": "NVAX",
+  "url": "https://www.benzinga.com/wiim/26/10/62203023/novavax-shares-are-trading-lower-possibly-stocks-sells-recent-strength-related-suspected-pneumonic-p"
+ },
+ {
+  "excess": {
+   "1": 0.068
+  },
+  "made_at": "2026-10-06T20:26:48.059870+00:00",
+  "magnitude": "small",
+  "p_std": 0.041,
+  "p_up": 0.47,
+  "pre_move": null,
+  "published_at": "2026-10-06T19:17:50.905000+00:00",
+  "seq": 107,
+  "stance": "split",
+  "ticker": "MRNA",
+  "url": "https://www.benzinga.com/wiim/26/10/62203006/moderna-shares-are-trading-lower-possibly-stocks-sells-recent-strength-related-suspected-pneumonic-p"
+ },
+ {
+  "excess": {
+   "1": -0.0348
+  },
+  "made_at": "2026-10-06T20:26:41.110475+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.49,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:57:34.266000+00:00",
+  "seq": 106,
+  "stance": "neutral",
+  "ticker": "LUNR",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62202532/intuitive-machines-stock-moves-higher-whats-going-on"
+ },
+ {
+  "excess": {
+   "1": 0.0019
+  },
+  "made_at": "2026-10-06T20:26:32.979368+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.533,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:51:12+00:00",
+  "seq": 105,
+  "stance": "agree",
+  "ticker": "RVTY",
+  "url": "https://www.benzinga.com/analyst-stock-ratings/initiation/26/10/62202386/revvity-nears-52-week-high-but-this-analyst-thinks-stock-can-climb-another-20"
+ },
+ {
+  "excess": {
+   "1": -0.0893
+  },
+  "made_at": "2026-10-06T20:26:24.494002+00:00",
+  "magnitude": "small",
+  "p_std": 0.033,
+  "p_up": 0.457,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:50:35+00:00",
+  "seq": 104,
+  "stance": "split",
+  "ticker": "SRFM",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62202365/surf-air-mobility-shares-jump-on-new-operatoros-deal"
+ },
+ {
+  "excess": {
+   "1": -0.0003
+  },
+  "made_at": "2026-10-06T20:26:14.298664+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.467,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:49:28+00:00",
+  "seq": 103,
+  "stance": "agree",
+  "ticker": "KKR",
+  "url": "https://www.benzinga.com/markets/private-markets/26/10/62202325/kkr-private-credit-fund-edges-past-redemption-limit"
+ },
+ {
+  "excess": {
+   "1": 0.0036
+  },
+  "made_at": "2026-10-06T20:26:05.869064+00:00",
+  "magnitude": "small",
+  "p_std": 0.008,
+  "p_up": 0.47,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:49:28+00:00",
+  "seq": 102,
+  "stance": "agree",
+  "ticker": "BX",
+  "url": "https://www.benzinga.com/markets/private-markets/26/10/62202325/kkr-private-credit-fund-edges-past-redemption-limit"
+ },
+ {
+  "excess": {
+   "1": -0.0531
+  },
+  "made_at": "2026-10-06T20:25:54.691330+00:00",
+  "magnitude": "small",
+  "p_std": 0.021,
+  "p_up": 0.447,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:35:59+00:00",
+  "seq": 101,
+  "stance": "agree",
+  "ticker": "SKYD",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62202016/skydance-stock-dips-whats-going-on"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-06T20:25:43.259619+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.463,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:35:59+00:00",
+  "seq": 100,
+  "stance": "agree",
+  "ticker": "PSKY",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62202016/skydance-stock-dips-whats-going-on"
+ },
+ {
+  "excess": {
+   "1": 0.0177
+  },
+  "made_at": "2026-10-06T20:25:28.554446+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:34:22+00:00",
+  "seq": 99,
+  "stance": "neutral",
+  "ticker": "SBGI",
+  "url": "https://www.benzinga.com/news/26/10/62201964/sinclair-and-new-media-announce-launch-national-press"
+ },
+ {
+  "excess": {
+   "1": -0.0076
+  },
+  "made_at": "2026-10-06T20:25:14.294625+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.49,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:30:06+00:00",
+  "seq": 98,
+  "stance": "neutral",
+  "ticker": "CCL",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62201846/why-is-carnival-stock-surging-on-tuesday-2"
+ },
+ {
+  "excess": {
+   "1": 0.0101
+  },
+  "made_at": "2026-10-06T20:25:03.083814+00:00",
+  "magnitude": "small",
+  "p_std": 0.019,
+  "p_up": 0.487,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:27:35+00:00",
+  "seq": 97,
+  "stance": "neutral",
+  "ticker": "MRVL",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62201765/why-is-marvell-technology-stock-surging-tuesday"
+ },
+ {
+  "excess": {
+   "1": -0.0136
+  },
+  "made_at": "2026-10-06T20:24:49.908593+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.533,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:21:22+00:00",
+  "seq": 96,
+  "stance": "agree",
+  "ticker": "NOW",
+  "url": "https://www.benzinga.com/markets/large-cap/26/10/62201590/servicenow-ai-adoption-enterprise-spending-catches-analyst-attention"
+ },
+ {
+  "excess": {
+   "1": -0.0236
+  },
+  "made_at": "2026-10-06T20:24:37.006238+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:19:57+00:00",
+  "seq": 95,
+  "stance": "neutral",
+  "ticker": "WORX",
+  "url": "https://www.benzinga.com/news/26/10/62201555/scworx-resume-nasdaq-trading-october-7-2026"
+ },
+ {
+  "excess": {
+   "1": -0.0017
+  },
+  "made_at": "2026-10-06T20:24:28.337293+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.457,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:16:33+00:00",
+  "seq": 94,
+  "stance": "agree",
+  "ticker": "UNH",
+  "url": "https://www.benzinga.com/news/health-care/26/10/62201393/texas-ag-targets-unitedhealth-probe-examines-alleged-bribes-care-delays-and-coverage-denials"
+ },
+ {
+  "excess": {
+   "1": -0.2037
+  },
+  "made_at": "2026-10-06T20:24:21.140315+00:00",
+  "magnitude": "medium",
+  "p_std": 0.033,
+  "p_up": 0.457,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:13:59+00:00",
+  "seq": 93,
+  "stance": "split",
+  "ticker": "KAPA",
+  "url": "https://www.benzinga.com/news/health-care/26/10/62201322/kairos-pharma-targets-drug-resistance-mechanism-against-prostate-cancer"
+ },
+ {
+  "excess": {
+   "1": 0.009
+  },
+  "made_at": "2026-10-06T20:24:13.213904+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.507,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:11:46+00:00",
+  "seq": 92,
+  "stance": "neutral",
+  "ticker": "GOOGL",
+  "url": "https://www.benzinga.com/news/26/10/62201259/waymo-posts-x-detroit-we-re-starting-fully-autonomous-driving-week-you-may-start-seeing-our-vehicles"
+ },
+ {
+  "excess": {
+   "1": 0.0089
+  },
+  "made_at": "2026-10-06T20:23:57.768594+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.513,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:11:46+00:00",
+  "seq": 91,
+  "stance": "neutral",
+  "ticker": "GOOG",
+  "url": "https://www.benzinga.com/news/26/10/62201259/waymo-posts-x-detroit-we-re-starting-fully-autonomous-driving-week-you-may-start-seeing-our-vehicles"
+ },
+ {
+  "excess": {
+   "1": 0.106
+  },
+  "made_at": "2026-10-06T20:23:35.352496+00:00",
+  "magnitude": "medium",
+  "p_std": 0.021,
+  "p_up": 0.423,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:09:58+00:00",
+  "seq": 90,
+  "stance": "agree",
+  "ticker": "AVBP",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62201193/arrivent-biopharma-lung-cancer-drug-fails-primary-trial-endpoint-stock-hits-52-week-low"
+ },
+ {
+  "excess": {
+   "1": -0.0513
+  },
+  "made_at": "2026-10-06T20:23:21.985658+00:00",
+  "magnitude": "none",
+  "p_std": 0.024,
+  "p_up": 0.483,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:09:58+00:00",
+  "seq": 89,
+  "stance": "neutral",
+  "ticker": "MI",
+  "url": "https://www.benzinga.com/quote/MI"
+ },
+ {
+  "excess": {
+   "1": 0.0089
+  },
+  "made_at": "2026-10-06T20:23:09.960395+00:00",
+  "magnitude": "none",
+  "p_std": 0.005,
+  "p_up": 0.503,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:01:16+00:00",
+  "seq": 88,
+  "stance": "neutral",
+  "ticker": "GOOG",
+  "url": "https://www.benzinga.com/news/26/10/62200877/anthropic-announces-claude-now-works-google-docs-sheets-and-slides"
+ },
+ {
+  "excess": {
+   "1": 0.0205
+  },
+  "made_at": "2026-10-06T20:23:03.078824+00:00",
+  "magnitude": "none",
+  "p_std": 0.005,
+  "p_up": 0.497,
+  "pre_move": null,
+  "published_at": "2026-10-06T18:01:16+00:00",
+  "seq": 87,
+  "stance": "neutral",
+  "ticker": "AMZN",
+  "url": "https://www.benzinga.com/news/26/10/62200877/anthropic-announces-claude-now-works-google-docs-sheets-and-slides"
+ },
+ {
+  "excess": {
+   "1": -0.0264
+  },
+  "made_at": "2026-10-06T20:22:54.712339+00:00",
+  "magnitude": "small",
+  "p_std": 0.008,
+  "p_up": 0.48,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:57:01+00:00",
+  "seq": 86,
+  "stance": "agree",
+  "ticker": "TD",
+  "url": "https://www.benzinga.com/news/26/10/62200766/former-td-bank-employee-pleads-guilty-accepting-bribes-laundering-4-8m-colombia"
+ },
+ {
+  "excess": {
+   "1": -0.0257
+  },
+  "made_at": "2026-10-06T20:22:43.100911+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:54:04+00:00",
+  "seq": 85,
+  "stance": "neutral",
+  "ticker": "NEO",
+  "url": "https://www.benzinga.com/analyst-stock-ratings/analyst-color/26/10/62200713/whats-going-on-with-neogenomics-stock-tuesday"
+ },
+ {
+  "excess": {
+   "1": -0.0513
+  },
+  "made_at": "2026-10-06T20:22:34.934370+00:00",
+  "magnitude": "none",
+  "p_std": 0.024,
+  "p_up": 0.483,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:53:56+00:00",
+  "seq": 84,
+  "stance": "neutral",
+  "ticker": "MI",
+  "url": "https://www.benzinga.com/quote/MI"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-06T20:22:24.801274+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.49,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:53:10+00:00",
+  "seq": 83,
+  "stance": "neutral",
+  "ticker": "TSHTY",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62200680/western-digital-stock-drops-tuesday-heres-why"
+ },
+ {
+  "excess": {
+   "1": 0.0279
+  },
+  "made_at": "2026-10-06T20:22:15.731394+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.48,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:53:10+00:00",
+  "seq": 82,
+  "stance": "split",
+  "ticker": "STX",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62200680/western-digital-stock-drops-tuesday-heres-why"
+ },
+ {
+  "excess": {
+   "1": 0.0076
+  },
+  "made_at": "2026-10-06T20:22:07.885079+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.473,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:52:21+00:00",
+  "seq": 81,
+  "stance": "agree",
+  "ticker": "DAL",
+  "url": "https://www.benzinga.com/news/26/10/62200648/delta-air-lines-issues-update-global-technology-issue-says-delta-systems-are-stabilizing-after-limit"
+ },
+ {
+  "excess": {
+   "1": 0.0676
+  },
+  "made_at": "2026-10-06T20:22:00.392162+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:49:37+00:00",
+  "seq": 80,
+  "stance": "agree",
+  "ticker": "MU",
+  "url": "https://www.benzinga.com/trading-ideas/long-ideas/26/10/62200556/micron-ai-100b-cash-windfall"
+ },
+ {
+  "excess": {
+   "1": 0.0426
+  },
+  "made_at": "2026-10-06T20:21:54.266618+00:00",
+  "magnitude": "small",
+  "p_std": 0.022,
+  "p_up": 0.53,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:36:56+00:00",
+  "seq": 79,
+  "stance": "split",
+  "ticker": "APOG",
+  "url": "https://www.benzinga.com/markets/earnings/26/10/62200199/apogee-uses-pricing-power-acquisitions-to-outrun-inflation-pressure"
+ },
+ {
+  "excess": {
+   "1": 0.0089
+  },
+  "made_at": "2026-10-06T20:21:41.398862+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.53,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:35:29+00:00",
+  "seq": 78,
+  "stance": "agree",
+  "ticker": "GOOG",
+  "url": "https://www.benzinga.com/markets/tech/26/10/62200140/challenging-nvidias-dominance-broadcom-pairs-custom-tpu-chips-with-60-billion-debt-package"
+ },
+ {
+  "excess": {
+   "1": 0.0086
+  },
+  "made_at": "2026-10-06T20:21:34.321311+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:35:29+00:00",
+  "seq": 77,
+  "stance": "neutral",
+  "ticker": "AVGO",
+  "url": "https://www.benzinga.com/markets/tech/26/10/62200140/challenging-nvidias-dominance-broadcom-pairs-custom-tpu-chips-with-60-billion-debt-package"
+ },
+ {
+  "excess": {
+   "1": -0.0154
+  },
+  "made_at": "2026-10-06T20:21:20.050101+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:33:39+00:00",
+  "seq": 76,
+  "stance": "neutral",
+  "ticker": "ET",
+  "url": "https://www.benzinga.com/m-a/26/10/62200078/energy-transfer-expands-gas-network-with-2-6-billion-vaquero-acquisition"
+ },
+ {
+  "excess": {
+   "1": 0.0315
+  },
+  "made_at": "2026-10-06T20:21:10.817665+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.463,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:19:52+00:00",
+  "seq": 75,
+  "stance": "agree",
+  "ticker": "OSTX",
+  "url": "https://www.benzinga.com/markets/biotech/26/10/62199676/os-therapies-reports-significant-three-year-survival-data-for-bone-cancer-treatment"
+ },
+ {
+  "excess": {
+   "1": -0.0028
+  },
+  "made_at": "2026-10-06T20:21:01.801941+00:00",
+  "magnitude": "none",
+  "p_std": 0.005,
+  "p_up": 0.503,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:12:05+00:00",
+  "seq": 74,
+  "stance": "neutral",
+  "ticker": "NVDA",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62199404/nvidia-partner-boost-run-tops-2-6b-in-contracts-with-new-ai-deal"
+ },
+ {
+  "excess": {
+   "1": -0.0665
+  },
+  "made_at": "2026-10-06T20:20:45.156502+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.457,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:12:05+00:00",
+  "seq": 73,
+  "stance": "agree",
+  "ticker": "BRUN",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62199404/nvidia-partner-boost-run-tops-2-6b-in-contracts-with-new-ai-deal"
+ },
+ {
+  "excess": {
+   "1": -0.0275
+  },
+  "made_at": "2026-10-06T20:20:35.308293+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:10:37+00:00",
+  "seq": 72,
+  "stance": "neutral",
+  "ticker": "MVIS",
+  "url": "https://www.benzinga.com/markets/small-cap/26/10/62199349/microvision-wants-drones-to-map-the-battlefield-in-real-time"
+ },
+ {
+  "excess": {
+   "1": 0.0104
+  },
+  "made_at": "2026-10-06T20:20:21.447386+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:06:56+00:00",
+  "seq": 71,
+  "stance": "neutral",
+  "ticker": "DIS",
+  "url": "https://www.benzinga.com/news/26/10/62199208/us-judge-concludes-two-hour-hearing-disney-lawsuit-over-federal-communications-commission-license-re"
+ },
+ {
+  "excess": {
+   "1": -0.0066
+  },
+  "made_at": "2026-10-06T20:20:14.612768+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:05:52+00:00",
+  "seq": 70,
+  "stance": "neutral",
+  "ticker": "DOCK",
+  "url": "https://www.benzinga.com/markets/tech/26/10/62199132/fedex-stripe-partner-to-use-shipping-data-for-smb-financing-add-50-payment-methods"
+ },
+ {
+  "excess": {
+   "1": -0.001
+  },
+  "made_at": "2026-10-06T20:20:05.611155+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:05:52+00:00",
+  "seq": 69,
+  "stance": "neutral",
+  "ticker": "AV",
+  "url": "https://www.benzinga.com/markets/tech/26/10/62199132/fedex-stripe-partner-to-use-shipping-data-for-smb-financing-add-50-payment-methods"
+ },
+ {
+  "excess": {
+   "1": -0.009
+  },
+  "made_at": "2026-10-06T20:19:58.109444+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.493,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:03:30+00:00",
+  "seq": 68,
+  "stance": "neutral",
+  "ticker": "UNP",
+  "url": "https://www.benzinga.com/news/26/10/62199056/union-pacific-ceo-makes-case-85b-norfolk-southern-merger-amid-pushback-fox-business"
+ },
+ {
+  "excess": {
+   "1": -0.0065
+  },
+  "made_at": "2026-10-06T20:19:44.141495+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T17:03:30+00:00",
+  "seq": 67,
+  "stance": "neutral",
+  "ticker": "NSC",
+  "url": "https://www.benzinga.com/news/26/10/62199056/union-pacific-ceo-makes-case-85b-norfolk-southern-merger-amid-pushback-fox-business"
+ },
+ {
+  "excess": {
+   "1": -0.0513
+  },
+  "made_at": "2026-10-06T20:19:30.977667+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:55:55+00:00",
+  "seq": 66,
+  "stance": "neutral",
+  "ticker": "MI",
+  "url": "https://www.benzinga.com/quote/MI"
+ },
+ {
+  "excess": {
+   "1": -0.0037
+  },
+  "made_at": "2026-10-06T20:19:22.445572+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:43:43+00:00",
+  "seq": 65,
+  "stance": "agree",
+  "ticker": "MSFT",
+  "url": "https://www.benzinga.com/analyst-stock-ratings/analyst-color/26/10/62198412/microsoft-sets-up-a-second-ai-paycheck-as-copilot-shifts-to-pay-per-use"
+ },
+ {
+  "excess": {
+   "1": -0.0249
+  },
+  "made_at": "2026-10-06T20:19:14.680430+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.493,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:43:43+00:00",
+  "seq": 64,
+  "stance": "neutral",
+  "ticker": "META",
+  "url": "https://www.benzinga.com/analyst-stock-ratings/analyst-color/26/10/62198412/microsoft-sets-up-a-second-ai-paycheck-as-copilot-shifts-to-pay-per-use"
+ },
+ {
+  "excess": {
+   "1": -0.0081
+  },
+  "made_at": "2026-10-06T20:18:49.188377+00:00",
+  "magnitude": "none",
+  "p_std": 0.005,
+  "p_up": 0.503,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:42:14+00:00",
+  "seq": 63,
+  "stance": "split",
+  "ticker": "IBM",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62198354/zscaler-says-agentic-ai-could-be-its-biggest-opportunity-ever"
+ },
+ {
+  "excess": {
+   "1": -0.0074
+  },
+  "made_at": "2026-10-06T20:18:37.947922+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.463,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:30:59+00:00",
+  "seq": 62,
+  "stance": "agree",
+  "ticker": "F",
+  "url": "https://www.benzinga.com/markets/bonds/26/10/62198030/boeing-ford-wbd-debt-wall"
+ },
+ {
+  "excess": {
+   "1": -0.0011
+  },
+  "made_at": "2026-10-06T20:18:31.105463+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.467,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:30:59+00:00",
+  "seq": 61,
+  "stance": "agree",
+  "ticker": "BA",
+  "url": "https://www.benzinga.com/markets/bonds/26/10/62198030/boeing-ford-wbd-debt-wall"
+ },
+ {
+  "excess": {
+   "1": -0.0029
+  },
+  "made_at": "2026-10-06T20:18:16.807903+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.53,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:30:53+00:00",
+  "seq": 60,
+  "stance": "agree",
+  "ticker": "BDX",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62198026/becton-dickinson-commits-massive-19-billion-to-expand-domestic-medical-manufacturing"
+ },
+ {
+  "excess": {
+   "1": -0.0035
+  },
+  "made_at": "2026-10-06T20:18:03.180037+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.503,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:26:37+00:00",
+  "seq": 59,
+  "stance": "split",
+  "ticker": "TSLA",
+  "url": "https://www.benzinga.com/news/26/10/62197907/tesla-showcase-its-cybercab-robotaxi-paris-auto-show-bloomberg"
+ },
+ {
+  "excess": {
+   "1": 0.0005
+  },
+  "made_at": "2026-10-06T20:17:51.603584+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.527,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:25:50+00:00",
+  "seq": 58,
+  "stance": "agree",
+  "ticker": "RPM",
+  "url": "https://www.benzinga.com/markets/earnings/26/10/62197872/rpm-ceo-sounds-housing-alarm-turnover-at-40-year-low-not-going-to-get-better-yet"
+ },
+ {
+  "excess": {
+   "1": 0.009
+  },
+  "made_at": "2026-10-06T20:17:41.899450+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:22:50+00:00",
+  "seq": 57,
+  "stance": "split",
+  "ticker": "GOOGL",
+  "url": "https://www.benzinga.com/trading-ideas/long-ideas/26/10/62197790/planet-labs-google-ai-satellite"
+ },
+ {
+  "excess": {
+   "1": 0.0089
+  },
+  "made_at": "2026-10-06T20:17:32.726575+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:22:50+00:00",
+  "seq": 56,
+  "stance": "split",
+  "ticker": "GOOG",
+  "url": "https://www.benzinga.com/trading-ideas/long-ideas/26/10/62197790/planet-labs-google-ai-satellite"
+ },
+ {
+  "excess": {
+   "1": -0.0258
+  },
+  "made_at": "2026-10-06T20:17:26.752732+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.487,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:19:32+00:00",
+  "seq": 55,
+  "stance": "agree",
+  "ticker": "DKNG",
+  "url": "https://www.benzinga.com/markets/prediction-markets/26/10/62197664/lebron-polymarket-deal-nba"
+ },
+ {
+  "excess": {
+   "1": -0.0208
+  },
+  "made_at": "2026-10-06T20:17:16.314309+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.487,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:16:39+00:00",
+  "seq": 54,
+  "stance": "split",
+  "ticker": "PANW",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62197509/palo-alto-networks-stock-reaches-new-highs-whats-happening"
+ },
+ {
+  "excess": {
+   "1": -0.0429
+  },
+  "made_at": "2026-10-06T20:17:07.471022+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:16:39+00:00",
+  "seq": 53,
+  "stance": "split",
+  "ticker": "CRWD",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62197509/palo-alto-networks-stock-reaches-new-highs-whats-happening"
+ },
+ {
+  "excess": {
+   "1": -0.0293
+  },
+  "made_at": "2026-10-06T20:16:58.614020+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.487,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:15:41+00:00",
+  "seq": 52,
+  "stance": "split",
+  "ticker": "SBUX",
+  "url": "https://www.benzinga.com/news/26/10/62197465/starbucks-chipotle-tie-might-be-crazy-enough-work-people-close-company-tell-semafor-chipotle-hasn-t-"
+ },
+ {
+  "excess": {
+   "1": -0.0032
+  },
+  "made_at": "2026-10-06T20:16:48.378545+00:00",
+  "magnitude": "small",
+  "p_std": 0.024,
+  "p_up": 0.517,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:15:41+00:00",
+  "seq": 51,
+  "stance": "split",
+  "ticker": "CMG",
+  "url": "https://www.benzinga.com/news/26/10/62197465/starbucks-chipotle-tie-might-be-crazy-enough-work-people-close-company-tell-semafor-chipotle-hasn-t-"
+ },
+ {
+  "excess": {
+   "1": 0.0101
+  },
+  "made_at": "2026-10-06T20:16:42.257116+00:00",
+  "magnitude": "medium",
+  "p_std": 0.057,
+  "p_up": 0.6,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:11:24+00:00",
+  "seq": 50,
+  "stance": "agree",
+  "ticker": "MRVL",
+  "url": "https://www.benzinga.com/news/26/10/62197352/marvell-cfo-investor-day-says-we-expect-non-gaap-eps-greater-30-fy31"
+ },
+ {
+  "excess": {
+   "1": 0.009
+  },
+  "made_at": "2026-10-06T20:16:33.930292+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:09:55+00:00",
+  "seq": 49,
+  "stance": "split",
+  "ticker": "GOOGL",
+  "url": "https://www.benzinga.com/news/26/10/62197269/google-rolls-out-embeddinggemma-2-multimodal-embedding-model"
+ },
+ {
+  "excess": {
+   "1": 0.0089
+  },
+  "made_at": "2026-10-06T20:16:19.945560+00:00",
+  "magnitude": "none",
+  "p_std": 0.005,
+  "p_up": 0.503,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:09:55+00:00",
+  "seq": 48,
+  "stance": "split",
+  "ticker": "GOOG",
+  "url": "https://www.benzinga.com/news/26/10/62197269/google-rolls-out-embeddinggemma-2-multimodal-embedding-model"
+ },
+ {
+  "excess": {
+   "1": -0.0031
+  },
+  "made_at": "2026-10-06T20:16:12.158192+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.52,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:07:15+00:00",
+  "seq": 47,
+  "stance": "agree",
+  "ticker": "PRU",
+  "url": "https://www.benzinga.com/news/26/10/62197183/prudential-mexico-brazil-units-draw-interest-metlife-cnp-bloomberg"
+ },
+ {
+  "excess": {
+   "1": -0.0077
+  },
+  "made_at": "2026-10-06T20:16:02.279364+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:07:15+00:00",
+  "seq": 46,
+  "stance": "split",
+  "ticker": "MET",
+  "url": "https://www.benzinga.com/news/26/10/62197183/prudential-mexico-brazil-units-draw-interest-metlife-cnp-bloomberg"
+ },
+ {
+  "excess": {
+   "1": 0.0029
+  },
+  "made_at": "2026-10-06T20:15:53.568776+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.527,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:07:01+00:00",
+  "seq": 45,
+  "stance": "agree",
+  "ticker": "TEAM",
+  "url": "https://www.benzinga.com/news/26/10/62197166/atlassian-and-openai-expand-partnership-turn-enterprise-knowledge-action"
+ },
+ {
+  "excess": {
+   "1": -0.0037
+  },
+  "made_at": "2026-10-06T20:15:45.198372+00:00",
+  "magnitude": "none",
+  "p_std": 0.005,
+  "p_up": 0.493,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:07:01+00:00",
+  "seq": 44,
+  "stance": "split",
+  "ticker": "MSFT",
+  "url": "https://www.benzinga.com/news/26/10/62197166/atlassian-and-openai-expand-partnership-turn-enterprise-knowledge-action"
+ },
+ {
+  "excess": {
+   "1": -0.0009
+  },
+  "made_at": "2026-10-06T20:15:37.687653+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.517,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:04:55+00:00",
+  "seq": 43,
+  "stance": "agree",
+  "ticker": "LUV",
+  "url": "https://www.benzinga.com/news/26/10/62197089/southwest-airlines-launches-first-its-kind-u-s-airline-plugin-chatgpt-customers-can-plan-southwest-f"
+ },
+ {
+  "excess": {
+   "1": -0.0409
+  },
+  "made_at": "2026-10-06T20:15:30.589453+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.543,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:02:48+00:00",
+  "seq": 42,
+  "stance": "agree",
+  "ticker": "IREN",
+  "url": "https://www.benzinga.com/markets/tech/26/10/62197008/why-is-nebius-group-stock-soaring-tuesday"
+ },
+ {
+  "excess": {
+   "1": -0.021
+  },
+  "made_at": "2026-10-06T20:15:20.332867+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.53,
+  "pre_move": null,
+  "published_at": "2026-10-06T16:02:48+00:00",
+  "seq": 41,
+  "stance": "agree",
+  "ticker": "CRWV",
+  "url": "https://www.benzinga.com/markets/tech/26/10/62197008/why-is-nebius-group-stock-soaring-tuesday"
+ },
+ {
+  "excess": {
+   "1": -0.0153
+  },
+  "made_at": "2026-10-06T20:15:10.675373+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.54,
+  "pre_move": null,
+  "published_at": "2026-10-06T15:54:15+00:00",
+  "seq": 40,
+  "stance": "agree",
+  "ticker": "ZS",
+  "url": "https://www.benzinga.com/news/26/10/62196696/zscaler-affirms-fy2027-adj-eps-guidance-4-86-4-90-vs-4-60-est-affirms-fy2027-sales-guidance-3-908b-3"
+ },
+ {
+  "excess": {
+   "1": -0.0153
+  },
+  "made_at": "2026-10-06T20:14:53.799240+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.54,
+  "pre_move": null,
+  "published_at": "2026-10-06T15:53:40+00:00",
+  "seq": 39,
+  "stance": "agree",
+  "ticker": "ZS",
+  "url": "https://www.benzinga.com/news/26/10/62196641/zscaler-affirms-q1-adj-eps-guidance-1-15-1-16-vs-1-08-est-affirms-q1-sales-guidance-935-000m-939-000"
+ },
+ {
+  "excess": {
+   "1": 0.015
+  },
+  "made_at": "2026-10-06T20:14:47.573614+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T15:50:40+00:00",
+  "seq": 38,
+  "stance": "split",
+  "ticker": "HUBS",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62196552/hubspot-stock-dips-whats-going-on"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-06T20:14:36.737902+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T15:42:02+00:00",
+  "seq": 37,
+  "stance": "split",
+  "ticker": "AIRL",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62196170/why-is-american-airlines-stock-surging-tuesday"
+ },
+ {
+  "excess": {
+   "1": 0.002
+  },
+  "made_at": "2026-10-06T20:14:25.267347+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T15:42:02+00:00",
+  "seq": 36,
+  "stance": "split",
+  "ticker": "AAL",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62196170/why-is-american-airlines-stock-surging-tuesday"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-06T20:14:16.778895+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T15:41:13+00:00",
+  "seq": 35,
+  "stance": "split",
+  "ticker": "WBD",
+  "url": "https://www.benzinga.com/news/26/10/62196141/skydance-ceos-acknowledge-layoffs-will-be-coming-after-paramount-warner-bros-merger-variety"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-06T20:14:04.899838+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": null,
+  "published_at": "2026-10-06T15:41:13+00:00",
+  "seq": 34,
+  "stance": "split",
+  "ticker": "PSKY",
+  "url": "https://www.benzinga.com/news/26/10/62196141/skydance-ceos-acknowledge-layoffs-will-be-coming-after-paramount-warner-bros-merger-variety"
+ },
+ {
+  "excess": {
+   "1": 0.009
+  },
+  "made_at": "2026-10-06T20:13:54.589293+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T15:28:23+00:00",
+  "seq": 33,
+  "stance": "split",
+  "ticker": "GOOGL",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62195699/why-is-planet-labs-stock-surging-on-tuesday-2"
+ },
+ {
+  "excess": {
+   "1": 0.0089
+  },
+  "made_at": "2026-10-06T20:13:47.491272+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T15:28:23+00:00",
+  "seq": 32,
+  "stance": "split",
+  "ticker": "GOOG",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62195699/why-is-planet-labs-stock-surging-on-tuesday-2"
+ },
+ {
+  "excess": {
+   "1": 0.0005
+  },
+  "made_at": "2026-10-06T20:13:37.937045+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T15:25:04+00:00",
+  "seq": 31,
+  "stance": "split",
+  "ticker": "RPM",
+  "url": "https://www.benzinga.com/news/26/10/62195604/rpm-intl-q1-2027-earnings-call-transcript"
+ },
+ {
+  "excess": {
+   "1": 0.009
+  },
+  "made_at": "2026-10-06T20:13:27.995537+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": null,
+  "published_at": "2026-10-06T15:18:38+00:00",
+  "seq": 30,
+  "stance": "split",
+  "ticker": "WDC",
+  "url": "https://www.benzinga.com/trading-ideas/long-ideas/26/10/62195328/seagate-western-digital-toshiba-ai-storage"
+ },
+ {
+  "excess": {
+   "1": 0.0279
+  },
+  "made_at": "2026-10-06T20:13:18.359002+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": null,
+  "published_at": "2026-10-06T15:18:38+00:00",
+  "seq": 29,
+  "stance": "split",
+  "ticker": "STX",
+  "url": "https://www.benzinga.com/trading-ideas/long-ideas/26/10/62195328/seagate-western-digital-toshiba-ai-storage"
+ },
+ {
+  "excess": {
+   "1": 0.0863
+  },
+  "made_at": "2026-10-06T20:13:10.915349+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.49,
+  "pre_move": null,
+  "published_at": "2026-10-06T15:18:32+00:00",
+  "seq": 28,
+  "stance": "split",
+  "ticker": "JUNS",
+  "url": "https://www.benzinga.com/news/26/10/62195317/jupiter-neurosciences-doses-first-participant-its-phase-2a-reset-clinical-study-jotrol-treat-parkins"
+ },
+ {
+  "excess": {
+   "1": -0.0061
+  },
+  "made_at": "2026-10-06T20:13:02.372789+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.453,
+  "pre_move": null,
+  "published_at": "2026-10-06T15:15:57+00:00",
+  "seq": 27,
+  "stance": "agree",
+  "ticker": "MCD",
+  "url": "https://www.benzinga.com/news/26/10/62195240/mcdonald-s-franchisees-balk-800-000-bill-overhaul-stores-bloomberg"
+ },
+ {
+  "excess": {
+   "1": 0.0104
+  },
+  "made_at": "2026-10-06T20:12:50.424269+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.463,
+  "pre_move": null,
+  "published_at": "2026-10-06T15:13:18+00:00",
+  "seq": 26,
+  "stance": "agree",
+  "ticker": "DIS",
+  "url": "https://www.benzinga.com/news/26/10/62195156/disney-lawyer-says-federal-communications-commission-wants-stop-censor-control-what-abc-says-about-t"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-06T20:12:43.375162+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": null,
+  "published_at": "2026-10-06T15:11:34+00:00",
+  "seq": 25,
+  "stance": "split",
+  "ticker": "BTCUSD",
+  "url": "https://www.benzinga.com/crypto/cryptocurrency/26/10/62195089/bitcoin-hit-highest-weekly-close-in-35-weeks-is-100000-next"
+ },
+ {
+  "excess": {
+   "1": -0.0429
+  },
+  "made_at": "2026-10-06T20:12:31.941309+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.457,
+  "pre_move": null,
+  "published_at": "2026-10-06T15:06:32+00:00",
+  "seq": 24,
+  "stance": "agree",
+  "ticker": "CRWD",
+  "url": "https://www.benzinga.com/markets/tech/26/10/62194906/crowdstrike-hits-record-high-up-147-in-2026-as-ai-security-demand-booms"
+ },
+ {
+  "excess": {
+   "1": -0.0002
+  },
+  "made_at": "2026-10-06T20:12:21.944739+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.513,
+  "pre_move": null,
+  "published_at": "2026-10-06T15:02:54+00:00",
+  "seq": 23,
+  "stance": "split",
+  "ticker": "KEYS",
+  "url": "https://www.benzinga.com/news/26/10/62194796/keysight-technologies-bringing-agentic-ai-its-software"
+ },
+ {
+  "excess": {
+   "1": -0.0033
+  },
+  "made_at": "2026-10-06T20:12:10.371033+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.463,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:59:06+00:00",
+  "seq": 22,
+  "stance": "agree",
+  "ticker": "ARES",
+  "url": "https://www.benzinga.com/news/26/10/62194585/ares-faces-50-loss-money-it-piled-talktalk-bt-deal-bloomberg"
+ },
+ {
+  "excess": {
+   "1": -0.0409
+  },
+  "made_at": "2026-10-06T20:11:53.403360+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.54,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:58:10+00:00",
+  "seq": 21,
+  "stance": "agree",
+  "ticker": "VG",
+  "url": "https://www.benzinga.com/news/26/10/62194521/venture-global-talks-sell-us-lng-more-chinese-buyers-bloomberg"
+ },
+ {
+  "excess": {
+   "1": -0.0182
+  },
+  "made_at": "2026-10-06T20:11:39.008986+00:00",
+  "magnitude": "small",
+  "p_std": 0.033,
+  "p_up": 0.497,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:57:52+00:00",
+  "seq": 20,
+  "stance": "split",
+  "ticker": "RKLB",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62194506/rocket-lab-stock-pops-tuesday-whats-going-on"
+ },
+ {
+  "excess": {
+   "1": -0.0509
+  },
+  "made_at": "2026-10-06T20:11:33.176412+00:00",
+  "magnitude": "small",
+  "p_std": 0.033,
+  "p_up": 0.56,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:50:53+00:00",
+  "seq": 19,
+  "stance": "agree",
+  "ticker": "HSCS",
+  "url": "https://www.benzinga.com/news/26/10/62194296/fda-grants-510-k-clearance-heartsciences-myovista-wavecgtm-device-12-lead-resting-electrocardiograph"
+ },
+ {
+  "excess": {
+   "1": -0.0303
+  },
+  "made_at": "2026-10-06T20:11:20.002106+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.467,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:45:30+00:00",
+  "seq": 18,
+  "stance": "agree",
+  "ticker": "AAOI",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62194091/applied-optoelectronics-stock-rises-on-possible-continued-momentum-as-it-completes-share-sale"
+ },
+ {
+  "excess": {
+   "1": -0.0025
+  },
+  "made_at": "2026-10-06T20:11:06.745270+00:00",
+  "magnitude": "small",
+  "p_std": 0.041,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:40:33+00:00",
+  "seq": 17,
+  "stance": "split",
+  "ticker": "OPCH",
+  "url": "https://www.benzinga.com/m-a/26/10/62193728/mckesson-takes-a-stake-in-option-care-with-an-option-on-the-rest"
+ },
+ {
+  "excess": {
+   "1": -0.0169
+  },
+  "made_at": "2026-10-06T20:10:58.345050+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:40:33+00:00",
+  "seq": 16,
+  "stance": "split",
+  "ticker": "MCK",
+  "url": "https://www.benzinga.com/m-a/26/10/62193728/mckesson-takes-a-stake-in-option-care-with-an-option-on-the-rest"
+ },
+ {
+  "excess": {},
+  "made_at": "2026-10-06T20:10:51.216932+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:36:18+00:00",
+  "seq": 15,
+  "stance": "split",
+  "ticker": "NSANY",
+  "url": "https://www.benzinga.com/news/26/10/62193381/honda-nissan-each-team-us-ai-startup-next-gen-vehicle-software-nikkei-asia"
+ },
+ {
+  "excess": {
+   "1": -0.0019
+  },
+  "made_at": "2026-10-06T20:10:44.714120+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.507,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:36:18+00:00",
+  "seq": 14,
+  "stance": "split",
+  "ticker": "HMC",
+  "url": "https://www.benzinga.com/news/26/10/62193381/honda-nissan-each-team-us-ai-startup-next-gen-vehicle-software-nikkei-asia"
+ },
+ {
+  "excess": {
+   "1": 0.0016
+  },
+  "made_at": "2026-10-06T20:10:32.092508+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.487,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:35:46+00:00",
+  "seq": 13,
+  "stance": "agree",
+  "ticker": "NWSA",
+  "url": "https://www.benzinga.com/news/26/10/62193322/new-york-post-media-group-ceo-sean-giancola-stepping-down"
+ },
+ {
+  "excess": {
+   "1": 0.0061
+  },
+  "made_at": "2026-10-06T20:10:24.823538+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.487,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:35:46+00:00",
+  "seq": 12,
+  "stance": "agree",
+  "ticker": "NWS",
+  "url": "https://www.benzinga.com/news/26/10/62193322/new-york-post-media-group-ceo-sean-giancola-stepping-down"
+ },
+ {
+  "excess": {
+   "1": -0.0088
+  },
+  "made_at": "2026-10-06T20:10:15.173940+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.503,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:33:58+00:00",
+  "seq": 11,
+  "stance": "split",
+  "ticker": "BKCH",
+  "url": "https://www.benzinga.com/markets/mid-cap/26/10/62192963/applied-digital-secures-up-to-1gw-power-capacity-in-finland-ahead-of-earnings"
+ },
+ {
+  "excess": {
+   "1": -0.032
+  },
+  "made_at": "2026-10-06T20:10:07.276394+00:00",
+  "magnitude": "small",
+  "p_std": 0.016,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:33:58+00:00",
+  "seq": 10,
+  "stance": "split",
+  "ticker": "APLD",
+  "url": "https://www.benzinga.com/markets/mid-cap/26/10/62192963/applied-digital-secures-up-to-1gw-power-capacity-in-finland-ahead-of-earnings"
+ },
+ {
+  "excess": {
+   "1": 0.0039
+  },
+  "made_at": "2026-10-06T20:09:59.135148+00:00",
+  "magnitude": "small",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:32:58+00:00",
+  "seq": 9,
+  "stance": "split",
+  "ticker": "ICLN",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62192931/whats-going-on-with-bloom-energy-stock-tuesday-3"
+ },
+ {
+  "excess": {
+   "1": 0.0166
+  },
+  "made_at": "2026-10-06T20:09:51.596994+00:00",
+  "magnitude": "small",
+  "p_std": 0.014,
+  "p_up": 0.49,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:32:58+00:00",
+  "seq": 8,
+  "stance": "split",
+  "ticker": "BE",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62192931/whats-going-on-with-bloom-energy-stock-tuesday-3"
+ },
+ {
+  "excess": {
+   "1": -0.0192
+  },
+  "made_at": "2026-10-06T20:09:34.667447+00:00",
+  "magnitude": "small",
+  "p_std": 0.013,
+  "p_up": 0.553,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:26:43+00:00",
+  "seq": 7,
+  "stance": "agree",
+  "ticker": "LW",
+  "url": "https://www.benzinga.com/markets/earnings/26/10/62192772/lamb-weston-beats-q1-expectations-raises-2027-outlook-as-cost-saving-efforts-gain-traction"
+ },
+ {
+  "excess": {
+   "1": -0.0249
+  },
+  "made_at": "2026-10-06T20:09:27.452303+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:26:06+00:00",
+  "seq": 6,
+  "stance": "split",
+  "ticker": "META",
+  "url": "https://www.benzinga.com/markets/tech/26/10/62150844/fieldai-700-million-10-billion-valuation-physical-ai"
+ },
+ {
+  "excess": {
+   "1": 0.0111
+  },
+  "made_at": "2026-10-06T20:09:17.046680+00:00",
+  "magnitude": "none",
+  "p_std": 0.0,
+  "p_up": 0.5,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:26:06+00:00",
+  "seq": 5,
+  "stance": "split",
+  "ticker": "INTC",
+  "url": "https://www.benzinga.com/markets/tech/26/10/62150844/fieldai-700-million-10-billion-valuation-physical-ai"
+ },
+ {
+  "excess": {
+   "1": -0.0249
+  },
+  "made_at": "2026-10-06T20:09:11.167439+00:00",
+  "magnitude": "small",
+  "p_std": 0.005,
+  "p_up": 0.467,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:18:52+00:00",
+  "seq": 4,
+  "stance": "agree",
+  "ticker": "META",
+  "url": "https://www.benzinga.com/markets/tech/26/10/62192478/meta-faces-uk-investigation-over-instagram-instants-launch-ofcom-probes-safety-risks-for-children-and-illegal-content"
+ },
+ {
+  "excess": {
+   "1": 0.0172
+  },
+  "made_at": "2026-10-06T20:09:00.041709+00:00",
+  "magnitude": "small",
+  "p_std": 0.029,
+  "p_up": 0.49,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:18:49+00:00",
+  "seq": 3,
+  "stance": "split",
+  "ticker": "NVAX",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62192431/novavax-stock-falls-back-whats-going-on"
+ },
+ {
+  "excess": {
+   "1": 0.0089
+  },
+  "made_at": "2026-10-06T20:08:53.195044+00:00",
+  "magnitude": "small",
+  "p_std": 0.009,
+  "p_up": 0.507,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:11:57+00:00",
+  "seq": 2,
+  "stance": "split",
+  "ticker": "GOOG",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62192200/oklo-stock-rises-as-googles-20-year-constellation-deal-lifts-nuclear-stocks"
+ },
+ {
+  "excess": {
+   "1": 0.0297
+  },
+  "made_at": "2026-10-06T20:08:45.296053+00:00",
+  "magnitude": "small",
+  "p_std": 0.029,
+  "p_up": 0.48,
+  "pre_move": null,
+  "published_at": "2026-10-06T14:11:57+00:00",
+  "seq": 1,
+  "stance": "split",
+  "ticker": "CEG",
+  "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62192200/oklo-stock-rises-as-googles-20-year-constellation-deal-lifts-nuclear-stocks"
+ }
+]

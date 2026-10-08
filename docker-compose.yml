@@ -63,6 +63,39 @@ services:
     <<: *app
     command: ["trader"]
 
+  # Nightly compressed database dump into ./backups (keeps 14 days). Restoring:
+  # see "Backups" in README.md.
+  backup:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      PGHOST: db
+      PGUSER: driftwatch
+      PGDATABASE: driftwatch
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+      TZ: America/New_York
+      BACKUP_AT: "02:30"
+      KEEP_DAYS: "14"
+    volumes:
+      - ./backups:/backups
+      - ./ops/backup.sh:/backup.sh:ro
+    entrypoint: ["bash", "/backup.sh"]
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # Run on demand (ops/nightly.ps1): verifies the ledger, writes today's anchor and
+  # the dashboard data in docs/data. Not a long-running service.
+  publisher:
+    <<: *app
+    command: ["publish"]
+    restart: "no"
+    profiles: ["tools"]
+    volumes:
+      - ./config:/app/config:ro
+      - ./anchors:/app/anchors
+      - ./docs:/app/docs
+
   gdelt:
     <<: *app
     command: ["gdelt-poll"]
