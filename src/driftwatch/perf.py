@@ -16,6 +16,21 @@ EULER = 0.5772156649
 N = NormalDist()
 
 
+BETA_MIN = 40   # fewest daily returns we'll estimate a beta from
+
+
+def beta_of(stock: list[float], market: list[float]) -> float | None:
+    rs = [b / a - 1 for a, b in zip(stock, stock[1:], strict=False) if a > 0]
+    rm = [b / a - 1 for a, b in zip(market, market[1:], strict=False) if a > 0]
+    if len(rs) != len(rm) or len(rs) < BETA_MIN:
+        return None
+    var = statistics.pvariance(rm)
+    if var <= 0:
+        return None
+    mr, ms = statistics.fmean(rm), statistics.fmean(rs)
+    return sum((a - ms) * (b - mr) for a, b in zip(rs, rm, strict=True)) / len(rs) / var
+
+
 def returns(values: list[float]) -> list[float]:
     return [b / a - 1 for a, b in zip(values, values[1:], strict=False) if a > 0]
 

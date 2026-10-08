@@ -95,6 +95,7 @@ services:
       - ./config:/app/config:ro
       - ./anchors:/app/anchors
       - ./docs:/app/docs
+      - ./backtests:/app/backtests
 
   gdelt:
     <<: *app

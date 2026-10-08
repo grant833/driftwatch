@@ -320,3 +320,63 @@ CREATE TABLE IF NOT EXISTS sec_companies (
     sic_desc   TEXT,
     fetched_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
+
+-- ===================== Backtest (bt_*: rebuildable from public data) =====================
+-- Excluded from nightly backups' data (see ops/backup.sh); reload with `backtest-load`.
+
+-- SEC insider transactions data sets, open-market purchases only.
+CREATE TABLE IF NOT EXISTS bt_insider_trades (
+    accession    TEXT             NOT NULL,
+    trans_sk     BIGINT           NOT NULL,
+    filing_date  DATE             NOT NULL,
+    doc_type     TEXT             NOT NULL,
+    issuer_cik   TEXT,
+    ticker       TEXT,
+    trans_date   DATE,
+    shares       DOUBLE PRECISION,
+    price        DOUBLE PRECISION,
+    value_usd    DOUBLE PRECISION,
+    plan_10b5_1  BOOLEAN          NOT NULL DEFAULT false,   -- reported since 2023
+    PRIMARY KEY (accession, trans_sk)
+);
+CREATE INDEX IF NOT EXISTS bt_insider_trades_day_idx ON bt_insider_trades (filing_date);
+
+CREATE TABLE IF NOT EXISTS bt_insider_owners (
+    accession    TEXT    NOT NULL,
+    owner_cik    TEXT    NOT NULL,
+    owner_name   TEXT,
+    is_officer   BOOLEAN NOT NULL,
+    is_director  BOOLEAN NOT NULL,
+    title        TEXT,
+    PRIMARY KEY (accession, owner_cik)
+);
+
+CREATE TABLE IF NOT EXISTS bt_quarters (
+    quarter    TEXT        PRIMARY KEY,           -- e.g. 2024q1
+    trades     INT         NOT NULL,
+    loaded_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- Split- and dividend-adjusted daily bars around each event. Stored per fetch batch
+-- (a quarter, or 'SPY'): adjusted prices are rescaled whenever a split or dividend
+-- happens, so bars from different fetches must never be mixed inside one event.
+CREATE TABLE IF NOT EXISTS bt_bars (
+    batch   TEXT             NOT NULL,
+    ticker  TEXT             NOT NULL,
+    day     DATE             NOT NULL,
+    open    DOUBLE PRECISION NOT NULL,
+    low     DOUBLE PRECISION NOT NULL,
+    close   DOUBLE PRECISION NOT NULL,
+    PRIMARY KEY (batch, ticker, day)
+);
+
+CREATE TABLE IF NOT EXISTS bt_bars_fetched (
+    batch      TEXT        PRIMARY KEY,           -- quarter fetched, or 'SPY'
+    rows       INT         NOT NULL,
+    fetched_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- Risk-adjusted grading: beta from ~100 sessions before entry (point-in-time), and the
+-- return left after subtracting beta x SPY's move ("abnormal" return).
+ALTER TABLE outcomes ADD COLUMN IF NOT EXISTS beta     DOUBLE PRECISION;
+ALTER TABLE outcomes ADD COLUMN IF NOT EXISTS abnormal DOUBLE PRECISION;

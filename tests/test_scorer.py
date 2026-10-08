@@ -60,3 +60,19 @@ def test_summarize_resists_outliers_and_counts_days():
     assert s["median_signed"] < 0                  # ...the median is not
     assert s["clipped_mean"] < s["mean_signed"]
     assert s["n_days"] == 2 and "rank_ic" in s
+
+
+def test_pre_entry_beta_ignores_prices_after_entry():
+    from datetime import date, timedelta
+
+    from driftwatch.scorer import pre_entry_beta
+    days = [date(2026, 1, 1) + timedelta(days=i) for i in range(120)]
+    px = {}
+    for i, d in enumerate(days):
+        m = 100 * (1 + 0.01 * ((i % 5) - 2))
+        px[("SPY", d)] = (m, m)
+        s = 50 * (1 + 0.02 * ((i % 5) - 2)) if i < 100 else 50 * (1 + 0.5 * (i % 2))
+        px[("AAA", d)] = (s, s)
+    b = pre_entry_beta("AAA", days[100], days, px)
+    assert b is not None and 1.5 < b < 2.5          # the wild days after entry don't count
+    assert pre_entry_beta("AAA", days[20], days, px) is None   # too little history

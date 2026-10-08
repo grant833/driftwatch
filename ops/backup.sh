@@ -12,7 +12,8 @@ dump() {
   out="$DIR/driftwatch-$day.dump"
   tmp="$out.partial"
   echo "$(date '+%F %T') backup: starting $out"
-  if pg_dump --format=custom --compress=6 --file="$tmp" \
+  # bt_* tables are rebuildable from public data (backtest-load): schema only, no rows.
+  if pg_dump --format=custom --compress=6 --exclude-table-data='bt_*' --file="$tmp" \
      && pg_restore --list "$tmp" > /dev/null; then       # proves the file is readable
     mv -f "$tmp" "$out"
     echo "$(date '+%F %T') backup: ok $(du -h "$out" | cut -f1)"

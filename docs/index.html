@@ -117,6 +117,21 @@ footer { margin-top: 48px; color: var(--muted); font-size: 13px; border-top: 1px
     <div class="card scroll"><table id="scoreTable"></table></div>
   </section>
 
+  <section id="btSection" hidden>
+    <h2>History check: the insider strategy since 2016</h2>
+    <p class="sub">The insider account's rules replayed on every qualifying insider purchase
+      filed with the SEC since 2016, buying only after the filing was public. The settings were
+      written to the ledger before the results were computed
+      (<span id="btReg"></span>). This can't be done honestly for the AI panel: the model
+      already knows how older news turned out.</p>
+    <div class="card">
+      <div class="chart-box"><canvas id="btChart"></canvas></div>
+      <div class="scroll" style="margin-top:14px"><table id="btTable"></table></div>
+      <div class="scroll" style="margin-top:14px"><table id="btEvents"></table></div>
+      <p class="sub" id="btNote" style="margin:10px 0 0"></p>
+    </div>
+  </section>
+
   <section>
     <h2>Recent calls</h2>
     <p class="sub">P(up) is the panel's probability the stock beats SPY over the next 5 trading
@@ -280,16 +295,61 @@ function renderScore(s) {
   }
   const rows = hs.map(h => {
     const c = sc[h];
-    if (!c.n_dir) return `<tr><td>${h}-day</td><td colspan="6" class="dim">${c.n} graded, none directional yet</td></tr>`;
+    if (!c.n_dir) return `<tr><td>${h}-day</td><td colspan="8" class="dim">${c.n} graded, none directional yet</td></tr>`;
+    const ba = c.beta_adj || {};
     return `<tr><td>${h}-day</td><td class="num">${c.n_dir}</td><td class="num">${c.n_days ?? "–"}</td>`
       + `<td class="num">${pctPlain(c.hit_rate)}</td>`
       + `<td class="num ${signCls(c.median_signed)}">${pct(c.median_signed, 2)}</td>`
       + `<td class="num ${signCls(c.clipped_mean)}">${pct(c.clipped_mean, 2)}</td>`
-      + `<td class="num">${num(c.t_days, 1)}</td><td class="num">${num(c.rank_ic, 2)}</td></tr>`;
+      + `<td class="num">${num(c.t_days, 1)}</td><td class="num">${num(c.rank_ic, 2)}</td>`
+      + `<td class="num ${signCls(ba.median_signed)}">${pct(ba.median_signed, 2)}</td>`
+      + `<td class="num">${num(ba.t_days, 1)}</td></tr>`;
   });
   setTable("scoreTable", [["Horizon"], ["Calls graded", "num"], ["Days", "num"], ["Hit rate", "num"],
-    ["Median edge", "num"], ["Capped avg edge", "num"], ["By-day t", "num"], ["Rank IC", "num"]],
+    ["Median edge", "num"], ["Capped avg edge", "num"], ["By-day t", "num"], ["Rank IC", "num"],
+    ["Risk-adj. median", "num"], ["Risk-adj. t", "num"]],
     rows, "No graded calls yet. The first 1-day grades arrive the trading day after the first call.");
+}
+
+function renderBacktest(b) {
+  if (!b || !b.portfolio || !b.portfolio.cagr) return;
+  document.getElementById("btSection").hidden = false;
+  const p = b.portfolio, d = b.data;
+  document.getElementById("btReg").textContent = `ledger #${b.ledger_registration}`;
+  const curve = b.equity_curve || [];
+  if (curve.length) {
+    const e0 = curve[0].equity, s0 = curve[0].spy;
+    charts.push(new Chart(document.getElementById("btChart"), { type: "line",
+      data: { labels: curve.map(r => r.day), datasets: [
+        { label: "Insider strategy", data: curve.map(r => 100 * r.equity / e0), borderColor: css("--c-insider"),
+          backgroundColor: css("--c-insider"), pointRadius: 0, borderWidth: 1.5 },
+        { label: "SPY buy & hold", data: curve.map(r => 100 * r.spy / s0), borderColor: css("--c-spy"),
+          backgroundColor: css("--c-spy"), borderDash: [5, 4], pointRadius: 0, borderWidth: 1.5 }] },
+      options: { maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+        scales: { y: { type: "logarithmic", title: { display: true, text: "Growth of 100 (log scale)", color: css("--muted") },
+                       ticks: { color: css("--muted") }, grid: { color: css("--line") } },
+                  x: { ticks: { color: css("--muted"), maxTicksLimit: 8, callback: function (v) { return this.getLabelForValue(v).slice(0, 4); } },
+                       grid: { display: false } } },
+        plugins: { legend: { labels: { color: css("--ink"), boxWidth: 12 } } } } }));
+  }
+  setTable("btTable", [[""], ["Per year", "num"], ["Sharpe", "num"], ["Max drawdown", "num"], ["Avg invested", "num"]], [
+    `<tr><td><span class="dot" style="background:${css("--c-insider")}"></span>Insider strategy</td><td class="num">${pct(p.cagr)}</td><td class="num">${num(p.sharpe)}</td><td class="num">${pct(p.max_drawdown)}</td><td class="num">${pctPlain(p.avg_exposure)}</td></tr>`,
+    `<tr><td><span class="dot" style="background:${css("--c-spy")}"></span>SPY buy &amp; hold</td><td class="num">${pct(p.spy_cagr)}</td><td class="num">${num(p.spy_sharpe)}</td><td class="num">${pct(p.spy_max_drawdown)}</td><td class="num">100%</td></tr>`,
+    `<tr><td class="dim">SPY at the same % invested</td><td class="num">${pct(p.matched_spy_cagr)}</td><td colspan="3"></td></tr>`], "");
+  const pre = (b.event_study || {})["all signals (pre-registered)"] || {};
+  const ev = Object.keys(pre).sort((a, c) => a - c).filter(h => pre[h].n).map(h => {
+    const x = pre[h];
+    return `<tr><td>${h} sessions</td><td class="num">${x.n.toLocaleString()}</td><td class="num">${pctPlain(x.hit_rate)}</td>`
+      + `<td class="num ${signCls(x.median_excess)}">${pct(x.median_excess, 2)}</td>`
+      + `<td class="num ${signCls(x.mean_abnormal)}">${pct(x.mean_abnormal, 2)}</td>`
+      + `<td class="num">${num(x.t_months, 1)}</td></tr>`;
+  });
+  setTable("btEvents", [["Every insider buy, held"], ["Events", "num"], ["Beat SPY", "num"], ["Median vs SPY", "num"],
+    ["Risk-adj. mean", "num"], ["Month t", "num"]], ev, "");
+  document.getElementById("btNote").textContent =
+    `${d.events_priced.toLocaleString()} of ${d.signals.toLocaleString()} signals had price history (${pctPlain(d.coverage)}). `
+    + `Costs of ${b.config.cost_bps} bps per trade side included; idle cash earns nothing. Stocks that were delisted are partly `
+    + `missing, which flatters results. Full report with every limitation: backtests/ folder on GitHub.`;
 }
 
 let predFilter = "agree", predShown = 25;
@@ -384,8 +444,9 @@ function renderCosts(s) {
 }
 
 async function main() {
-  const [s, preds, trades, positions, eq] = await Promise.all(
-    ["summary.json", "predictions.json", "trades.json", "positions.json", "equity.json"].map(load));
+  const [s, preds, trades, positions, eq, bt] = await Promise.all(
+    ["summary.json", "predictions.json", "trades.json", "positions.json", "equity.json",
+     "backtest.json"].map(load));
   if (!s) {
     document.getElementById("pills").innerHTML = `<span class="pill">No data published yet. The first nightly publish fills this page.</span>`;
     return;
@@ -393,6 +454,7 @@ async function main() {
   renderHeader(s, preds);
   renderTournament(s, eq);
   renderScore(s);
+  renderBacktest(bt);
   renderPreds(preds);
   renderTrades(trades, positions);
   renderProof(s);

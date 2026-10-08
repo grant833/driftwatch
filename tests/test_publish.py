@@ -94,3 +94,17 @@ def test_publish_with_empty_database(conn, tmp_path):
     assert len(paths) == 5                                          # no anchor for an empty ledger
     summary = json.loads((tmp_path / "docs" / "data" / "summary.json").read_text())
     assert summary["ledger"]["head_hash"] is None
+
+
+def test_scorecard_reports_beta_adjusted_view(conn):
+    from driftwatch import reports
+    from driftwatch.scorer import scorecard
+    for i, (p, ab) in enumerate([(0.6, 0.02), (0.6, -0.01), (0.4, -0.03)]):
+        nid = _prediction(conn, f"T{i}", p)
+        conn.execute("INSERT INTO outcomes (news_id, ticker, horizon, entry_day, entry_kind, "
+                     "entry_px, exit_day, exit_px, ret, spy_ret, excess, beta, abnormal) VALUES "
+                     "(%s,%s,1,'2026-10-07','open',10,'2026-10-07',11,0.1,0.01,0.09,1.5,%s)",
+                     (nid, f"T{i}", ab))
+    adj = scorecard(conn, [1])[1]["beta_adj"]
+    assert adj["n_dir"] == 3 and adj["hit_rate"] == pytest.approx(2 / 3)
+    assert "beta-adj" in reports.score(conn, [1])

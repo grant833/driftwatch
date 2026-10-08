@@ -143,6 +143,36 @@ def cmd_equity_start(s, conn, args):
         log.info("nothing to add")
 
 
+def cmd_backtest_load(s, conn, args):
+    """Download history for backtests (SEC insider data, industry codes, Alpaca bars)."""
+    from . import bt_data
+    from .trader import sec_lookup
+    only = args.quarters.split(",") if args.quarters else None
+    n = bt_data.load_sec(conn, s.sec_user_agent, only=only)
+    log.info("SEC: %d new open-market purchases loaded", n)
+    n = bt_data.load_sic(conn, sec_lookup(s.sec_user_agent))
+    log.info("SEC industry codes: %d new issuers", n)
+    n = bt_data.load_bars(conn, bt_data.BarClient(s.alpaca_key, s.alpaca_secret))
+    log.info("bars: %d new rows. Next: backtest-insider", n)
+
+
+def cmd_backtest_insider(s, conn, args):
+    from . import backtest
+    r = backtest.run(conn, home())
+    pre = r["event_study"]["all signals (pre-registered)"].get("20", {})
+    p = r.get("portfolio") or {}
+    print(f"signals {r['data']['signals']:,}, priced {r['data']['events_priced']:,}")
+    if pre.get("n"):
+        print(f"20-session vs SPY: median {pre['median_excess']:+.2%}, capped mean "
+              f"{pre['capped_mean']:+.2%}, hit {pre['hit_rate']:.0%}, month t "
+              f"{pre['t_months'] or 0:+.1f}")
+    if p:
+        print(f"portfolio: {p['cagr']:+.1%}/yr vs SPY {p['spy_cagr']:+.1%} "
+              f"(same exposure {p['matched_spy_cagr']:+.1%}), Sharpe {p['sharpe'] or 0:.2f}, "
+              f"max drawdown {p['max_drawdown']:.1%}")
+    print("full report: backtests/ folder and the dashboard")
+
+
 def cmd_notify(s, conn, args):
     from .alerts import notify
     notify(conn, "alert", f"🚨 {args.text}")
@@ -201,6 +231,10 @@ def main() -> None:
     es = sub.add_parser("equity-start")
     es.add_argument("--equity", type=float, default=100000.0)
     es.set_defaults(fn=cmd_equity_start)
+    bl = sub.add_parser("backtest-load")
+    bl.add_argument("--quarters", help="comma list like 2024q1,2024q2 (default: all)")
+    bl.set_defaults(fn=cmd_backtest_load)
+    sub.add_parser("backtest-insider").set_defaults(fn=cmd_backtest_insider)
     nt = sub.add_parser("notify")
     nt.add_argument("text")
     nt.set_defaults(fn=cmd_notify)

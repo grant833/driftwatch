@@ -124,6 +124,11 @@ def score(conn, horizons: list[int]) -> str:
                    + (f"  (by-day t={td:+.1f})" if td is not None else ""))
         if c.get("ic") is not None:
             out.append(f"  IC {c['ic']:+.2f}  rank IC {c['rank_ic']:+.2f}")
+        ba = c.get("beta_adj")
+        if ba:
+            tb = ba.get("t_days")
+            out.append(f"  beta-adj    hit {ba['hit_rate']:.0%} med {ba['median_signed']:+.2%}"
+                       + (f" (by-day t={tb:+.1f})" if tb is not None else ""))
         for st in ("agree", "split"):
             if st in c:
                 s = c[st]

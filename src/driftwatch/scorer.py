@@ -23,6 +23,7 @@ from datetime import date, datetime, timedelta
 from .alerts import alert
 from .config import Settings
 from .db import get_control, set_control
+from .perf import beta_of
 from .prices import ET, MARKET_CLOSE, MARKET_OPEN, PriceSource, completed_cutoff
 
 log = logging.getLogger(__name__)
@@ -72,6 +73,19 @@ def score_one(made_at: datetime, ticker: str, horizon: int, days: list[date],
     spy = b_out[1] / bench_in - 1
     return {"entry_day": ed, "entry_kind": kind, "entry_px": entry_px, "exit_day": xd,
             "exit_px": s_out[1], "ret": ret, "spy_ret": spy, "excess": ret - spy}
+
+
+BETA_LOOKBACK = 100
+
+
+def pre_entry_beta(ticker: str, entry_day: date, days: list[date],
+                   px: dict[tuple[str, date], tuple[float, float]]) -> float | None:
+    """Beta vs SPY from up to 100 sessions strictly before entry (nothing after it)."""
+    i = bisect.bisect_left(days, entry_day)
+    window = [d for d in days[max(0, i - BETA_LOOKBACK - 1):i]
+              if (ticker, d) in px and (BENCHMARK, d) in px]
+    return beta_of([px[(ticker, d)][1] for d in window],
+                   [px[(BENCHMARK, d)][1] for d in window])
 
 
 def _ranks(v: list[float]) -> list[float]:
@@ -155,7 +169,8 @@ def refresh_prices(conn, src: PriceSource, horizons: list[int],
         return 0
     tried = tried if tried is not None else set()
     cutoff = completed_cutoff(now)
-    first = {t: c.astimezone(ET).date() - timedelta(days=5) for t, c in pending}
+    # ~150 calendar days of history before each call, for the pre-entry beta
+    first = {t: c.astimezone(ET).date() - timedelta(days=150) for t, c in pending}
     if get_control(conn, "scorer_cutoff") != cutoff.isoformat():
         tickers = set(first) | {BENCHMARK}
         tried.clear()
@@ -200,26 +215,60 @@ def score_pending(conn, horizons: list[int]) -> int:
             row = score_one(made_at, ticker, h, days, px)
             if row is None:
                 continue
+            beta = pre_entry_beta(ticker, row["entry_day"], days, px)
+            abnormal = row["ret"] - beta * row["spy_ret"] if beta is not None else None
             cur = conn.execute(
                 "INSERT INTO outcomes (news_id, ticker, horizon, entry_day, entry_kind, entry_px, "
-                "exit_day, exit_px, ret, spy_ret, excess) VALUES "
-                "(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) ON CONFLICT DO NOTHING",
+                "exit_day, exit_px, ret, spy_ret, excess, beta, abnormal) VALUES "
+                "(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) ON CONFLICT DO NOTHING",
                 (news_id, ticker, h, row["entry_day"], row["entry_kind"], row["entry_px"],
-                 row["exit_day"], row["exit_px"], row["ret"], row["spy_ret"], row["excess"]))
+                 row["exit_day"], row["exit_px"], row["ret"], row["spy_ret"], row["excess"],
+                 beta, abnormal))
             n += cur.rowcount
     return n
 
 
+def backfill_beta(conn) -> int:
+    """Add beta-adjusted results to outcomes graded before beta existed (or before enough
+    price history had been downloaded)."""
+    todo = conn.execute("SELECT news_id, ticker, horizon, entry_day, ret, spy_ret FROM outcomes "
+                        "WHERE abnormal IS NULL AND scored_at > now() - interval '60 days'"
+                        ).fetchall()
+    if not todo:
+        return 0
+    days = [r[0] for r in conn.execute(
+        "SELECT day FROM prices_daily WHERE ticker = %s ORDER BY day", (BENCHMARK,))]
+    tickers = sorted({r[1] for r in todo} | {BENCHMARK})
+    px = {(t, d): (o, c) for t, d, o, c in conn.execute(
+        "SELECT ticker, day, open, close FROM prices_daily WHERE ticker = ANY(%s)", (tickers,))}
+    n = 0
+    for news_id, ticker, h, entry_day, ret, spy_ret in todo:
+        beta = pre_entry_beta(ticker, entry_day, days, px)
+        if beta is None:
+            continue
+        conn.execute("UPDATE outcomes SET beta = %s, abnormal = %s WHERE news_id = %s "
+                     "AND ticker = %s AND horizon = %s",
+                     (beta, ret - beta * spy_ret, news_id, ticker, h))
+        n += 1
+    return n
+
+
 def scorecard(conn, horizons: list[int]) -> dict[int, dict]:
+    """Per horizon: stats on excess return vs SPY, plus the same stats on the
+    beta-adjusted ("abnormal") return under the key 'beta_adj'."""
     out = {}
     for h in horizons:
         rows = conn.execute(
             "SELECT p.p_up_mean, o.excess, "
             "       coalesce(p.stance, CASE WHEN p.agree THEN 'agree' ELSE 'split' END), "
-            "       o.entry_day "
+            "       o.entry_day, o.abnormal "
             "FROM outcomes o JOIN predictions p USING (news_id, ticker) "
             "WHERE o.horizon = %s", (h,)).fetchall()
-        out[h] = summarize(rows)
+        out[h] = summarize([r[:4] for r in rows])
+        adj = summarize([(r[0], r[4], r[2], r[3]) for r in rows])
+        if adj.get("n_dir"):
+            out[h]["beta_adj"] = {k: adj.get(k) for k in (
+                "n_dir", "hit_rate", "median_signed", "clipped_mean", "t_days", "rank_ic")}
     return out
 
 
@@ -234,7 +283,9 @@ def run(s: Settings, conn, src: PriceSource | None = None) -> None:
         try:
             fetched = refresh_prices(conn, src, cfg["horizons"], tried=tried)
             scored = score_pending(conn, cfg["horizons"])
-            log.info("scorer: %d bars refreshed, %d outcomes scored", fetched, scored)
+            adjusted = backfill_beta(conn)
+            log.info("scorer: %d bars refreshed, %d outcomes scored, %d beta-adjusted",
+                     fetched, scored, adjusted)
             failures = 0
         except Exception as exc:
             failures += 1
