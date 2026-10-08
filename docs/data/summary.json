@@ -22,8 +22,8 @@
   "total_30d_usd": 5.0
  },
  "first_prediction_at": "2026-10-06T20:08:45.296053+00:00",
- "generated_at": "2026-10-08T14:17:17.880985+00:00",
- "generated_et": "2026-10-08 10:17 ET",
+ "generated_at": "2026-10-08T14:19:06.542824+00:00",
+ "generated_et": "2026-10-08 10:19 ET",
  "insider_buys_total": 25,
  "ledger": {
   "by_kind": {
@@ -36,9 +36,9 @@
   "head_recorded_at": "2026-10-08T14:10:20.236231+00:00",
   "head_seq": 420,
   "verified": true,
-  "verified_at": "2026-10-08T14:17:17.880985+00:00"
+  "verified_at": "2026-10-08T14:19:06.542824+00:00"
  },
- "news_total": 2616,
+ "news_total": 2617,
  "predictions_total": 405,
  "scorecard": {
   "1": {
