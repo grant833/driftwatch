@@ -134,6 +134,15 @@ def cmd_publish(s, conn, args):
         log.info("wrote %s", p.relative_to(home()))
 
 
+def cmd_equity_start(s, conn, args):
+    from .trader import start_rows
+    rows = start_rows(conn, args.equity)
+    for acct, day, eq, spy in rows:
+        log.info("%s: start row %s equity=%.2f SPY=%.2f", acct, day, eq, spy)
+    if not rows:
+        log.info("nothing to add")
+
+
 def cmd_notify(s, conn, args):
     from .alerts import notify
     notify(conn, "alert", f"🚨 {args.text}")
@@ -189,6 +198,9 @@ def main() -> None:
     sub.add_parser("ledger-verify").set_defaults(fn=cmd_ledger_verify)
     sub.add_parser("ledger-anchor").set_defaults(fn=cmd_ledger_anchor)
     sub.add_parser("publish").set_defaults(fn=cmd_publish)
+    es = sub.add_parser("equity-start")
+    es.add_argument("--equity", type=float, default=100000.0)
+    es.set_defaults(fn=cmd_equity_start)
     nt = sub.add_parser("notify")
     nt.add_argument("text")
     nt.set_defaults(fn=cmd_notify)

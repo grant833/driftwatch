@@ -1,5 +1,31 @@
 [
  {
+  "account": "insider",
+  "fill_price": 55.95,
+  "filled_qty": 148.0,
+  "limit": 56.05,
+  "qty": 148.0,
+  "reason": "insider buys: 1 insider(s), $28,185",
+  "seq": 436,
+  "side": "buy",
+  "status": "filled",
+  "submitted_at": "2026-10-08T16:30:34.193833+00:00",
+  "ticker": "CET"
+ },
+ {
+  "account": "insider",
+  "fill_price": 49.69,
+  "filled_qty": 166.0,
+  "limit": 49.9,
+  "qty": 166.0,
+  "reason": "insider buys: 1 insider(s), $500,000",
+  "seq": 435,
+  "side": "buy",
+  "status": "filled",
+  "submitted_at": "2026-10-08T16:30:34.153096+00:00",
+  "ticker": "FUL"
+ },
+ {
   "account": "baseline",
   "fill_price": 775.33,
   "filled_qty": 121.0,
@@ -73,20 +99,20 @@
   "reason": "insider buys: 1 insider(s), $32,311,450",
   "seq": 413,
   "side": "buy",
-  "status": "new",
+  "status": "canceled",
   "submitted_at": "2026-10-08T13:57:11.535064+00:00",
   "ticker": "COE"
  },
  {
   "account": "insider",
-  "fill_price": null,
-  "filled_qty": 0.0,
+  "fill_price": 8.88,
+  "filled_qty": 312.0,
   "limit": 8.88,
   "qty": 312.0,
   "reason": "insider buys: 3 insider(s), $249,590",
   "seq": 412,
   "side": "buy",
-  "status": "new",
+  "status": "filled",
   "submitted_at": "2026-10-08T13:57:11.502175+00:00",
   "ticker": "AGMB"
  },

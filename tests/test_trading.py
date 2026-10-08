@@ -455,3 +455,22 @@ def test_flatten_with_one_broken_account_still_sells_and_is_capped(conn):
     assert get_control(conn, "flatten_requested") == "false"    # gave up after 5 tries
     assert "could not be placed" in conn.execute(
         "SELECT text FROM notifications ORDER BY id DESC LIMIT 1").fetchone()[0]
+
+
+def test_first_snapshot_records_the_starting_point(conn):
+    b = FakeBroker(equity=100_197, last=100_000)
+    a = acct("insider", INSIDER, b)
+    assert trader.snapshot(conn, a, FakeMarket(), NOW)
+    rows = conn.execute("SELECT day, equity FROM equity_daily WHERE account = 'insider' "
+                        "ORDER BY day").fetchall()
+    assert rows == [(TODAY - timedelta(days=1), 100_000), (TODAY, 100_197)]
+    assert trader.prev_weekday(date(2026, 10, 12)) == date(2026, 10, 9)   # Mon -> Fri
+
+
+def test_start_rows_repairs_accounts_missing_day_one(conn):
+    conn.execute("INSERT INTO prices_daily (ticker, day, open, close, volume) VALUES "
+                 "('SPY', '2026-10-07', 770, 772.5, 1), ('SPY', '2026-10-08', 776, 771, 1)")
+    conn.execute("INSERT INTO equity_daily (account, day, equity, spy_close) VALUES "
+                 "('news', '2026-10-08', 99972, 771)")
+    assert trader.start_rows(conn, 100_000) == [("news", date(2026, 10, 7), 100_000, 772.5)]
+    assert trader.start_rows(conn, 100_000) == []                         # idempotent

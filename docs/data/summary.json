@@ -1,9 +1,9 @@
 {
  "costs": {
-  "avg_daily_usd": 1.67,
+  "avg_daily_usd": 1.79,
   "calls_30d": {
-   "panel": 1215,
-   "triage": 437
+   "panel": 1284,
+   "triage": 474
   },
   "daily_usd": [
    {
@@ -16,30 +16,30 @@
    },
    {
     "day": "2026-10-08",
-    "usd": 0.93
+    "usd": 1.29
    }
   ],
-  "total_30d_usd": 5.0
+  "total_30d_usd": 5.36
  },
  "first_prediction_at": "2026-10-06T20:08:45.296053+00:00",
- "generated_at": "2026-10-08T14:19:06.542824+00:00",
- "generated_et": "2026-10-08 10:19 ET",
- "insider_buys_total": 25,
+ "generated_at": "2026-10-08T17:54:57.991589+00:00",
+ "generated_et": "2026-10-08 13:54 ET",
+ "insider_buys_total": 30,
  "ledger": {
   "by_kind": {
-   "order": 15,
-   "prediction": 405
+   "order": 17,
+   "prediction": 428
   },
-  "entries": 420,
+  "entries": 445,
   "first_bad_seq": null,
-  "head_hash": "bb99a6e4db2b2a8fba65f9b073b9a93b1e0683250660bb7ad474b0a6b69ac2d1",
-  "head_recorded_at": "2026-10-08T14:10:20.236231+00:00",
-  "head_seq": 420,
+  "head_hash": "d853daee4c628f4bc2afce86722fc4f2aeb614acc5e183637c380cb91f318c3a",
+  "head_recorded_at": "2026-10-08T17:51:19.393679+00:00",
+  "head_seq": 445,
   "verified": true,
-  "verified_at": "2026-10-08T14:19:06.542824+00:00"
+  "verified_at": "2026-10-08T17:54:57.991589+00:00"
  },
- "news_total": 2617,
- "predictions_total": 405,
+ "news_total": 2873,
+ "predictions_total": 428,
  "scorecard": {
   "1": {
    "agree": {

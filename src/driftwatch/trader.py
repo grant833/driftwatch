@@ -403,6 +403,32 @@ def flatten(conn, accts: list[Acct], now: datetime, slip: float, pause: float = 
     return ok
 
 
+def prev_weekday(d):
+    d -= timedelta(days=1)
+    while d.weekday() >= 5:
+        d -= timedelta(days=1)
+    return d
+
+
+def start_rows(conn, equity: float) -> list[tuple]:
+    """One-time repair for accounts snapshotted before start rows existed: add a row on the
+    trading day before each account's first snapshot, with the starting equity and SPY's
+    close that day (from the scorer's price table)."""
+    added = []
+    for acct, first in conn.execute(
+            "SELECT account, min(day) FROM equity_daily GROUP BY 1").fetchall():
+        spy = conn.execute("SELECT day, close FROM prices_daily WHERE ticker = 'SPY' "
+                           "AND day < %s ORDER BY day DESC LIMIT 1", (first,)).fetchone()
+        if not spy:
+            continue
+        cur = conn.execute("INSERT INTO equity_daily (account, day, equity, positions, "
+                           "spy_close) VALUES (%s,%s,%s,0,%s) ON CONFLICT DO NOTHING",
+                           (acct, spy[0], equity, spy[1]))
+        if cur.rowcount:
+            added.append((acct, spy[0], equity, spy[1]))
+    return added
+
+
 def snapshot(conn, a: Acct, prices, now: datetime) -> bool:
     """Record today's closing equity once, only on actual trading days."""
     today = now.astimezone(ET).date()
@@ -415,6 +441,12 @@ def snapshot(conn, a: Acct, prices, now: datetime) -> bool:
         return False                     # market holiday: no new trades today
     acct = a.broker.account()
     n = len(a.broker.positions())
+    if not conn.execute("SELECT 1 FROM equity_daily WHERE account = %s", (a.name,)).fetchone():
+        # First snapshot ever: also record where the account STARTED (yesterday's close
+        # equity and SPY's prior close), or day one's gain or loss would never be counted.
+        conn.execute("INSERT INTO equity_daily (account, day, equity, positions, spy_close) "
+                     "VALUES (%s,%s,%s,0,%s) ON CONFLICT DO NOTHING",
+                     (a.name, prev_weekday(today), acct.last_equity, spy["prev_close"]))
     conn.execute("INSERT INTO equity_daily (account, day, equity, cash, positions, spy_close) "
                  "VALUES (%s,%s,%s,%s,%s,%s) ON CONFLICT DO NOTHING",
                  (a.name, today, acct.equity, acct.cash, n, spy["price"]))
