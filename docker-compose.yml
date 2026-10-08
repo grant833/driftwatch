@@ -59,6 +59,10 @@ services:
     <<: *app
     command: ["notifier"]
 
+  trader:
+    <<: *app
+    command: ["trader"]
+
   gdelt:
     <<: *app
     command: ["gdelt-poll"]

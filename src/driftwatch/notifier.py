@@ -34,15 +34,23 @@ HELP = """<b>driftwatch</b>
 /score – prediction scorecard vs SPY
 /mood – market mood from headlines
 /costs – API usage, last 7 days
-/positions – open positions
+/positions – open paper positions
+/perf – tournament results vs SPY
 /kill – halt all trading immediately
-/resume confirm – allow trading again"""
+/resume confirm – allow trading again
+/flatten confirm – sell everything, then halt"""
 
 
 # ---------------- state helpers ----------------
 
 def set_halt(conn, halted: bool) -> None:
     set_control(conn, "trading_halted", "true" if halted else "false")
+    if halted:       # the trader also cancels any orders still working
+        set_control(conn, "kill_cancel_done", "false")
+    else:            # resuming clears per-account halts and restarts the drawdown peak
+        conn.execute("UPDATE controls SET value = 'false', updated_at = now() "
+                     "WHERE key LIKE 'halt:%%'")
+        set_control(conn, "peak_reset_day", datetime.now(ET).date().isoformat())
 
 
 def is_halted(conn) -> bool:
@@ -59,7 +67,7 @@ def clip(text: str) -> str:
 
 # ---------------- commands ----------------
 
-def handle_command(conn, text: str, horizons: list[int]) -> str:
+def handle_command(conn, text: str, horizons: list[int], trials: int = 3) -> str:
     parts = text.strip().split()
     if not parts:
         return HELP
@@ -80,7 +88,17 @@ def handle_command(conn, text: str, horizons: list[int]) -> str:
     if cmd == "/costs":
         return pre(reports.costs(conn, days=7))
     if cmd == "/positions":
-        return "No positions: paper trading starts in Phase 2."
+        return pre(reports.positions(conn))
+    if cmd == "/perf":
+        from .perf import report
+        return pre(report(conn, trials))
+    if cmd == "/flatten":
+        if arg != "confirm":
+            return ("This sells EVERY position in every paper account and halts trading.\n"
+                    "To do it, send exactly: /flatten confirm")
+        set_control(conn, "flatten_requested", "true")
+        return ("🧯 Flatten requested. Sell orders go out at the next market-open check "
+                "(within a minute while the market is open); trading then halts.")
     if cmd == "/kill":
         set_halt(conn, True)
         return ("🛑 <b>Trading HALTED.</b> No new orders will be placed.\n"
@@ -111,8 +129,12 @@ def daily_summary(conn, horizons: list[int]) -> str:
         f"{stance.get('neutral', 0)} neutral)",
         f"Insider buys (24h): {insider_n}",
         f"API calls (24h): {calls.get('triage', 0)} triage, {calls.get('panel', 0)} panel",
-        f"Trading: {'🛑 HALTED' if is_halted(conn) else 'not live (research phase)'}",
+        f"Trading: {'🛑 HALTED' if is_halted(conn) else 'paper (research phase)'}",
     ]
+    eq = reports.equity_today(conn)
+    if not eq.startswith("No "):
+        lines.append("\n<b>Paper accounts</b>")
+        lines.append(pre(eq))
     _, stale = reports.health(conn)
     if stale:
         lines.append(f"⚠ No data in: {', '.join(stale)}")
@@ -164,7 +186,7 @@ class TelegramError(Exception):
 
 
 def process_updates(conn, tg, owner: int | None, updates: list[dict],
-                    horizons: list[int]) -> int | None:
+                    horizons: list[int], trials: int = 3) -> int | None:
     """Handle messages; return the next offset."""
     offset = None
     for u in updates:
@@ -183,7 +205,7 @@ def process_updates(conn, tg, owner: int | None, updates: list[dict],
             log.warning("ignoring message from unknown chat %s", chat)
             continue
         try:
-            tg.send(owner, handle_command(conn, text, horizons))
+            tg.send(owner, handle_command(conn, text, horizons, trials))
         except TelegramError as exc:
             log.error("reply failed: %s", exc)
     if offset is not None:
@@ -231,7 +253,8 @@ def run(s: Settings, conn, tg=None) -> None:
             pending = owner is not None and conn.execute(
                 "SELECT 1 FROM notifications WHERE sent_at IS NULL LIMIT 1").fetchone()
             updates = tg.updates(offset, timeout=2 if pending else 25)
-            offset = process_updates(conn, tg, owner, updates, horizons) or offset
+            offset = process_updates(conn, tg, owner, updates, horizons,
+                                     s.raw.get("trading", {}).get("trials_count", 3)) or offset
             if owner is not None:
                 flush_outbox(conn, tg, owner)
                 now = datetime.now(UTC)

@@ -1,6 +1,7 @@
 """Plain-text reports shared by the command line and the Telegram bot."""
 from __future__ import annotations
 
+from .prices import ET
 from .scorer import scorecard
 
 RECENT = "WHERE received_at > now() - interval '24 hours'"
@@ -113,20 +114,56 @@ def score(conn, horizons: list[int]) -> str:
         if not c.get("n_dir"):
             out.append(f"  {c['n']} scored, none directional yet")
             continue
-        t = c.get("t_stat")
-        ic = c.get("ic")
-        out.append(f"  scored {c['n']} | leaning {c['n_dir']}")
-        out.append(f"  hit rate   {c['hit_rate']:.0%}")
-        out.append(f"  avg edge   {c['mean_signed']:+.2%}"
+        t, td = c.get("t_stat"), c.get("t_days")
+        out.append(f"  scored {c['n']} | leaning {c['n_dir']} | {c.get('n_days', 0)} days")
+        out.append(f"  hit rate    {c['hit_rate']:.0%}")
+        out.append(f"  avg edge    {c['mean_signed']:+.2%}"
                    + (f"  (t={t:+.1f})" if t is not None else ""))
-        if ic is not None:
-            out.append(f"  IC         {ic:+.2f}")
+        out.append(f"  median      {c['median_signed']:+.2%}")
+        out.append(f"  capped avg  {c['clipped_mean']:+.2%}"
+                   + (f"  (by-day t={td:+.1f})" if td is not None else ""))
+        if c.get("ic") is not None:
+            out.append(f"  IC {c['ic']:+.2f}  rank IC {c['rank_ic']:+.2f}")
         for st in ("agree", "split"):
             if st in c:
                 s = c[st]
                 out.append(f"  {st:6s} n={s['n']:<4d} hit {s['hit_rate']:.0%} "
-                           f"edge {s['mean_signed']:+.2%}")
-    smallest = min((c.get("n_dir", 0) for c in card.values()), default=0)
-    if smallest < 100:
-        out.append("\n⚠ Under ~100 scored calls per horizon this is mostly noise.")
+                           f"med {s['median_signed']:+.2%}")
+    days = min((c.get("n_days", 0) for c in card.values() if c.get("n_dir")), default=0)
+    if days < 20:
+        out.append(f"\n⚠ Only {days} trading day(s) of results. Trust the by-day t and "
+                   f"median over the average; under ~20 days this is mostly noise.")
     return "\n".join(out)
+
+
+def positions(conn) -> str:
+    rows = conn.execute(
+        "SELECT p.account, p.ticker, p.qty, p.avg_entry_price, p.current_price, "
+        "p.unrealized_plpc, h.exit_after FROM positions_live p LEFT JOIN holdings h "
+        "USING (account, ticker) ORDER BY p.account, p.market_value DESC").fetchall()
+    if not rows:
+        return "No open positions."
+    out, cur = [], None
+    for acct, tkr, qty, entry, px, plpc, exit_after in rows:
+        if acct != cur:
+            out.append(f"── {acct} ──")
+            cur = acct
+        due = f" exit≥{exit_after:%m-%d}" if exit_after and exit_after.year < 2900 else ""
+        out.append(f"{tkr:5s} {qty:>6g} @{entry:>8.2f} now {px:>8.2f} {plpc:+6.1%}{due}")
+    upd = conn.execute("SELECT max(updated_at) FROM positions_live").fetchone()[0]
+    if upd:
+        out.append(f"(as of {upd.astimezone(ET):%m-%d %H:%M} ET)")
+    return "\n".join(out)
+
+
+def equity_today(conn) -> str:
+    rows = conn.execute(
+        "SELECT DISTINCT ON (account) account, day, equity FROM equity_daily "
+        "ORDER BY account, day DESC").fetchall()
+    first = dict(conn.execute(
+        "SELECT DISTINCT ON (account) account, equity FROM equity_daily "
+        "ORDER BY account, day").fetchall())
+    if not rows:
+        return "No paper equity recorded yet."
+    return "\n".join(f"{a:8s} ${eq:>11,.0f} ({eq / first[a] - 1:+.2%} since start)"
+                     for a, _d, eq in rows)

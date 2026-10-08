@@ -46,3 +46,46 @@ notifier:
 scorer:
   poll_minutes: 30
   horizons: [1, 5, 10]            # trading sessions after entry
+
+trading:
+  enabled: true
+  allow_live: false               # refuse any non-paper Alpaca URL unless this is true
+  run_times: ["09:45", "12:30", "15:45"]   # US/Eastern decision times on trading days
+  snapshot_after: "16:10"         # record end-of-day equity after this time
+  limit_slippage: 0.005           # marketable limit: buy <= price*1.005, sell >= price*0.995
+  max_invested: 0.95              # never use more than this share of equity (no margin)
+  min_price: 5.0
+  halt_drawdown: 0.15             # halt an account at a 15% drop from its peak
+  halt_daily_loss: 0.03           # no new entries after a 3% down day
+  risk_off_slots: 0.5             # SPY below 200-day average: use half the position slots
+  default_daily_vol: 0.03         # when a stock lacks price history
+  reference_daily_vol: 0.02       # a stock this volatile gets a full-size position
+  trials_count: 3                 # strategies tested so far (raise when you try a variant)
+  accounts:
+    news:                         # A: the AI news panel
+      key_env: ALPACA_API_KEY
+      secret_env: ALPACA_API_SECRET
+      strategy: news_drift
+      max_positions: 12
+      max_position_pct: 0.10
+      hold_days: 5
+      stop_loss: 0.08
+      min_edge: 0.05              # p_up must be >= 0.55 and the panel must AGREE
+      max_pre_move: 0.05          # skip if the stock already jumped >5% before the call
+      max_chase: 0.03             # skip if it rose >3% more since the call
+      entry_window_hours: 24
+    insider:                      # B: follow insider open-market buys
+      key_env: ALPACA_B_API_KEY
+      secret_env: ALPACA_B_API_SECRET
+      strategy: insider_follow
+      max_positions: 12
+      max_position_pct: 0.10
+      hold_days: 20
+      stop_loss: 0.10
+      lookback_days: 3
+      max_chase: 0.05
+    baseline:                     # C: plain SPY trend-following, no AI at all
+      key_env: ALPACA_C_API_KEY
+      secret_env: ALPACA_C_API_SECRET
+      strategy: spy_trend
+      sma_days: 200

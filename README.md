@@ -7,7 +7,7 @@ instead looks for news the market hasn't fully absorbed, holds for days, and
 records every prediction in a tamper-evident ledger, so its track record can be
 proven instead of claimed.
 
-## Status: Phase 1 (reading and predicting, no trading)
+## Status: Phase 2 (paper-trading tournament)
 
 | Component | What it does |
 |---|---|
@@ -19,6 +19,9 @@ proven instead of claimed.
 | `notifier` service | Telegram bot: insider buys, strong AGREE calls, problems, and a weekday after-close summary; commands `/status /today /insiders /score /mood /costs /kill /resume`. Obeys only the owner's chat |
 | Universe & budget | Only US exchange-listed stocks Alpaca can trade, priced at $5+, ETFs excluded. Triage rates importance 1–5; the panel scores the most important news first, and its daily call budget is released evenly through the US/Eastern day so a busy morning can't starve after-close earnings |
 | "Priced in?" check | At prediction time the panel sees how far the stock has already moved vs the prior close (IEX snapshot), and the move is stored with the prediction |
+| `trader` service | Paper trading with three Alpaca paper accounts competing: **news** (the AI panel: AGREE, p_up ≥ 0.55, not already priced in, 5-day holds), **insider** (officer/director open-market buys, 20-day holds) and **baseline** (SPY while above its 200-day average, otherwise cash: no AI at all). Marketable limit orders only, volatility-scaled sizes, max 10% per stock, no margin, stop-losses, time exits, exit when the panel turns bearish, half the slots when SPY is in a downtrend, a 3% daily-loss brake and a 15% drawdown halt. Every order is written to the hash-chained ledger first |
+| Safety | Refuses any non-paper Alpaca URL unless `trading.allow_live: true`. Telegram `/kill` halts and cancels working orders; `/flatten confirm` sells everything and halts; `/resume confirm` restarts |
+| `/perf` | Each account vs buy-and-hold SPY: return, max drawdown, Sharpe, probabilistic Sharpe, and the Deflated Sharpe Ratio adjusted for the number of strategies tried |
 | `gdelt` service | Optional, off by default (GDELT's free API returned empty data in Oct 2026); replaced by headline-based market mood |
 | Ledger | Hash-chained, append-only (enforced by Postgres triggers), daily anchors for public git timestamps |
 | Guards | Ticker blocklist so the bot never buys ETFs held in the UBS model (wash-sale protection) |
@@ -52,6 +55,8 @@ docker compose run --rm news mood                # hourly market mood from headl
 docker compose run --rm news costs               # API calls and tokens per day
 docker compose run --rm news score               # scorecard: hit rate, edge, IC vs SPY
 docker compose run --rm news kill                # halt trading (same as /kill in Telegram)
+docker compose run --rm news positions           # open paper positions
+docker compose run --rm news perf                # tournament results vs SPY
 ```
 
 Runs on a Raspberry Pi 5 (arm64) or any small Linux VM.
@@ -68,7 +73,7 @@ Runs on a Raspberry Pi 5 (arm64) or any small Linux VM.
 
 - **Phase 1 (done):** Form 4 parsing, LLM triage plus analyst panel, predictions in the ledger.
 - **Phase 1C (done):** "already priced in?" check, scorekeeper, Telegram bot with kill switch.
-- **Phase 2:** Three-way paper tournament (news drift, news plus insider, SPY trend baseline).
+- **Phase 2 (running):** Three-way paper tournament (AI news, insider buys, SPY trend baseline).
 - **Phase 3:** Go/no-go gate on Deflated Sharpe vs SPY, then small live Roth IRA allocation.
 
 ## Tests

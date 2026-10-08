@@ -74,29 +74,67 @@ def score_one(made_at: datetime, ticker: str, horizon: int, days: list[date],
             "exit_px": s_out[1], "ret": ret, "spy_ret": spy, "excess": ret - spy}
 
 
-def summarize(rows: list[tuple[float, float, str]]) -> dict:
-    """rows: (p_up, excess, stance). Directional = the panel actually leaned one way."""
-    directional = [(p, x, st) for p, x, st in rows if st != "neutral" and p != 0.5]
-    signed = [x if p > 0.5 else -x for p, x, _ in directional]
+def _ranks(v: list[float]) -> list[float]:
+    order = sorted(range(len(v)), key=v.__getitem__)
+    r = [0.0] * len(v)
+    i = 0
+    while i < len(v):                       # average ranks for ties
+        j = i
+        while j + 1 < len(v) and v[order[j + 1]] == v[order[i]]:
+            j += 1
+        for k in range(i, j + 1):
+            r[order[k]] = (i + j) / 2
+        i = j + 1
+    return r
+
+
+def _t(xs: list[float]) -> float | None:
+    if len(xs) < 3:
+        return None
+    sd = statistics.stdev(xs)
+    return statistics.fmean(xs) / (sd / math.sqrt(len(xs))) if sd else None
+
+
+CLIP = 0.10   # cap each call's result at +-10% so one wild stock can't fake an edge
+
+
+def summarize(rows: list[tuple]) -> dict:
+    """rows: (p_up, excess, stance[, entry_day]). Directional = the panel leaned one way.
+
+    Beyond the plain average, reports outlier-resistant views (median, capped mean, rank IC)
+    and a by-day t-stat: calls made on the same day share market moves, so the honest
+    sample size is the number of distinct days, not the number of calls."""
+    rows = [tuple(r) + (None,) * (4 - len(r)) for r in rows
+            if r[0] is not None and r[1] is not None]
+    directional = [r for r in rows if r[2] != "neutral" and r[0] != 0.5]
+    signed = [x if p > 0.5 else -x for p, x, _, _ in directional]
     out = {"n": len(rows), "n_dir": len(directional)}
     if not directional:
         return out
-    out["hit_rate"] = sum(s > 0 for s in signed) / len(signed)
+    out["hit_rate"] = sum(v > 0 for v in signed) / len(signed)
     out["mean_signed"] = statistics.fmean(signed)
-    if len(signed) > 2:
-        sd = statistics.stdev(signed)
-        out["t_stat"] = out["mean_signed"] / (sd / math.sqrt(len(signed))) if sd else None
-        edges = [p - 0.5 for p, _, _ in directional]
-        xs = [x for _, x, _ in directional]
+    out["median_signed"] = statistics.median(signed)
+    out["clipped_mean"] = statistics.fmean([max(-CLIP, min(CLIP, v)) for v in signed])
+    out["t_stat"] = _t(signed)
+    days: dict = {}
+    for (_p, _x, _st, d), v in zip(directional, signed, strict=True):
+        days.setdefault(d, []).append(max(-CLIP, min(CLIP, v)))
+    out["n_days"] = len([d for d in days if d is not None])
+    out["t_days"] = _t([statistics.fmean(v) for d, v in days.items() if d is not None])
+    if len(directional) > 2:
+        edges = [p - 0.5 for p, _, _, _ in directional]
+        xs = [x for _, x, _, _ in directional]
         try:
             out["ic"] = statistics.correlation(edges, xs)
+            out["rank_ic"] = statistics.correlation(_ranks(edges), _ranks(xs))
         except statistics.StatisticsError:
-            out["ic"] = None
+            out["ic"] = out["rank_ic"] = None
     for stance in ("agree", "split"):
-        sub = [(x if p > 0.5 else -x) for p, x, st in directional if st == stance]
+        sub = [v for r, v in zip(directional, signed, strict=True) if r[2] == stance]
         if sub:
             out[stance] = {"n": len(sub), "hit_rate": sum(v > 0 for v in sub) / len(sub),
-                           "mean_signed": statistics.fmean(sub)}
+                           "mean_signed": statistics.fmean(sub),
+                           "median_signed": statistics.median(sub)}
     return out
 
 
@@ -177,7 +215,8 @@ def scorecard(conn, horizons: list[int]) -> dict[int, dict]:
     for h in horizons:
         rows = conn.execute(
             "SELECT p.p_up_mean, o.excess, "
-            "       coalesce(p.stance, CASE WHEN p.agree THEN 'agree' ELSE 'split' END) "
+            "       coalesce(p.stance, CASE WHEN p.agree THEN 'agree' ELSE 'split' END), "
+            "       o.entry_day "
             "FROM outcomes o JOIN predictions p USING (news_id, ticker) "
             "WHERE o.horizon = %s", (h,)).fetchall()
         out[h] = summarize(rows)

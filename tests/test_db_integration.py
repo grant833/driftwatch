@@ -10,17 +10,6 @@ URL = os.getenv("TEST_DATABASE_URL")
 pytestmark = pytest.mark.skipif(not URL, reason="TEST_DATABASE_URL not set")
 
 
-@pytest.fixture
-def conn(monkeypatch):
-    monkeypatch.setenv("DRIFTWATCH_HOME", os.path.dirname(os.path.dirname(__file__)))
-    with psycopg.connect(URL, autocommit=True) as c:
-        c.execute("DROP TABLE IF EXISTS ledger, news_items, filings, gdelt_tone, insider_trades, "
-                  "triage, panel_assessments, predictions, llm_calls, fund_tickers, notifications, "
-                  "controls, prices_daily, outcomes, tradable_assets CASCADE")
-        db.apply_schema(c)
-        yield c
-
-
 def test_ledger_roundtrip_and_append_only(conn):
     for i in range(3):
         ledger.append(conn, "prediction", {"ticker": "ABC", "p_up": 0.55 + i / 100})

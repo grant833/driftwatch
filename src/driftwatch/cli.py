@@ -81,6 +81,20 @@ def cmd_notifier(s, conn, args):
     notifier.run(s, conn)
 
 
+def cmd_trader(s, conn, args):
+    from . import trader
+    trader.run(s, conn)
+
+
+def cmd_positions(s, conn, args):
+    print(reports.positions(conn))
+
+
+def cmd_perf(s, conn, args):
+    from .perf import report
+    print(report(conn, s.raw["trading"].get("trials_count", 3)))
+
+
 def cmd_kill(s, conn, args):
     from .notifier import set_halt
     set_halt(conn, True)
@@ -149,6 +163,9 @@ def main() -> None:
     sub.add_parser("scorer").set_defaults(fn=cmd_scorer)
     sub.add_parser("notifier").set_defaults(fn=cmd_notifier)
     sub.add_parser("kill").set_defaults(fn=cmd_kill)
+    sub.add_parser("trader").set_defaults(fn=cmd_trader)
+    sub.add_parser("positions").set_defaults(fn=cmd_positions)
+    sub.add_parser("perf").set_defaults(fn=cmd_perf)
     sub.add_parser("resume").set_defaults(fn=cmd_resume)
     sub.add_parser("ledger-verify").set_defaults(fn=cmd_ledger_verify)
     sub.add_parser("ledger-anchor").set_defaults(fn=cmd_ledger_anchor)

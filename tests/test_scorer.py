@@ -48,3 +48,15 @@ def test_summarize():
     assert s["agree"]["n"] == 2 and s["agree"]["hit_rate"] == 1.0
     assert s["split"]["hit_rate"] == 0.0
     assert summarize([]) == {"n": 0, "n_dir": 0}
+
+
+def test_summarize_resists_outliers_and_counts_days():
+    from datetime import date
+    d1, d2 = date(2026, 10, 6), date(2026, 10, 7)
+    rows = [(0.4, -0.70, "agree", d1),            # one wild short winner (+70%)
+            (0.6, -0.01, "agree", d1), (0.6, -0.02, "split", d2), (0.6, -0.01, "agree", d2)]
+    s = summarize(rows)
+    assert s["mean_signed"] > 0.15                 # the raw average is fooled...
+    assert s["median_signed"] < 0                  # ...the median is not
+    assert s["clipped_mean"] < s["mean_signed"]
+    assert s["n_days"] == 2 and "rank_ic" in s

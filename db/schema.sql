@@ -107,7 +107,7 @@ CREATE INDEX IF NOT EXISTS insider_trades_ticker_idx ON insider_trades (ticker, 
 CREATE OR REPLACE VIEW insider_buy_signals AS
 SELECT t.ticker, t.insider_name, t.officer_title, t.is_director, t.is_officer,
        t.transaction_date, t.shares, t.price, t.value_usd, t.shares_after,
-       f.filed_at, t.received_at, t.accession
+       f.filed_at, t.received_at, t.accession, t.issuer_cik
 FROM insider_trades t
 JOIN filings f USING (accession)
 WHERE t.code = 'P'
@@ -253,3 +253,70 @@ CREATE TABLE IF NOT EXISTS tradable_assets (
 
 -- 1 (trivial) .. 5 (major, likely to move the stock for days)
 ALTER TABLE triage ADD COLUMN IF NOT EXISTS importance INT;
+
+-- ===================== Phase 2: paper trading =====================
+
+-- Every order we submit. client_order_id is deterministic, so a restart can never
+-- submit the same order twice (Alpaca rejects a reused client_order_id).
+CREATE TABLE IF NOT EXISTS orders (
+    client_order_id  TEXT        PRIMARY KEY,
+    account          TEXT        NOT NULL,
+    ticker           TEXT        NOT NULL,
+    side             TEXT        NOT NULL,
+    qty              DOUBLE PRECISION NOT NULL,
+    limit_price      DOUBLE PRECISION,
+    reason           TEXT        NOT NULL,
+    ref_news_id      BIGINT,
+    ledger_seq       BIGINT,
+    broker_order_id  TEXT,
+    status           TEXT        NOT NULL DEFAULT 'submitted',
+    filled_qty       DOUBLE PRECISION,
+    filled_avg_price DOUBLE PRECISION,
+    notified         BOOLEAN     NOT NULL DEFAULT false,
+    submitted_at     TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at       TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS orders_account_idx ON orders (account, submitted_at DESC);
+
+-- Our notes on each position we opened: why, and when the time exit is due.
+CREATE TABLE IF NOT EXISTS holdings (
+    account     TEXT    NOT NULL,
+    ticker      TEXT    NOT NULL,
+    entry_day   DATE    NOT NULL,
+    exit_after  DATE    NOT NULL,
+    reason      TEXT    NOT NULL,
+    ref_news_id BIGINT,
+    PRIMARY KEY (account, ticker)
+);
+
+-- Latest broker view of positions (for /positions without broker keys in the bot).
+CREATE TABLE IF NOT EXISTS positions_live (
+    account         TEXT             NOT NULL,
+    ticker          TEXT             NOT NULL,
+    qty             DOUBLE PRECISION NOT NULL,
+    avg_entry_price DOUBLE PRECISION,
+    current_price   DOUBLE PRECISION,
+    market_value    DOUBLE PRECISION,
+    unrealized_plpc DOUBLE PRECISION,
+    updated_at      TIMESTAMPTZ      NOT NULL DEFAULT now(),
+    PRIMARY KEY (account, ticker)
+);
+
+-- End-of-day account values, with SPY's close for the buy-and-hold benchmark.
+CREATE TABLE IF NOT EXISTS equity_daily (
+    account    TEXT             NOT NULL,
+    day        DATE             NOT NULL,
+    equity     DOUBLE PRECISION NOT NULL,
+    cash       DOUBLE PRECISION,
+    positions  INT,
+    spy_close  DOUBLE PRECISION,
+    PRIMARY KEY (account, day)
+);
+
+-- SEC industry code per company, cached (used to skip funds and SPACs).
+CREATE TABLE IF NOT EXISTS sec_companies (
+    cik        TEXT        PRIMARY KEY,
+    sic        TEXT,
+    sic_desc   TEXT,
+    fetched_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
