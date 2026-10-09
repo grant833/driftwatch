@@ -114,6 +114,11 @@ finra.org/rules-guidance/notices/26-10 · dspace.mit.edu/handle/1721.1/114876
    - Q2: hard news vs soft news
    - Q3: calls that agree with the early price reaction vs calls that fight it
    - Q4: calibration of the panel's probabilities
+   - Q5: a *fast* insider entry: each qualifying Form 4 seen during market hours is priced
+     the moment the bot sees it and graded vs IWM at the close, next open, 1 and 5
+     sessions (measured, never traded). `backtest-diagnose` showed the remaining insider
+     edge sits in the hours after filing (+0.8% filing close to next open, 73% of the
+     time) and is gone by day 2–5.
 3. **Insider diagnostic** (`backtest-diagnose`): where the return goes (before filing,
    overnight, after entry) vs SPY and IWM. A diagnostic, not a new strategy.
 4. **The likely end state, stated now so it can't drift later:** unless the AI panel

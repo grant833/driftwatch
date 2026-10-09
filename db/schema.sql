@@ -380,3 +380,19 @@ CREATE TABLE IF NOT EXISTS bt_bars_fetched (
 -- return left after subtracting beta x SPY's move ("abnormal" return).
 ALTER TABLE outcomes ADD COLUMN IF NOT EXISTS beta     DOUBLE PRECISION;
 ALTER TABLE outcomes ADD COLUMN IF NOT EXISTS abnormal DOUBLE PRECISION;
+
+-- Q5: live measurement of a fast insider entry (never traded). Price when the bot saw a
+-- qualifying Form 4 during market hours, graded vs IWM at later points.
+CREATE TABLE IF NOT EXISTS insider_fast (
+    accession    TEXT             NOT NULL,
+    ticker       TEXT             NOT NULL,
+    detected_at  TIMESTAMPTZ      NOT NULL,
+    px           DOUBLE PRECISION NOT NULL,
+    bench_px     DOUBLE PRECISION NOT NULL,
+    ex_close     DOUBLE PRECISION,
+    ex_next_open DOUBLE PRECISION,
+    ex_1d        DOUBLE PRECISION,
+    ex_5d        DOUBLE PRECISION,
+    graded_at    TIMESTAMPTZ,
+    PRIMARY KEY (accession, ticker)
+);

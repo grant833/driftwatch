@@ -12,6 +12,8 @@ traded and no extra paper accounts are needed:
      calls that fight it? (Research on underreaction says follow the reaction; the live
      strategy currently avoids stocks that already moved a lot.)
   Q4 Calibration: when the panel says 60%, is it right ~60% of the time?
+  Q5 Fast insider entry: insider buys priced from the moment the bot saw the filing
+     (market hours only), vs small caps. Measured, never traded (see fast_insider.py).
 
 A difference only counts once it is large relative to its by-day noise (|t| > 2) and the
 answers will be judged in mid-November 2026 (~25 trading days).
@@ -78,4 +80,6 @@ def report(conn, horizons: list[int]) -> str:
     for bucket, n, share in calibration(conn, h):
         lines.append(f"  P(up) {bucket}: n={n:<4d} beat SPY "
                      f"{'–' if share is None else f'{share:.0%}'}")
+    from .fast_insider import report_lines
+    lines += [""] + report_lines(conn)
     return "\n".join(lines)

@@ -142,6 +142,9 @@ def insert_trades(conn, accession: str, trades: list[dict]) -> None:
 def poll(s: Settings, conn) -> None:
     cfg = s.raw["insider"]
     client = httpx.Client(headers={"User-Agent": s.sec_user_agent}, timeout=30)
+    from .fast_insider import record as record_fast
+    from .prices import AlpacaPrices
+    prices = AlpacaPrices(s.alpaca_key, s.alpaca_secret) if s.alpaca_key else None
     failures = 0
     while True:
         rows = conn.execute(
@@ -159,6 +162,8 @@ def poll(s: Settings, conn) -> None:
                 for t in trades:
                     if is_signal(t, cfg["min_signal_value_usd"]):
                         notify(conn, "insider", format_insider(t))
+                        if prices is not None:              # Q5 measurement, never traded
+                            record_fast(conn, prices, accession, t["ticker"])
                         log.info("INSIDER BUY %s: %s (%s) bought $%.0f",
                                  t["ticker"], t["insider_name"], t["officer_title"] or "director",
                                  t["value_usd"])

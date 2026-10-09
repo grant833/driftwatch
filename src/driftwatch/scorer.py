@@ -284,6 +284,8 @@ def run(s: Settings, conn, src: PriceSource | None = None) -> None:
             fetched = refresh_prices(conn, src, cfg["horizons"], tried=tried)
             scored = score_pending(conn, cfg["horizons"])
             adjusted = backfill_beta(conn)
+            from .fast_insider import grade as grade_fast
+            grade_fast(conn, src)
             log.info("scorer: %d bars refreshed, %d outcomes scored, %d beta-adjusted",
                      fetched, scored, adjusted)
             failures = 0
