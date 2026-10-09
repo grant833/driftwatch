@@ -173,6 +173,17 @@ def cmd_backtest_insider(s, conn, args):
     print("full report: backtests/ folder and the dashboard")
 
 
+def cmd_backtest_diagnose(s, conn, args):
+    from . import bt_diagnose
+    out = bt_diagnose.run(conn, home())
+    print(open(out["path"], encoding="utf-8").read())
+
+
+def cmd_experiments(s, conn, args):
+    from .experiments import report
+    print(report(conn, s.raw["scorer"]["horizons"]))
+
+
 def cmd_notify(s, conn, args):
     from .alerts import notify
     notify(conn, "alert", f"🚨 {args.text}")
@@ -235,6 +246,8 @@ def main() -> None:
     bl.add_argument("--quarters", help="comma list like 2024q1,2024q2 (default: all)")
     bl.set_defaults(fn=cmd_backtest_load)
     sub.add_parser("backtest-insider").set_defaults(fn=cmd_backtest_insider)
+    sub.add_parser("backtest-diagnose").set_defaults(fn=cmd_backtest_diagnose)
+    sub.add_parser("experiments").set_defaults(fn=cmd_experiments)
     nt = sub.add_parser("notify")
     nt.add_argument("text")
     nt.set_defaults(fn=cmd_notify)

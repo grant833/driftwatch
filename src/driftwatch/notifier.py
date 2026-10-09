@@ -36,6 +36,7 @@ HELP = """<b>driftwatch</b>
 /costs – API usage, last 7 days
 /positions – open paper positions
 /perf – tournament results vs SPY
+/experiments – pre-registered research questions
 /kill – halt all trading immediately
 /resume confirm – allow trading again
 /flatten confirm – sell everything, then halt"""
@@ -92,6 +93,9 @@ def handle_command(conn, text: str, horizons: list[int], trials: int = 3) -> str
     if cmd == "/perf":
         from .perf import report
         return pre(report(conn, trials))
+    if cmd == "/experiments":
+        from .experiments import report as experiments
+        return pre(experiments(conn, horizons))
     if cmd == "/flatten":
         if arg != "confirm":
             return ("This sells EVERY position in every paper account and halts trading.\n"

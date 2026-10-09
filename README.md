@@ -112,7 +112,11 @@ docker compose run --rm news perf                # tournament results vs SPY
 docker compose --profile tools build publisher       # on-demand service: rebuild after updates
 docker compose run --rm publisher backtest-load      # SEC insider data, industry codes, bars
 docker compose run --rm publisher backtest-insider   # report: backtests/ + dashboard
+docker compose run --rm publisher backtest-diagnose  # where the return goes, vs SPY and IWM
+docker compose run --rm news experiments             # pre-registered questions on live calls
 ```
+
+Research behind the design and the pre-registered questions: [`backtests/RESEARCH.md`](backtests/RESEARCH.md).
 
 Runs on any always-on machine with Docker and ~2 GB free RAM (Windows PC with Docker Desktop, a small Linux VM, or a Raspberry Pi 4/5 with 4 GB+).
 

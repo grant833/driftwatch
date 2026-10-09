@@ -45,7 +45,7 @@ notifier:
 
 scorer:
   poll_minutes: 30
-  horizons: [1, 5, 10]            # trading sessions after entry
+  horizons: [1, 2, 3, 5, 10]      # trading sessions after entry
 
 trading:
   enabled: true

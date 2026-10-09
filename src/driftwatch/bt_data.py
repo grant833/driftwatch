@@ -322,13 +322,14 @@ def _replace_batch(conn, batch: str, rows) -> int:
 
 def load_bars(conn, client: BarClient, min_value: float = 25000,
               today: date | None = None) -> int:
-    """SPY (refreshed every run) plus, per quarter, every candidate ticker's bars inside
+    """SPY and IWM (refreshed every run) plus, per quarter, every candidate ticker's bars inside
     its event windows. A quarter whose windows reach past yesterday is refetched on the
     next run, so recent events fill in as time passes."""
     today = today or datetime.now(ET).date()
     yesterday = today - timedelta(days=1)
-    n = _replace_batch(conn, "SPY", client.bars(["SPY"], date(2015, 6, 1), yesterday))
-    log.info("SPY: %d bars", n)
+    for bench in ("SPY", "IWM"):    # large-cap and small-cap yardsticks
+        n = _replace_batch(conn, bench, client.bars([bench], date(2015, 6, 1), yesterday))
+        log.info("%s: %d bars", bench, n)
     done = {r[0] for r in conn.execute("SELECT batch FROM bt_bars_fetched")}
     events = conn.execute(
         "SELECT DISTINCT ticker, filing_date FROM bt_insider_trades "
