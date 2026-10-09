@@ -106,58 +106,62 @@ TOP_TITLE = re.compile(r"\b(CEO|CFO|CHIEF EXECUTIVE|CHIEF FINANCIAL|(?<!VICE )(?
 
 def load_signals(conn, cfg: dict) -> tuple[list[Signal], dict]:
     """Group qualifying purchases by (ticker, filing date), mirroring the live view
-    insider_buy_signals: code P, acquired, officer or director, >= min value."""
-    rows = conn.execute(
-        """
-        WITH own AS (
-            SELECT accession, owner_cik, is_officer, upper(coalesce(title, '')) AS title
-            FROM bt_insider_owners WHERE is_officer OR is_director),
-        tr AS (
-            SELECT t.* FROM bt_insider_trades t
-            WHERE t.doc_type = '4' AND t.ticker IS NOT NULL AND t.value_usd >= %s
-              AND t.price >= %s AND t.filing_date >= %s AND NOT t.plan_10b5_1
-              AND EXISTS (SELECT 1 FROM own WHERE own.accession = t.accession)),
-        uniq AS (   -- one purchase reported on several Forms 4 that share a reporting owner
-                    -- (e.g. an officer and their family trust filing jointly) counts once
-            SELECT t.* FROM tr t
-            WHERE NOT EXISTS (
-                SELECT 1 FROM tr t2
-                JOIN bt_insider_owners o2 ON o2.accession = t2.accession
-                JOIN bt_insider_owners o1 ON o1.accession = t.accession
-                     AND o1.owner_cik = o2.owner_cik
-                WHERE t2.accession < t.accession AND t2.ticker = t.ticker
-                  AND t2.filing_date = t.filing_date
-                  AND t2.trans_date IS NOT DISTINCT FROM t.trans_date
-                  AND t2.shares = t.shares AND t2.price = t.price)),
-        money AS (
-            SELECT ticker, filing_date, max(trans_date) AS trans_date, sum(value_usd) AS value,
-                   max(lpad(issuer_cik, 10, '0')) AS cik
-            FROM uniq GROUP BY 1, 2),
-        people AS (
-            SELECT tr.ticker, tr.filing_date, count(DISTINCT own.owner_cik) AS n,
-                   bool_or(own.is_officer) AS officer,
-                   string_agg(DISTINCT own.title, '|') AS titles,
-                   array_agg(DISTINCT own.owner_cik) AS owners
-            FROM (SELECT DISTINCT ticker, filing_date, accession FROM tr) tr
-            JOIN own USING (accession) GROUP BY 1, 2)
-        SELECT m.ticker, m.filing_date, m.trans_date, p.n, m.value, p.officer, p.titles,
-               m.cik, p.owners
-        FROM money m JOIN people p USING (ticker, filing_date)
-        ORDER BY m.filing_date, m.ticker
-        """, (cfg["min_value_usd"], cfg["min_price"], cfg["start"])).fetchall()
+    insider_buy_signals: code P, acquired, officer or director, >= min value.
+
+    Two plain queries, then one pass in Python (a self-join in SQL over ~10 years of
+    filings is far too slow)."""
+    owners: dict[str, list[tuple]] = defaultdict(list)
+    for acc, cik, officer, title in conn.execute(
+            "SELECT accession, owner_cik, is_officer, upper(coalesce(title, '')) "
+            "FROM bt_insider_owners WHERE is_officer OR is_director"):
+        owners[acc].append((cik, officer, title))
+    trades = conn.execute(
+        "SELECT accession, ticker, filing_date, trans_date, shares, price, value_usd, "
+        "lpad(issuer_cik, 10, '0') FROM bt_insider_trades "
+        "WHERE doc_type = '4' AND ticker IS NOT NULL AND value_usd >= %s AND price >= %s "
+        "AND filing_date >= %s AND NOT plan_10b5_1 ORDER BY accession",
+        (cfg["min_value_usd"], cfg["min_price"], cfg["start"])).fetchall()
+    # One purchase reported on several Forms 4 that share a reporting owner (e.g. an
+    # officer and their family trust filing jointly) counts once. Different people
+    # buying identical lots on the same day are separate purchases.
+    seen: dict[tuple, set[str]] = defaultdict(set)
+    groups: dict[tuple, dict] = {}
+    for acc, tkr, filed, tdate, shares, price, value, cik in trades:
+        own = owners.get(acc)
+        if not own:
+            continue                       # no officer or director on this filing
+        g = groups.setdefault((tkr, filed), {"value": 0.0, "trans": None, "cik": cik,
+                                             "owners": {}, "accs": set()})
+        if acc not in g["accs"]:
+            g["accs"].add(acc)
+            for o_cik, officer, title in own:
+                prev = g["owners"].get(o_cik, (False, ""))
+                g["owners"][o_cik] = (prev[0] or officer, prev[1] or title)
+        ids = {o[0] for o in own}
+        key = (tkr, filed, tdate, shares, price)
+        dup = bool(seen[key] & ids) and acc not in seen.get((key, "accs"), set())
+        seen[key] |= ids
+        seen.setdefault((key, "accs"), set()).add(acc)
+        if dup:
+            continue
+        g["value"] += value or 0.0
+        if tdate and (g["trans"] is None or tdate > g["trans"]):
+            g["trans"] = tdate
     funds = {r[0] for r in conn.execute("SELECT ticker FROM fund_tickers")}
     sic = dict(conn.execute("SELECT cik, sic FROM sec_companies").fetchall())
     out, skipped = [], defaultdict(int)
-    for tkr, filed, tdate, n, value, officer, titles, cik, owners in rows:
+    for (tkr, filed), g in sorted(groups.items(), key=lambda kv: (kv[0][1], kv[0][0])):
         if tkr in funds:
             skipped["fund ticker"] += 1
             continue
-        if str(sic.get(cik) or "") in NOT_OPERATING_SIC:
+        if str(sic.get(g["cik"]) or "") in NOT_OPERATING_SIC:
             skipped["fund or SPAC (SEC industry code)"] += 1
             continue
-        top = any(TOP_TITLE.search(t) for t in (titles or "").split("|"))
-        out.append(Signal(tkr, filed, tdate, int(n), float(value or 0), bool(officer), top,
-                          frozenset(owners or ())))
+        people = g["owners"]
+        top = any(TOP_TITLE.search(t) for _, t in people.values() if t)
+        out.append(Signal(tkr, filed, g["trans"], len(people), g["value"],
+                          any(o for o, _ in people.values()), top, frozenset(people)))
+    log.info("signals: %d from %d qualifying purchases", len(out), len(trades))
     return out, dict(skipped)
 
 

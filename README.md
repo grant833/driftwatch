@@ -109,6 +109,7 @@ docker compose run --rm news positions           # open paper positions
 docker compose run --rm news perf                # tournament results vs SPY
 
 # Historical backtest of the insider strategy (one-time download, ~15-30 min)
+docker compose --profile tools build publisher       # on-demand service: rebuild after updates
 docker compose run --rm publisher backtest-load      # SEC insider data, industry codes, bars
 docker compose run --rm publisher backtest-insider   # report: backtests/ + dashboard
 ```

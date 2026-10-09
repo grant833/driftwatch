@@ -38,6 +38,11 @@ try {
     }
     if (-not $ready) { throw "Docker is not running" }
 
+    # The publisher is an on-demand service, so "docker compose up --build" doesn't
+    # rebuild it. Rebuild here (seconds when nothing changed) so it runs current code.
+    docker compose --profile tools build -q publisher 2>&1 | ForEach-Object { Log "  $_" }
+    if ($LASTEXITCODE -ne 0) { throw "publisher build failed" }
+
     $out = docker compose run --rm publisher 2>&1
     $out | ForEach-Object { Log "  $_" }
     if ($LASTEXITCODE -ne 0) { throw "publisher exited with code $LASTEXITCODE" }
